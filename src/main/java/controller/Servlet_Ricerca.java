@@ -21,7 +21,17 @@ public class Servlet_Ricerca extends HttpServlet
 	{
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet");
+		HttpSession session = request.getSession(true);
 		String[] info = servlet.split(",");
+		if (info[0].equals("login"))
+		{
+			if (main.Login(info[1], info[2]) == true)
+			{
+				session.setAttribute("Login", 1);
+				session.setAttribute("Utente", main.nomeUtente(info[1]));
+				response.getWriter().println(1);
+			}
+		}
 		if (info[0].equals("stampa_profilo"))
 		{
 			List profili = main.ricercaProfilo(info[1]);

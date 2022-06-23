@@ -165,7 +165,7 @@ public class Main
 		Commento impressione = new Commento();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query get_utente = controllo.createQuery("select id from Utente where email = '" + utente + "'");
+		Query get_utente = controllo.createQuery("select id from Utente where nome_cognome = '" + utente + "'");
 		Query get_profilo = controllo.createQuery("select id from Profilo where email = '" + profilo + "'");
 		List list_utente = get_utente.list();
 		List list_profilo = get_profilo.list();
@@ -359,5 +359,29 @@ public class Main
 		tech.add(" ");
 		controllo.close();
 		return tech;
+	}
+	public List get_esito_colloquio()
+	{
+		List esito_colloquio = new ArrayList();
+		esito_colloquio.add(" ");
+		esito_colloquio.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select esito_colloquio from Esito_Colloquio");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			esito_colloquio.add((String)list.get(c));
+		esito_colloquio.add(" ");
+		controllo.close();
+		return esito_colloquio;
+	}
+	public String nomeUtente(String email)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select nome_cognome from Utente where email = '" + email + "'");
+		List list = q.list();
+		controllo.close();
+		return (String)list.get(0);
 	}
 }

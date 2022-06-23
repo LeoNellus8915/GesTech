@@ -9,11 +9,9 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
-	rel="stylesheet">
-
-
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"rel="stylesheet">
+	
+	
 
 </head>
 
@@ -125,6 +123,7 @@
 	left: 50%;
 }
 </style>
+
 </head>
 
 <body class="light" onload="ricerca()">
@@ -143,7 +142,7 @@
 								<img class="user_avatar" src="Immagini/u2.png" alt="User Image">
 							</div>
 							<div class="float-left info">
-								<h6 class="font-weight-light mt-2 mb-1">Giovanna Rossi</h6>
+								<h6 class="font-weight-light mt-2 mb-1"><%String x = (String)session.getAttribute("Utente"); out.println(x);%></h6>
 								<a href="#"> Recruiter</a>
 							</div>
 						</div>
@@ -157,16 +156,15 @@
 					</div>
 				</div>
 				<ul class="sidebar-menu">
-					<li class="treeview"><a href="ricerca.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input
-								type="hidden" name="Servlet" value="logout">
-						</i> <span>Tutte le Risorse</span>
-					</a></li>
-					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input type="hidden" name="Servlet"
-								value="logout">
-						</i> <span>Nuova Risorsa</span>
-					</a></li>
+					<li class="treeview"><a href="#"><i
+							class="icon icon-account_box light-green-text s-18"></i>Risorse<i
+							class="icon icon-angle-left s-18 pull-right"></i></a>
+						<ul class="treeview-menu">
+							<li><a href="registra.jsp"><i class="icon icon-user"></i>Tutte
+									le risorse</a></li>
+							<li><a href="nuova_risorsa.html"><i
+									class="icon icon-add"></i>Aggiungi risorsa</a></li>
+						</ul></li>
 					<li class="treeview"><a href="index.jsp"> <i
 							class="icon icon-exit_to_app purple-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
@@ -263,47 +261,6 @@
 		<a href="profilo&cv.jsp"
 			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
 			class="icon-add"></i></a>
-
-
-		<!--         <div class="conteiner head"> -->
-		<!--             <div class="row header"> -->
-		<!--             	<div class="col-md-1"> -->
-		<!--                 	<div id="hormenu">div che contiene il menu -->
-		<!--             			<ul> lista principale: definisce il menu nella sua interezza -->
-		<!--                 			<li> -->
-		<!-- 			                	<img src="Immagini/trattini.png" width=120% height=80%> -->
-		<!-- 			                	<ul class="ordine"> -->
-		<!-- 			                		<br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Modulo Presenze</p> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="bustepaga.jsp"><p class="categorie">Buste Paga</p></a> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="certificazione_unica.jsp"><p class="categorie">Certificazione Unica</p></a> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Commesse</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Certificazioni</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Corso Sicurezza</p>	 -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Visita Medica</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="ricerca.jsp"><p class="categorie">Profilo & CV</p></a> -->
-		<!-- 			                        </li> -->
-		<!--                     			</ul> -->
-		<!-- 			                </li> -->
-		<!-- 			    		</ul> -->
-		<!-- 			    	</div> -->
-		<!--                 </div> -->
-		<!--                 <div class="col-md-8 offset-1 logo"><p class="home">Logo</p></div> -->
 		<div class="page has-sidebar-left">
 			<div class="pos-f-t">
 				<div class="collapse" id="navbarToggleExternalContent">
@@ -320,14 +277,12 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-
-	</div>
-	<!-- page  has-sidebar-left height-full -->
-</body>
-
-
-
+		<div class="row categorie">
+			<div id="curriculum" class="col-md-6 offset-1"><br></div>
+			<br><br>
+		</div>
+	<script scr="./js/app.js"></script>
+	</body>
 </html>
 <%}%>
