@@ -236,7 +236,7 @@
 										class="custom-control-label" for="checkedAll"></label>
 								</div>
 							</th>
-							<th class="titolotabella">NOME E COGNOME</th>
+							<th class="titolotabella">NOME E COGNOMEaa</th>
 							<th class="titolotabella">TELEFONO</th>
 							<th class="titolotabella">VALUTAZIONE</th>
 							<th class="titolotabella">RUOLO</th>
