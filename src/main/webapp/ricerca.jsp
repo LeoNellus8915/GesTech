@@ -9,9 +9,11 @@
 <link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"rel="stylesheet">
-	
-	
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+	rel="stylesheet">
+
+
 
 </head>
 
@@ -123,7 +125,6 @@
 	left: 50%;
 }
 </style>
-
 </head>
 
 <body class="light" onload="ricerca()">
@@ -156,15 +157,16 @@
 					</div>
 				</div>
 				<ul class="sidebar-menu">
-					<li class="treeview"><a href="#"><i
-							class="icon icon-account_box light-green-text s-18"></i>Risorse<i
-							class="icon icon-angle-left s-18 pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li><a href="registra.jsp"><i class="icon icon-user"></i>Tutte
-									le risorse</a></li>
-							<li><a href="nuova_risorsa.html"><i
-									class="icon icon-add"></i>Aggiungi risorsa</a></li>
-						</ul></li>
+					<li class="treeview"><a href="ricerca.jsp"> <i
+							class="icon icon-account_box light-green-text s-18"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Tutte le Risorse</span>
+					</a></li>
+					<li class="treeview"><a href="profilo&cv.jsp"> <i
+							class="icon icon-add"> <input type="hidden" name="Servlet"
+								value="logout">
+						</i> <span>Nuova Risorsa</span>
+					</a></li>
 					<li class="treeview"><a href="index.jsp"> <i
 							class="icon icon-exit_to_app purple-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
@@ -234,11 +236,11 @@
 										class="custom-control-label" for="checkedAll"></label>
 								</div>
 							</th>
-							<th>NOME E COGNOME</th>
-							<th>TELEFONO</th>
-							<th>VALUTAZIONE</th>
-							<th>RUOLO</th>
-							<th></th>
+							<th class="titolotabella">NOME E COGNOME</th>
+							<th class="titolotabella">TELEFONO</th>
+							<th class="titolotabella">VALUTAZIONE</th>
+							<th class="titolotabella">RUOLO</th>
+							<th class="titolotabella">AZIONI</th>
 						</tr>
 					</thead>
 				</table>
@@ -320,21 +322,8 @@
 			</div>
 
 		</div>
-		<!--             <div class="row categorie"> -->
-		<!--             	<div class="col-md-3 offset-1 ricerca"> -->
-		<!--             		<input id="ricerca" type="text"> -->
-		<!--             		<button id="filtro" onclick="cerca()">Cerca</button> -->
-		<!--             	</div> -->
-		<!-- <!--             	<div class="col-md-1 offset-7"><a href="profilo&cv.jsp"><button class="add">+</button></a></div> -->
-		<!--            	</div> -->
-		<div class="row categorie">
-			<div id="curriculum" class="col-md-6 offset-1">
-				<br>
-			</div>
-			<br> <br>
-		</div>
+
 	</div>
-	<script scr="./js/app.js"></script>
 	<!-- page  has-sidebar-left height-full -->
 </body>
 

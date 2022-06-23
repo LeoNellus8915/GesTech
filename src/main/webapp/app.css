@@ -196,6 +196,10 @@ samp {
     font-size: 1em
 }
 
+  .titolotabella {
+    font-weight: bold !important;
+}
+
 pre {
     margin-top: 0;
     margin-bottom: 1rem;
@@ -228,12 +232,16 @@ caption {
     caption-side: bottom
 }
 
+tbody {
+    /* font-family: inherit; */
+    font-size: 13px;
+}
+
 th {
     text-align: inherit
 }
 tbody td:nth-child(odd)
 {
-	background-color: #FFF;
 }
 
 tbody td:nth-child(even)
@@ -36891,3 +36899,5 @@ html[dir=rtl] .form-group.has-icon input {
   .icon-arrow_downward {
     margin-right: 20px;
   }
+  
+  
