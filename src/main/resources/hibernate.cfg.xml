@@ -21,5 +21,6 @@
       <mapping resource = "model/Seniority.hbm.xml"/>
       <mapping resource = "model/Skill.hbm.xml"/>
       <mapping resource = "model/Tech.hbm.xml"/>
+      <mapping resource = "model/Esito_Colloquio.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>

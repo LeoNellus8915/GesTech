@@ -149,7 +149,7 @@
 		<div class="row justify-content-center">
 			<div class="col-md-9">
 				<p class="utente">
-					<a href="home.jsp">Home</a> > Profilo & CV
+					<a href="ricerca.jsp">Profilo & CV</a> > Nuovo CV
 				</p>
 			</div>
 		</div>
@@ -234,7 +234,7 @@
 					<h5>
 						<p>Esito Colloquio</p>
 					</h5>
-					<input class="profilo" type="text" name="esito_colloquio">
+					<select name="esito_colloquio" id="esito_colloquio" class="cascata"></select>
 				</div>
 			</div>
 

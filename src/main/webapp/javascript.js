@@ -539,6 +539,7 @@ function menu_cascata()
 	menu_cascata_lingue();
 	menu_cascata_seniority();
 	menu_cascata_tech();
+	menu_cascata_esito_colloquio();
 }
 function menu_cascata_lingue()
 {
@@ -628,6 +629,32 @@ function menu_cascata_skill()
 		}
 	}
 }
+function menu_cascata_esito_colloquio()
+{
+	var esito_colloqui;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_esito_colloquio");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_esito_colloqui = xhttp.responseText;
+			esito_colloqui = risposta_esito_colloqui.split(", ");
+			esito_colloqui.pop();
+			esito_colloqui.shift();
+			for (var c = 0; c < esito_colloqui.length; c++)
+			{
+				const esito_colloquio = document.createElement("option");
+				esito_colloquio.value = esito_colloqui[c];
+				esito_colloquio.innerHTML = esito_colloqui[c];
+				document.getElementById('esito_colloquio').appendChild(esito_colloquio);
+			}
+		}
+	}
+}
 function menu_cascata_tech()
 {
 	var tech;   
@@ -668,4 +695,27 @@ function menu_cascata_tech()
 			}
 		}
 	}
+}
+function login()
+{
+	var email = document.getElementById("email").value;
+	var password = document.getElementById("password").value;
+	
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "login," + email + "," + password);
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var login = xhttp.responseText;
+			if (login == 1)
+				window.open("ricerca.jsp", "_self");
+			else
+				alert("Credenziali Sbagliate");
+		}
+	}
+
 }

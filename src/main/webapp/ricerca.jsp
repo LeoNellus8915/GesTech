@@ -142,7 +142,7 @@
 								<img class="user_avatar" src="Immagini/u2.png" alt="User Image">
 							</div>
 							<div class="float-left info">
-								<h6 class="font-weight-light mt-2 mb-1">Giovanna Rossi</h6>
+								<h6 class="font-weight-light mt-2 mb-1"><%String x = (String)session.getAttribute("Utente"); out.println(x);%></h6>
 								<a href="#"> Recruiter</a>
 							</div>
 						</div>

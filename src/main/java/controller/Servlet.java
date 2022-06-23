@@ -26,20 +26,6 @@ public class Servlet extends HttpServlet
 		HttpSession session = request.getSession(true);
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet"); 
-		if (servlet.equals("login"))
-		{
-			String email = request.getParameter("email");
-			String password = request.getParameter("password");
-			if (main.Login(email, password) == true)
-			{
-				session.setAttribute("Login", 1);
-				session.setAttribute("Utente", email);
-				disp = request.getRequestDispatcher("home.jsp");
-			}
-			else
-				disp = request.getRequestDispatcher("exist.jsp");
-			disp.forward(request, response);
-		}
 		
 		if (servlet.equals("register"))
 		{
@@ -95,7 +81,7 @@ public class Servlet extends HttpServlet
 						competenze_totali, certificazioni, seniority);
 			String utente = (String) session.getAttribute("Utente");
 			main.salvaCommento(impressioni, utente, email);
-			disp = request.getRequestDispatcher("home.jsp");
+			disp = request.getRequestDispatcher("profilo&cv.jsp");
 			disp.forward(request, response);
 		}
 		if (servlet.equals("ricerca"))
@@ -162,6 +148,11 @@ public class Servlet extends HttpServlet
 		{
 			List tech = main.get_tech();
 			response.getWriter().println(tech);
+		}
+		if (servlet.equals("get_esito_colloquio"))
+		{
+			List esito_colloquio = main.get_esito_colloquio();
+			response.getWriter().println(esito_colloquio);
 		}
 	}
 }
