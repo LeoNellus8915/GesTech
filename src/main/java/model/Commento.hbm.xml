@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Commento" table="commenti">
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="commento" type="string" column="commento"/>
+		<property name="id_utente" type="int" column="fk_utente"/>
+		<property name="id_profilo" type="int" column="fk_profilo"/>
+	</class>
+</hibernate-mapping>

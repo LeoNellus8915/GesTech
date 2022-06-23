@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Certificazione_Unica" table="certificazione_unica">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<property name="anno" type="int" column="anno"/>
+		<property name="data" type="string" column="data"/>
+	</class>
+</hibernate-mapping>

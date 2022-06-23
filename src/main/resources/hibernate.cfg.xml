@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+   <session-factory>
+      <property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+      <property name = "hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+      <property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/unico?serverTimezone=GMT</property>
+      <property name = "show_sql">true</property>
+      <property name = "hibernate.current_session_context_class">thread</property>
+      <property name = "hibernate.connection.username">root</property>
+      <property name = "hibernate.connection.password">miao</property>
+      <mapping resource = "model/Utente.hbm.xml"/>
+      <mapping resource = "model/Bustepaga.hbm.xml"/>
+      <mapping resource = "model/Certificazione_Unica.hbm.xml"/>
+      <mapping resource = "model/Profilo.hbm.xml"/>
+      <mapping resource = "model/Commento.hbm.xml"/>
+      <mapping resource = "model/Lingua.hbm.xml"/>
+      <mapping resource = "model/Seniority.hbm.xml"/>
+      <mapping resource = "model/Skill.hbm.xml"/>
+      <mapping resource = "model/Tech.hbm.xml"/>
+   </session-factory>
+</hibernate-configuration>

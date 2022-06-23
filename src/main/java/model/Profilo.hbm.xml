@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Profilo" table="profilo">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<property name="nome" type="string" column="nome"/>
+		<property name="cognome" type="string" column="cognome"/>
+		<property name="recapito" type="string" column="recapito"/>
+		<property name="email" type="string" column="email"/>
+		<property name="citta_allocazione" type="string" column="citta_allocazione"/>
+		<property name="ruolo" type="string" column="ruolo"/>
+		<property name="competenza_principale" type="string" column="competenza_principale"/>
+		<property name="data_colloquio" type="string" column="data_colloquio"/>
+		<property name="anno_colloquio" type="string" column="anno_colloquio"/>
+		<property name="esito_colloquio" type="string" column="esito_colloquio"/>
+		<property name="fonte_reperimento" type="string" column="fonte_reperimento"/>
+		<property name="costo_giornaliero" type="string" column="costo_giornaliero"/>
+		<property name="possibilita_lavorativa" type="string" column="possibilita_lavorativa"/>
+		<property name="skill" type="string" column="skill"/>
+		<property name="tech1" type="string" column="tech1"/>
+		<property name="tech2" type="string" column="tech2"/>
+		<property name="tech3" type="string" column="tech3"/>
+		<property name="tech4" type="string" column="tech4"/>
+		<property name="tech_campo_libero" type="string" column="tech_campo_libero"/>
+		<property name="lingua1" type="string" column="lingua1"/>
+		<property name="lingua2" type="string" column="lingua2"/>
+		<property name="lingua3" type="string" column="lingua3"/>
+		<property name="competenze_totali" type="string" column="competenze_totali"/>
+		<property name="certificazioni" type="string" column="certificazioni"/>
+		<property name="seniority" type="string" column="seniority"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Seniority" table="seniority">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<property name="seniority" type="string" column="seniority"/>
+	</class>
+</hibernate-mapping>

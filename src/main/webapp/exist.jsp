@@ -1,0 +1,107 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<html>
+    <head>
+        <title>Unico</title>
+        <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous">
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+			
+		<link rel="stylesheet" href="app.css">
+		<script type="text/javascript" src="javascript.js"></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+			rel="stylesheet">
+     <style>
+        .loader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #F5F8FA;
+            z-index: 9998;
+            text-align: center;
+        }
+        
+        .plane-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+    </head>
+    
+
+    <body class="light loaded">
+        <div id="primary" class="blue4 p-t-b-100 height-full responsive-phone">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-2">
+                        </div>
+                        <div class="col-lg-8 p-t-100">
+                            <div class="text-white">
+                                <h1>Email o Password ERRATI</h1>
+                                <p class="s-18 p-t-b-20 font-weight-lighter">Inserisci le credenziali per accedere al sistema</p>
+                            </div>
+                            <div class="col-lg-2">
+                            </div>
+                            <form  method="POST" action="Servlet">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group has-icon"><i class="icon-envelope-o"></i>
+                                            <input type="text" class="form-control form-control-lg no-b" name="email" placeholder="error@mail.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Esempio error@mail.com">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group has-icon"><i class="icon-user-secret"></i>
+                                            <input type="password" name="password" class="form-control form-control-lg no-b" placeholder="**********">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                    	<input type="hidden" name="Servlet" value="login">
+                                        <input type="submit" class="btn btn-success btn-lg btn-block" value="Accedi">
+                                        <p class="forget-pass text-white">Hai dimenticato il nome utente o la password?
+                                        </p>
+                                        <input type=checkbox value="recupera_password"><u>Recupera Password</u>
+                                    </div>
+                                </div>
+                            </form>                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>
+<!--                 <form method="POST" action="Servlet"> -->
+<!--                     <br> -->
+<!--                     <b><h2><p class="index">Accedi</p></h2></b> -->
+<!--                     <br><br> -->
+<!--                     <h5><p class="index">E-mail</p></h5><br> -->
+<!--                     <p class="index"><input type="text" name="email" placeholder="error@mail.com"></p><br><br> -->
+<!--                     <h5><p class="index">Password</p></h2><br> -->
+<!--                     <p class="index"><input type="password" name="password" placeholder="**********"></p><br><br> -->
+<!--                     <h5><p class="index"><input type=checkbox value="recupera_password"><u>Recupera Password</u></p></p><br><br><br> -->
+<!--                     <input type="hidden" name="Servlet" value="login"> -->
+<!--                     <input type="submit" value="ACCEDI"> -->
+<!--                     <br><br><br> -->
+<!--                 </form> -->
+<!--             </div> -->
+<!--             <br><br> -->
+<!--             <font color="red"><h2>Utente non trovato</h2></font> -->
+<!--         </center> -->
+<!--     </body> -->
+<!-- </html> -->
