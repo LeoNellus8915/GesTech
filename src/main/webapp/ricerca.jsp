@@ -219,7 +219,7 @@
 								le risorse</a></li>
 						<li class="float-right"><a class="nav-link"
 							href="profilo&cv.jsp"><i class="icon icon-plus-circle"></i>
-								Aggiungi risorsaa</a></li>
+								Aggiungi risorsa</a></li>
 					</ul>
 				</div>
 			</div>
