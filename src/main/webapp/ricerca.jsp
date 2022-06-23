@@ -261,47 +261,6 @@
 		<a href="profilo&cv.jsp"
 			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
 			class="icon-add"></i></a>
-
-
-		<!--         <div class="conteiner head"> -->
-		<!--             <div class="row header"> -->
-		<!--             	<div class="col-md-1"> -->
-		<!--                 	<div id="hormenu">div che contiene il menu -->
-		<!--             			<ul> lista principale: definisce il menu nella sua interezza -->
-		<!--                 			<li> -->
-		<!-- 			                	<img src="Immagini/trattini.png" width=120% height=80%> -->
-		<!-- 			                	<ul class="ordine"> -->
-		<!-- 			                		<br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Modulo Presenze</p> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="bustepaga.jsp"><p class="categorie">Buste Paga</p></a> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="certificazione_unica.jsp"><p class="categorie">Certificazione Unica</p></a> -->
-		<!--                     				</li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Commesse</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Certificazioni</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Corso Sicurezza</p>	 -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!--                     					<p class="categorie">Visita Medica</p> -->
-		<!-- 			                        </li><br> -->
-		<!-- 			                        <li class="ordine"> -->
-		<!-- 			                        	<a href="ricerca.jsp"><p class="categorie">Profilo & CV</p></a> -->
-		<!-- 			                        </li> -->
-		<!--                     			</ul> -->
-		<!-- 			                </li> -->
-		<!-- 			    		</ul> -->
-		<!-- 			    	</div> -->
-		<!--                 </div> -->
-		<!--                 <div class="col-md-8 offset-1 logo"><p class="home">Logo</p></div> -->
 		<div class="page has-sidebar-left">
 			<div class="pos-f-t">
 				<div class="collapse" id="navbarToggleExternalContent">
@@ -318,27 +277,13 @@
 					</div>
 				</div>
 			</div>
-
 		</div>
-		<!--             <div class="row categorie"> -->
-		<!--             	<div class="col-md-3 offset-1 ricerca"> -->
-		<!--             		<input id="ricerca" type="text"> -->
-		<!--             		<button id="filtro" onclick="cerca()">Cerca</button> -->
-		<!--             	</div> -->
-		<!-- <!--             	<div class="col-md-1 offset-7"><a href="profilo&cv.jsp"><button class="add">+</button></a></div> -->
-		<!--            	</div> -->
 		<div class="row categorie">
-			<div id="curriculum" class="col-md-6 offset-1">
-				<br>
-			</div>
-			<br> <br>
+			<div id="curriculum" class="col-md-6 offset-1"><br></div>
+			<br><br>
 		</div>
 	</div>
 	<script scr="./js/app.js"></script>
-	<!-- page  has-sidebar-left height-full -->
-</body>
-
-
-
+	</body>
 </html>
 <%}%>
