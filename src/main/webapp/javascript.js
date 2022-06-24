@@ -704,5 +704,30 @@ function login()
 				alert("Credenziali Sbagliate");
 		}
 	}
-
+}
+function menu_cascata_ruolo()
+{
+	var tech;   
+	var xhttp = new XMLHttpRequest();
+	
+	xhttp.open("POST", 'Servlet', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "get_ruolo");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_ruolo = xhttp.responseText;
+			ruoli = risposta_ruolo.split(", ");
+			ruoli.pop();
+			ruoli.shift();
+			for (var c = 0; c < ruoli.length; c++)
+			{
+				const ruolo = document.createElement("option");
+				ruolo.value = ruoli[c];
+				ruolo.innerHTML = ruoli[c];
+				document.getElementById('ruolo').appendChild(ruolo);
+			}
+		}
+	}
 }

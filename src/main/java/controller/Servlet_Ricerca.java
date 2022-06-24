@@ -28,6 +28,7 @@ public class Servlet_Ricerca extends HttpServlet
 			if (main.Login(info[1], info[2]) == true)
 			{
 				session.setAttribute("Login", 1);
+				session.setAttribute("Ruolo", main.getRuolo(info[1]));
 				session.setAttribute("Utente", main.nomeUtente(info[1]));
 				response.getWriter().println(1);
 			}

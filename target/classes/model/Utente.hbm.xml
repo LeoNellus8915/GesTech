@@ -8,5 +8,6 @@
 		<property name="nome_cognome" type="string" column="nome_cognome"/>
 		<property name="email" type="string" column="email"/>
 		<property name="password" type="string" column="password"/>
+		<property name="fk_ruolo" type="int" column="fk_ruolo"/>
 	</class>
 </hibernate-mapping>

@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
+import jakarta.servlet.http.HttpSession;
 import model.Utente;
 import model.Bustepaga;
 
@@ -25,13 +26,24 @@ public class Main
         	user = (Utente) users.get(c);
         	if ((user.getEmail().equals(email)) && (user.getPassword().equals(password)))
         	{
+        		
         		return true;
         	}	
         }
         controllo.close();
         return false;
 	}
-	public void Register(String email, String password)
+	public String getRuolo(String email)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q_ruolo = controllo.createQuery("select r.ruolo from Ruolo r join Utente u on r.id = u.fk_ruolo where email = '" + email + "'");
+		List ruolo = q_ruolo.list();
+		controllo.close();
+		return (String)ruolo.get(0);
+		
+	}
+	public void Register(String nome_cognome, String email, String password)
 	{
 		Utente user = new Utente();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
@@ -42,6 +54,8 @@ public class Main
             user.setId((Integer)list.get(0) + 1);
         user.setEmail(email);
         user.setPassword(password);
+        user.setNome_cognome(nome_cognome);
+        user.setFk_ruolo(1);
         controllo.save(user);
         controllo.getTransaction().commit();
         controllo.close();
@@ -374,6 +388,21 @@ public class Main
 		esito_colloquio.add(" ");
 		controllo.close();
 		return esito_colloquio;
+	}
+	public List get_ruolo()
+	{
+		List ruolo = new ArrayList();
+		ruolo.add(" ");
+		ruolo.add(" ");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select ruolo from Ruolo");
+		List list = q.list();
+		for (int c=0; c<list.size(); c++)
+			ruolo.add((String)list.get(c));
+		ruolo.add(" ");
+		controllo.close();
+		return ruolo;
 	}
 	public String nomeUtente(String email)
 	{

@@ -22,7 +22,6 @@ public class Servlet extends HttpServlet
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
-		//miao
 		RequestDispatcher disp = null;
 		HttpSession session = request.getSession(true);
 		Main main = new Main();
@@ -30,12 +29,13 @@ public class Servlet extends HttpServlet
 		
 		if (servlet.equals("register"))
 		{
+			String nome_cognome = request.getParameter("nome_cognome");
 			String email = request.getParameter("email");
 			String password = request.getParameter("password");
 			String password2 = request.getParameter("password2");
 			if ((password.equals(password2)) && (main.Register2(email) == false))
 			{
-				main.Register(email, password);
+				main.Register(email, password, nome_cognome);
 				disp = request.getRequestDispatcher("tabella.jsp");
 			}
 			else
@@ -154,6 +154,11 @@ public class Servlet extends HttpServlet
 		{
 			List esito_colloquio = main.get_esito_colloquio();
 			response.getWriter().println(esito_colloquio);
+		}
+		if (servlet.equals("get_ruolo"))
+		{
+			List ruolo = main.get_ruolo();
+			response.getWriter().println(ruolo);
 		}
 	}
 }

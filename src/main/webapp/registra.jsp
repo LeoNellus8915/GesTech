@@ -10,7 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
     </head>
 
-    <body>
+    <body onload="menu_cascata_ruolo()">
         <center>
             <div>
                 <h1>logo</h1>
@@ -21,6 +21,10 @@
                     <br>
                     <b><h2><p class="index">Aggiungi Utente</p></h2></b>
                     <br><br>
+                    <h5><p class="index">Nome e Cognome</p></h2><br>
+                    <p class="index"><input type="text" id="nome_cognome" name="nome_cognome" placeholder="Mario Rossi" required=""></p><br><br>
+                    <h5><p class="index">Ruolo</p></h2><br>
+                    <select name="ruolo" id="ruolo" class="cascata"></select>
                     <h5><p class="index">E-mail</p></h5><br>
                     <p class="index"><input type="text" name="email" placeholder="error@mail.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Esempio error@mail.com"></p><br><br>
                     <h5><p class="index">Password</p></h2><br>

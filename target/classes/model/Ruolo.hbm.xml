@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Ruolo" table="ruolo">
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		<property name="ruolo" type="string" column="ruolo"/>
+	</class>
+</hibernate-mapping>
