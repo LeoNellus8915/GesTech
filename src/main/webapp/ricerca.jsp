@@ -10,6 +10,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"rel="stylesheet">
+<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	
 	
 
@@ -102,7 +104,8 @@
 	crossorigin="anonymous"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-
+	<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 <link rel="stylesheet" href="app.css">
 <script type="text/javascript" src="javascript.js"></script>
 <style>
@@ -156,15 +159,16 @@
 					</div>
 				</div>
 				<ul class="sidebar-menu">
-					<li class="treeview"><a href="#"><i
-							class="icon icon-account_box light-green-text s-18"></i>Risorse<i
-							class="icon icon-angle-left s-18 pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li><a href="registra.jsp"><i class="icon icon-user"></i>Tutte
-									le risorse</a></li>
-							<li><a href="nuova_risorsa.html"><i
-									class="icon icon-add"></i>Aggiungi risorsa</a></li>
-						</ul></li>
+						<li class="treeview"><a href="ricerca.jsp"> <i
+							class="icon icon-account_box light-green-text s-18"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Tutte le risorse</span>
+					</a></li>
+						<li class="treeview"><a href="profilo&cv.jsp"> <i
+							class="icon icon-add"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Aggiungi risorsa</span>
+					</a></li>
 					<li class="treeview"><a href="index.jsp"> <i
 							class="icon icon-exit_to_app purple-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
@@ -223,7 +227,7 @@
 			</div>
 		</header>
 		<div class="table-responsive">
-			<form>
+			
 				<table id="prova" class="table table-striped table-hover r-0">
 					<thead>
 						<tr class="no-b">
@@ -242,18 +246,6 @@
 						</tr>
 					</thead>
 				</table>
-			</form>
-			<nav class="my-3" aria-label="Page navigation">
-				<ul class="pagination">
-					<li class="page-item"><a class="page-link" href="#">Indietro</a>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item"><a class="page-link" href="#">2</a></li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item"><a class="page-link" href="#">Avanti</a>
-					</li>
-				</ul>
-			</nav>
 		</div>
 		<!-- table-responsive -->
 
@@ -277,10 +269,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="row categorie">
-			<div id="curriculum" class="col-md-6 offset-1"><br></div>
-			<br><br>
 		</div>
 	<script scr="./js/app.js"></script>
 	</body>

@@ -325,28 +325,12 @@ function ricerca()
 		{
 			var risposta = xhttp.responseText;
 			profili = risposta.split(", ");
+			var arrayRow = [];
 			for (var c = 1; c < profili.length - 1; c++)
 			{
-				let tbody = document.createElement('tbody');
-				document.getElementById("prova").appendChild(tbody);
-				let td1 = document.createElement('td');
-				let td2 = document.createElement('td');
-				let td3 = document.createElement('td');
-				let td4 = document.createElement('td');
-				let td5 = document.createElement('td');
 				valori = profili[c].split(" ");
-				td1.innerText = valori[0];
-				td2.innerText = valori[1] + " " + valori[2];
-				td3.innerText = valori[3];
-				td4.innerText = valori[4];
-				td5.innerText = valori[5];
-				tbody.appendChild(td1);
-				tbody.appendChild(td2);
-				tbody.appendChild(td3);
-				tbody.appendChild(td4);
-				tbody.appendChild(td5);
-				
-				let td6 = document.createElement('td');
+				var b1 = '<a href="sola_lettura.jsp" id="'+valori[0]+'" onclick="function(){localStorage.setItem(\"dato\", this.id);}"><i class="icon-eye mr-3"></i></a>';
+				var b2 = '<a href="stampa_profilo.jsp" id="'+valori[0]+'" onclick="function(){localStorage.setItem(\"dato\", this.id);}"><i class="icon-pencil"></i></a>';
 				var a1 = document.createElement('a');
 				a1.href = "sola_lettura.jsp";
 				a1.id = valori[0];
@@ -357,7 +341,6 @@ function ricerca()
 				var i1 = document.createElement('i');
 				i1.className = "icon-eye mr-3";
 				a1.appendChild(i1);
-				td6.appendChild(a1);
 				
 				var a2 = document.createElement('a');
 				a2.href = "stampa_profilo.jsp";
@@ -369,10 +352,14 @@ function ricerca()
 				var i2 = document.createElement('i');
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);
-				td6.appendChild(a2);
-				
-				tbody.appendChild(td6);
+				arrayRow.push([
+					 valori[0],valori[1] + " " + valori[2], valori[3],valori[4], valori[5],
+					b1 +b2
+				]);
 			}
+			$('#prova').DataTable({
+				"data": arrayRow
+			});
 		}
 	}
 }
