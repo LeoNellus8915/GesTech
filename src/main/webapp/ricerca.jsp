@@ -226,6 +226,9 @@
 				</div>
 			</div>
 		</header>
+		
+		
+		
 		<div class="table-responsive">
 			
 				<table id="prova" class="table table-striped table-hover r-0">

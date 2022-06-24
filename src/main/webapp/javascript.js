@@ -296,7 +296,7 @@ function stampa_profilo()
 			document.getElementById("possibilita_lavorativa").value = profilo[13];
 			
 			document.getElementById("skill").value = profilo[14];
-			document.getElementById("tech").value = profilo[15];
+			document.getElementById("tech_1").value = profilo[15];   // prima tech
 			document.getElementById("tech_2").value = profilo[16];
 			document.getElementById("tech_3").value = profilo[17];
 			document.getElementById("tech_4").value = profilo[18];

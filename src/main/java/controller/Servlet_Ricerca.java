@@ -23,6 +23,7 @@ public class Servlet_Ricerca extends HttpServlet
 		String servlet = request.getParameter("Servlet");
 		HttpSession session = request.getSession(true);
 		String[] info = servlet.split(",");
+		System.out.println("asdf  " + info[0] + "  "  + info[1]);
 		if (info[0].equals("login"))
 		{
 			if (main.Login(info[1], info[2]) == true)

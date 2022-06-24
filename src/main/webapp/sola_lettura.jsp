@@ -115,7 +115,7 @@ if (session.getAttribute("Login") == null) {
 </head>
 
 
-<body class="light" onload="ricerca()">
+<body class="light" onload="stampa_profilo()">
 
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
@@ -164,7 +164,7 @@ if (session.getAttribute("Login") == null) {
 							class="icon icon-exit_to_app purple-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Esci</span>
-					</a></li>
+					</a></li></ul>
 			</section>
 		</aside>
 		<!--Sidebar End-->
@@ -424,7 +424,7 @@ if (session.getAttribute("Login") == null) {
 								<br>
 								<br>
 							</div>
-                              
+                       </div>  
                </div>
              </div>
            </div>

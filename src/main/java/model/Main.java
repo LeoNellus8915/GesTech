@@ -246,6 +246,7 @@ public class Main
         Query q = controllo.createQuery("from Profilo where id = " + id);
         q.uniqueResult();
         List lista = q.list();
+        System.out.println(lista);
         profilo = (Profilo) lista.get(0);
         profili.add(profilo.getNome()!=null?profilo.getNome():"");
         profili.add(profilo.getCognome()!=null?profilo.getCognome():"");
