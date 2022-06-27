@@ -11,6 +11,7 @@
 			<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<link rel="stylesheet" href="app.css">
+		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="javascript.js"></script>
 		<link rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -65,11 +66,13 @@
 	<%
   		if (session.getAttribute("Login") == null)
     	{	
-  			%><body onload="errore()"></body></html><%
+  			%><body onload="errore()"><%
     	}
   		else	
   		{
-    		%><body class="light" onload="ricerca()">
+    		%><body class="light" onload="menu_cascata_ruolo()"><%
+  		}
+	%>
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>
@@ -142,82 +145,56 @@
 				<div class="relative">
 					<div class="d-flex">
 						<div class="d-none d-md-block">
-							<h1 class="nav-title text-white">Risorse</h1>
+							<h1 class="nav-title text-white">Aggiungi nuovo utente</h1>
 						</div>
 					</div>
 				</div>
 				<!--Top Menu Start -->
 
 			</div>
+				<form method="POST" action="Servlet">
+					<div class="row spazio">
+						<div class="form-group col-6 m-0">
+							<label for="nome_e_cognome" class="col-form-label s-12">Nome e cognome</label>
+							<input id="nome_e_cognome" name="nome_e_cognome"
+								placeholder="Inserisci nome e cognome"
+								class="form-control r-0 light s-12 date-picker" type="text">
+						</div>
+						<div class="form-group col-6 m-0 ruolo">
+							<label for="ruolo" class="col-form-label s-12">Ruolo</label>
+							<select name="ruolo" id="ruolo" class="cascata"></select>
+						</div>
+						<div class="form-group col-4 m-0">
+							<label for="email" class="col-form-label s-12">E-mail</label>
+							<input id="email" name="email"
+								placeholder="Inserisci email"
+								class="form-control r-0 light s-12 date-picker" type="text">
+						</div>
+						<div class="form-group col-4 m-0">
+							<label for="password" class="col-form-label s-12">Password</label>
+							<input id="password" name="password"
+								placeholder="**********"
+								class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
+						</div>
+						<div class="form-group col-4 m-0">
+							<label for="conferma_password" class="col-form-label s-12">Conferma Password</label>
+							<input id="conferma_password" name="password"
+								placeholder="**********"
+								class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
+						</div>
+	                    <input type="hidden" name="Servlet" value="register">
+	                    <div class="col-12">
+	                    	<input class="aggiungi_utente" type="submit" value="AGGIUNGI">
+	                    </div>
+                    </div>
+                </form>
+            </div>
 
 		</div>
 	</div>
 	<div class="page  has-sidebar-left height-full">
-		<header class="blue accent-3 relative">
-			<div class="container-fluid text-white">
-				<div class="row p-t-b-10 "></div>
-				<div class="row justify-content-between">
-					<ul class="nav nav-material nav-material-white responsive-tab"
-						id="v-pills-tab" role="tablist">
-						<li><a class="nav-link active" id="v-pills-all-tab"
-							data-toggle="pill" href="#v-pills-all" role="tab"
-							aria-controls="v-pills-all"><i class="icon icon-user"></i>Tutte
-								le risorse</a></li>
-						<li class="float-right"><a class="nav-link"
-							href="profilo&cv.jsp"><i class="icon icon-plus-circle"></i>
-								Aggiungi risorsa</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
 		
-		
-		
-		<div class="container mb-3 mt-3" >
-			
-				<table id="prova" class="table table-striped table-bordered" cellspacing="0" width="100%">
-					<thead><br>
-						<tr class="no-b">
-							<th style="width: 30px">
-<!-- 								<div class="custom-control custom-checkbox">  -->
-<!-- 									<input type="checkbox" id="checkedAll" -->
-<!-- 										class="custom-control-input"><label -->
-<!-- 										class="custom-control-label" for="checkedAll"></label> -->
-<!-- 								</div> -->
-							</th>
-							<th class="titolotabella">NOME E COGNOME</th>
-							<th class="titolotabella">TELEFONO</th>
-							<th class="titolotabella">VALUTAZIONE</th>
-							<th class="titolotabella">RUOLO</th>
-							<th class="titolotabella">AZIONI</th>
-						</tr>
-					</thead>
-				</table>
-		</div>
-		<!-- table-responsive -->
-
-
-		<a href="profilo&cv.jsp"
-			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
-			class="icon-add"></i></a>
-		<div class="page has-sidebar-left">
-			<div class="pos-f-t">
-				<div class="collapse" id="navbarToggleExternalContent">
-					<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-						<div class="search-bar">
-							<input
-								class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
-								type="text" placeholder="start typing...">
-						</div>
-						<a href="#" data-toggle="collapse"
-							data-target="#navbarToggleExternalContent" aria-expanded="false"
-							aria-label="Toggle navigation"
-							class="paper-nav-toggle paper-nav-white active "><i></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
+	</div>
 	<script scr="./js/app.js"></script>
 	</body>
 </html>
-<%}%>

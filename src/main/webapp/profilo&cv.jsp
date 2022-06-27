@@ -66,13 +66,11 @@
 	<%
   		if (session.getAttribute("Login") == null)
     	{	
-  			%><body onload="errore()"><%
+  			%><body onload="errore()"></body></html><%
     	}
   		else	
   		{
-    		%><body class="light" onload="menu_cascata()"><%
-  		}
-	%>
+    		%><body class="light" onload="menu_cascata()">
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>
@@ -114,6 +112,11 @@
 							class="icon icon-add"> <input type="hidden" name="Servlet"
 								value="logout">
 						</i> <span>Aggiungi risorsa</span>
+					</a></li>
+					<li class="treeview"><a href="profilo&cv.jsp"> <i
+							class="icon icon-add"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
 					<li class="treeview"><a href="index.jsp"> <i
 							class="icon icon-exit_to_app purple-text s-18"> <input
@@ -441,3 +444,4 @@
 		</div>
 	</body>
 </html>
+<%}%>

@@ -16,13 +16,11 @@
 	<%
   		if (session.getAttribute("Login") == null)
     	{	
-  			%><body onload="errore()"><%
+  			%><body onload="errore()"></body></html><%
     	}
   		else	
   		{
-    		%><body onload="certificazione_unica()"><%
-  		}
-	%>
+    		%><body onload="certificazione_unica()">
         <div class="conteiner head">
             <div class="row header">
             	<div class="col-md-1">
@@ -103,3 +101,4 @@
         <a href="PDF/2022.pdf" id="2022_pdf" download="2022" hidden></a>
     </body>
 </html>
+<%}%>

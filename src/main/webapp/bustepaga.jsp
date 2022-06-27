@@ -16,13 +16,11 @@
 	<%
   		if (session.getAttribute("Login") == null)
     	{	
-  			%><body onload="errore()"><%
+  			%><body onload="errore()"></body></html><%
     	}
   		else	
   		{
-    		%><body onload="bustepaga()"><%
-  		}
-	%>
+    		%><body onload="bustepaga()">
         <div class="conteiner head">
             <div class="row header">
             	<div class="col-md-1">
@@ -156,3 +154,4 @@
         <a href="PDF/Dicembre.pdf" id="dicembre_pdf" download="Dicembre" hidden></a>
     </body>
 </html>
+<%}%>

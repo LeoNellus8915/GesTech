@@ -258,3 +258,27 @@ to {
     background-color: #18448f!important;
 }
 
+select#ruolo {
+    width: 100%;
+    height: calc(1.5em + 0.55rem);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.15rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.row.spazio {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+input.aggiungi_utente {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 5px;
+}
