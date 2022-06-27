@@ -260,7 +260,7 @@
 													type="text">
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="esito_colloquio" class="col-form-label s-12">ESITOCOLLOQUIO</label> 
+												<label for="esito_colloquio" class="col-form-label s-12">ESITO COLLOQUIO</label> 
 												<select name="esito_colloquio" id="esito_colloquio" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 										</div>

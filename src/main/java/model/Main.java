@@ -1,5 +1,7 @@
 package model;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -181,7 +183,12 @@ public class Main
 		impressione.setId_utente((Integer)list_utente.get(0));
 		impressione.setId_profilo((Integer)list_profilo.get(0));
 		impressione.setCommento(commento);
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
+		LocalDateTime now = LocalDateTime.now();  
+		String data = dtf.format(now);
+		impressione.setData(data);
 		controllo.save(impressione);
+		controllo.getTransaction().commit();
 		controllo.close();
 	}
 	

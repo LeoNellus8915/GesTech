@@ -54,7 +54,6 @@ public class Servlet_Ricerca extends HttpServlet
 		}
 		if (info[0].equals("scrittura_anno"))
 		{
-			System.out.println(info[1]);
 			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");  
 			LocalDateTime now = LocalDateTime.now();  
 			String data = dtf.format(now);  

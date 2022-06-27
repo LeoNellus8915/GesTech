@@ -6,15 +6,17 @@ public class Commento
 	private String commento;
 	private int id_utente;
 	private int id_profilo;
+	private String data;
 	
 	public Commento () {}
 	
-	public Commento (int id, String commento, int id_utente, int id_profilo)
+	public Commento (int id, String commento, int id_utente, int id_profilo, String data)
 	{
 		this.id = id;
 		this.commento = commento;
 		this.id_utente = id_utente;
 		this.id_profilo = id_profilo;
+		this.data = data;
 	}
 	
 	public void setId(int id)
@@ -51,5 +53,13 @@ public class Commento
 	public int getId_profilo()
 	{
 		return id_profilo;
+	}
+
+	public String getData() {
+		return data;
+	}
+
+	public void setData(String data) {
+		this.data = data;
 	}
 }

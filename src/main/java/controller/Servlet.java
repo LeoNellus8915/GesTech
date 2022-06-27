@@ -94,7 +94,7 @@ public class Servlet extends HttpServlet
 			String nome_cognome = request.getParameter("nome_cognome");
 			String recapito = request.getParameter("recapito");
 			String email = request.getParameter("email");
-			String citta_allocazione = request.getParameter("citta_allocazione");
+			String citta_allocazione = request.getParameter("citta_di_allocazione");
 			String ruolo = request.getParameter("ruolo");
 			String competenza_principale = request.getParameter("competenza_principale");
 			String data_colloquio = request.getParameter("data_colloquio");
@@ -104,18 +104,19 @@ public class Servlet extends HttpServlet
 			String costo_giornaliero = request.getParameter("costo_giornaliero");
 			String possibilita_lavorativa = request.getParameter("possibilita_lavorativa");
 			String skill = request.getParameter("skill");
-			String tech1 = request.getParameter("tech1");
-			String tech2 = request.getParameter("tech2");
-			String tech3 = request.getParameter("tech3");
-			String tech4 = request.getParameter("tech4");
+			String tech1 = request.getParameter("tech_1");
+			String tech2 = request.getParameter("tech_2");
+			String tech3 = request.getParameter("tech_3");
+			String tech4 = request.getParameter("tech_4");
 			String tech_campo_libero = request.getParameter("tech_campo_libero");
-			String lingua1 = request.getParameter("lingua1");
-			String lingua2 = request.getParameter("lingua2");
-			String lingua3 = request.getParameter("lingua3");
+			String lingua1 = request.getParameter("lingua_1");
+			String lingua2 = request.getParameter("lingua_2");
+			String lingua3 = request.getParameter("lingua_3");
 			String competenze_totali = request.getParameter("competenze_totali");
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
-			String commento = request.getParameter("impressioni");
+			String commento = request.getParameter("commento");
+			System.out.println("Commento: " + commento);
 			main.aggiorna_cv(nome_cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);

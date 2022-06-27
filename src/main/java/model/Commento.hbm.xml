@@ -8,5 +8,6 @@
 		<property name="commento" type="string" column="commento"/>
 		<property name="id_utente" type="int" column="fk_utente"/>
 		<property name="id_profilo" type="int" column="fk_profilo"/>
+		<property name="data" type="string" column="data"/>
 	</class>
 </hibernate-mapping>

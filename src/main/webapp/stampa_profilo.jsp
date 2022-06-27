@@ -190,7 +190,7 @@
 									<div class="col-md-8">
 										<div class="form-row">
 											<div class="form-group col-6 m-0">
-												<label for="nome_congnome" class="col-form-label s-12">NOME
+												<label for="nome_cognome" class="col-form-label s-12">NOME
 													E COGNOME</label> <input id="nome_cognome" name="nome_cognome"
 													placeholder="Inserisci Nome e Cognome"
 													class="form-control r-0 light s-12 " type="text">
@@ -214,7 +214,7 @@
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA' DI ALLOCAZIONE</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
-													placeholder="Inserisci Città di Allocazione"
+													placeholder="Inserisci Cittï¿½ di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
 													data-time-picker="false" data-format-date='Y/m/d'
 													type="text">
@@ -260,7 +260,7 @@
 													type="text">
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="esito_colloquio" class="col-form-label s-12">ESITOCOLLOQUIO</label> 
+												<label for="esito_colloquio" class="col-form-label s-12">ESITO COLLOQUIO</label> 
 												<select name="esito_colloquio" id="esito_colloquio" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 										</div>
@@ -272,16 +272,21 @@
 								<div class="form-row">
 									<div class="col-md-12">
 										<div class="form-row">
-											<div class="form-group col-6 m-0">
+											<div class="form-group col-4 m-0">
 												<label for="fonte_reperimento" class="col-form-label s-12">FONTE
 													REPERIMENTO</label> <input id="fonte_reperimento"
 													name="fonte_reperimento"
 													placeholder="Inserisci Fonte Reperimento"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
-											<div class="form-group col-6 m-0">
+											<div class="form-group col-4 m-0">
 												<label for="ruolo" class="col-form-label s-12">RUOLO</label>
 												<input id="ruolo" name="ruolo" placeholder="Insersci Ruolo"
+													class="form-control r-0 light s-12 date-picker" type="text">
+											</div>
+											<div class="form-group col-4 m-0">
+												<label for="competenza_principale" class="col-form-label s-12">COMPETENZA PRINCIPALE</label>
+												<input id="competenza_principale" name="competenza_principale" placeholder="Insersci Competenza Principale"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>
@@ -305,7 +310,7 @@
 													class="col-form-label s-12">POSSIBILITA' LAVORATIVA</label>
 												<input id="possibilita_lavorativa"
 													name="possibilita_lavorativa"
-													placeholder="Insersci Possibilità Lavorativa"
+													placeholder="Insersci Possibilitï¿½ Lavorativa"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>
@@ -427,7 +432,7 @@
 								<hr>
 
 								<div class="card-body">
-									<input type="hidden" name="Servlet" value="profilo">
+									<input type="hidden" name="Servlet" value="aggiorna_cv">
 									<input type="submit" value="SALVA">
 								</div>
 
@@ -439,5 +444,6 @@
 			</div>
 		</div>
 		</div>
-	</body>
+
+</body>
 </html>
