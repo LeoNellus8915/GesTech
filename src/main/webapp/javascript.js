@@ -331,6 +331,70 @@ function stampa_profilo()
 		}
 	}
 }
+function stampa_profilo_lettura()
+{
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "stampa_profilo," + localStorage.getItem("dato"));
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_profilo = xhttp.responseText;
+			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
+			
+			
+			document.getElementById("nome_cognome").innerHTML = profilo[1]// Home > Ricerca > Nome&Cognome
+			
+			document.getElementById("recapito").innerHTML =  profilo[2];  // Controllo se profilo[] è null, se lo è campo vuoto
+			document.getElementById("email").innerHTML = profilo[3]
+			document.getElementById("citta_di_allocazione").innerHTML = profilo[4];            // profilo[4]!=="null"?profilo[4]:"";
+			
+			document.getElementById("ruolo").innerHTML = profilo[5];
+			document.getElementById("competenza_principale").innerHTML = profilo[6];
+			
+			document.getElementById("data_colloquio").innerHTML = profilo[7];
+			document.getElementById("anno_colloquio").innerHTML = profilo[8];
+			document.getElementById("esito_colloquio").innerHTML = profilo[9];
+			
+			document.getElementById("fonte_reperimento").innerHTML = profilo[10];
+			
+			document.getElementById("costo_giornaliero").innerHTML = profilo[11];
+			document.getElementById("possibilita_lavorativa").innerHTML = profilo[12];
+			
+			document.getElementById("skill").innerHTML = profilo[13];
+			document.getElementById("tech_1").innerHTML = profilo[14];   // prima tech
+			document.getElementById("tech_2").innerHTML = profilo[15];
+			document.getElementById("tech_3").innerHTML = profilo[16];
+			document.getElementById("tech_4").innerHTML = profilo[17];
+			document.getElementById("tech_campo_libero").innerHTML = profilo[18];
+			
+			document.getElementById("lingua_1").innerHTML = profilo[19];
+			document.getElementById("lingua_2").innerHTML = profilo[20];
+			document.getElementById("lingua_3").innerHTML = profilo[21];
+			
+			document.getElementById("competenze_totali").innerHTML = profilo[22];
+			document.getElementById("certificazioni").innerHTML = profilo[23];
+			document.getElementById("seniority").innerHTML = profilo[24];
+			
+			/*for(var i=0; i < profilo.length; i++){
+				console.log(profilo[i] + " " + i);
+			}*/
+			
+			for(var i=26; i < profilo.length-1; i++){
+			const paragrafo = document.createElement("p");
+			paragrafo.id = i;
+			paragrafo.innerText = profilo[i];
+			document.getElementById("commenti").appendChild(paragrafo);
+			}
+			
+			localStorage.setItem("nome_cognome", profilo[1]);
+			localStorage.setItem("array", profilo);
+		}
+	}
+}
 function cerca()
 {
 	var ricerca = document.getElementById("ricerca").value;

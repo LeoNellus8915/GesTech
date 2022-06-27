@@ -55,7 +55,7 @@
     	}
   		else	
   		{
-    		%><body class="light" onload="stampa_profilo()"><%
+    		%><body class="light" onload="stampa_profilo_lettura()"><%
   		}
 	%>
 	<div id="app">
@@ -149,12 +149,12 @@
                         <div class="col-md-4 b-r">
                             <div class="text-center p-5 mt-5">
                                 <div>
-                                    <h4 class="p-t-10"> <input type="text" id="nome" name="nome"></h4>
-                                    Ruolo
+                                    <h4 class="p-t-10"> <span id="nome_cognome"></span></h4>
+                                    <h5 class="p-t-10"> <span id="ruolo"></span></h5>
                                 </div>
                                 <a href="#" class="btn btn-success  mt-3">Scarica CV</a>
                                 <a href="#" class="btn btn-success  mt-3">Genera CV</a>
-                                <a href="#" class="btn btn-success giallo mt-3">Modifica</a>
+                                <a href="stampa_profilo.jsp" class="btn btn-success giallo mt-3">Modifica</a>
                                 <a href="#" class="btn btn-success rosso  mt-3">Elimina</a>
                                 <div class="mt-5">
                                     <ul class="social social list-inline">
@@ -169,16 +169,16 @@
                                     <h5>Recapiti</h5>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Email</h4>
-                                            <span>paper_user@panel.com</span>
+                                           <h4 class="p-t-10"> <span id="email"></span></h4>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Recapito</h4>
-                                            <span>064062735</span>
+                                            <h4 class="p-t-10"> <span id="recapito"></span></h4>
                                         </div>
                                     </div>                                
                                 </div>
@@ -192,7 +192,7 @@
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Città</h4>
-                                            <span>Roma</span>
+                                           <h4 class="p-t-10"> <span id="citta_di_allocazione"></span></h4>
                                         </div>
                                     </div>
                                     
@@ -207,8 +207,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="p-4">
-                                            <h4 class="text-black">Competenze Principali</h4>
-                                            <span>java</span>
+                                            <h4 class="text-black">Competenza Principale</h4>
+                                            <span id="competenza_principale"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -224,32 +224,32 @@
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Data Colloquio:</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="data_colloquio"></span>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Anno Colloquio:</h4>
-                                            <span>064062735</span>
+                                            <span id="anno_colloquio"></span>
                                         </div>
                                     </div>   
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Esito Colloquio:</h4>
-                                            <span>064062735</span>
+                                            <span id="esito_colloquio"></span>
                                         </div>
                                     </div>                                                         
                                 </div>
                             </div>
                                   <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Candidatura</h5>
+                                    <span id="ruolo"></span>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="p-4">
                                             <h4 class="text-black">Fonte Reperimento: </h4>
-                                            <span>paper_user@panel.com</span>
+                                           <span id="fonte_reperimento"></span>
                                         </div>
                                      </div>
                                 </div>   
@@ -263,13 +263,13 @@
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Costo Giornaliero:</h4>
-                                            <span>paper_user@panel.com</span>
+                                           <span id="costo_giornaliero"></span>
                                         </div>
                                      </div>
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Possibilità Lavorativa:</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="possibilita_lavorativa"></span>
                                         </div>
                                      </div> 
                                 </div>   
@@ -280,28 +280,40 @@
                                     <h5>Skill-Tech</h5>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Skill</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="skill"></span>
                                         </div>
                                      </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <h4 class="text-black">Tech 1</h4>
+                                            <span id="tech_1"></span>
                                         </div>
                                      </div> 
-                                     <div class="col-md-3">
+                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Skill1</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <h4 class="text-black">Tech 2</h4>
+                                            <span id="tech_2"></span>
                                         </div>
                                      </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech1</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <h4 class="text-black">Tech 3</h4>
+                                            <span id="tech_3"></span>
+                                        </div>
+                                     </div> 
+                                     <div class="col-md-4">
+                                        <div class="p-4">
+                                            <h4 class="text-black">Tech 4</h4>
+                                            <span id="tech_4"></span>
+                                        </div>
+                                     </div> 
+                                     <div class="col-md-4">
+                                        <div class="p-4">
+                                            <h4 class="text-black">Tech campo libero</h4>
+                                            <span id="tech_campo_libero"></span>
                                         </div>
                                      </div> 
                                 </div>   
@@ -315,19 +327,19 @@
                                     <div class="col-md-3">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 1</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="lingua_1"></span>
                                         </div>
                                      </div>
                                     <div class="col-md-3">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 2</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="lingua_2"></span>
                                         </div>
                                      </div> 
                                      <div class="col-md-3">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 3</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="lingua_3"></span>
                                         </div>
                                      </div>
                                </div>
@@ -341,23 +353,28 @@
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Competenze Totali:</h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="competenze_totali"></span>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Certificazioni: </h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="certificazioni"></span>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Seniority: </h4>
-                                            <span>paper_user@panel.com</span>
+                                            <span id="seniority"></span>
                                         </div>
                                      </div>
                                      </div>
+                                     </div>
                                      
+                                     <div class="p5 b-b"> 
+                                <div class="pl-4 mt-4">
+                                    <h5>Commenti</h5>
+                                </div>
                                      <div class="row">
 								<div id="commenti" class="col-md-6 offset-1">
 									<br>
@@ -371,295 +388,6 @@
            </div>
          </form>
        </div>   
-        <!-- Contenuto della pagina centrale -->
-	<br>
-	<!-- <div class="row justify-content-center">
-		<div class="col-md-9">
-			<p class="utente">
-				<a href="home.jsp">Home</a> > <a href="ricerca.jsp">Profilo & CV</a>
-				> <span id="nome_cognome"></span>
-				<!-- Home > Ricerca > Nome&Cognome 
-			</p>
-		</div>
-	</div> -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<form method="post" action="Servlet"> -->
-<!-- 		<div class="row categorie"> -->
-<!-- 			<div id="" class="col-md-12"> -->
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<div class="row"> -->
-<!-- 							<div class="col-md-12"> -->
-<!-- 								<h4>Anagrafica</h4> -->
-<!-- 							</div> -->
-
-<!-- 						</div> -->
-
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Nome: <input type="text" id="nome" name="nome" -->
-<!-- 										style="width: 150px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Cognome: <input type="text" id="cognome" name="cognome" -->
-<!-- 										style="width: 150px !important;" disabled> -->
-<!-- 								</div> -->
-
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Numero Telefono: <input type="text" id="numeroTelefono" -->
-<!-- 										name="recapito" style="width: 120px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Email: <input type="text" id="email" name="email" -->
-<!-- 										style="width: 150px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Città: <input type="text" id="citta" name="citta_allocazione" -->
-<!-- 										style="width: 150px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Posizione</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Ruolo: <input type="text" id="ruolo" name="ruolo" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Competenza Principale: <input type="text" -->
-<!-- 										id="competenza_principale" name="competenza_principale" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Colloquio</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Data Colloquio: <input type="text" id="data_colloquio" -->
-<!-- 										name="data_colloquio" style="width: 150px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Anno Colloquio: <input type="text" id="anno_colloquio" -->
-<!-- 										name="anno_colloquio" style="width: 150px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Esito Colloquio: <input type="text" id="esito_colloquio" -->
-<!-- 										name="esito_colloquio" style="width: 120px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Candidatura</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md"> -->
-<!-- 									Fonte Reperimento: <input type="text" id="fonte_reperimento" -->
-<!-- 										name="fonte_reperimento" style="width: 150px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-				<!-- Fine Card -->
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Costo-Impiego</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Costo Giornaliero: <input type="text" id="costo_giornaliero" -->
-<!-- 										name="costo_giornaliero" style="width: 200px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-6"> -->
-<!-- 									Possibilità Lavorativa: <input type="text" -->
-<!-- 										id="possibilita_lavorativa" name="possibilita_lavorativa" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Skill-Tech</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Skill: <input type="text" id="skill" name="skill" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Tech: <input type="text" id="tech" name="tech1" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Tech2: <input type="text" id="tech_2" name="tech2" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Tech3: <input type="text" id="tech_3" name="tech3" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Tech4: <input type="text" id="tech_4" name="tech4" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md-4"> -->
-<!-- 									Tech(Campo Libero): <input type="text" id="tech_campo_libero" -->
-<!-- 										name="tech_campo_libero" style="width: 200px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Lingua</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md id="div_lingua_1"> -->
-<!-- 									Lingua1: <input type="text" id="lingua_1" name="lingua1" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md id="div_lingua_2"> -->
-<!-- 									Lingua2: <input type="text" id="lingua_2" name="lingua2" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md id="div_lingua_3"> -->
-<!-- 									Lingua3: <input type="text" id="lingua_3" name="lingua3" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-<!-- 				<div class="card"> -->
-<!-- 					<div class="card-header"> -->
-<!-- 						<h4>Info Extra</h4> -->
-<!-- 					</div> -->
-<!-- 					<div class="card-body"> -->
-<!-- 						<div class="container"> -->
-<!-- 							<div class="row"> -->
-<!-- 								<div class="col-md"> -->
-<!-- 									Competenze Totali: <input type="text" id="competenze_totali" -->
-<!-- 										name="competenze_totali" style="width: 200px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md"> -->
-<!-- 									Certificazioni: <input type="text" id="certificazioni" -->
-<!-- 										name="certificazioni" style="width: 200px !important;" -->
-<!-- 										disabled> -->
-<!-- 								</div> -->
-<!-- 								<div class="col-md"> -->
-<!-- 									Seniority: <input type="text" id="seniority" name="seniority" -->
-<!-- 										style="width: 200px !important;" disabled> -->
-<!-- 								</div> -->
-<!-- 							</div> -->
-<!-- 							Fine Row -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-							<!-- Fine Row -->
-<!-- 							<div class="row"> -->
-<!-- 								<div id="commenti" class="col-md-6 offset-1"> -->
-<!-- 									<br> -->
-<!-- 								</div> -->
-<!-- 								<br> -->
-<!-- 								<br> -->
-<!-- 							</div> -->
-<!-- 						</div> -->
-<!-- 						Fine Container -->
-<!-- 					</div> -->
-<!-- 					Fine Card Body -->
-<!-- 				</div> -->
-<!-- 				Fine Card -->
-
-<!-- 			</div> -->
-<!-- 			<!-- Fine Column -->
-<!-- 		</div> -->
-<!-- 		<!-- Fine Row Categorie --> 
-<!-- 	</form> -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	</div> -->
-<!-- 	<!-- Fine Container Head -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<br> -->
-<!-- 	<div type="hidden" id="scarica_cv"></div> -->
+        
 </body>
 </html>
