@@ -10,7 +10,16 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
     </head>
 
-    <body onload="menu_cascata_ruolo()">
+	<%
+  		if (session.getAttribute("Login") == null)
+    	{	
+  			%><body onload="errore()"><%
+    	}
+  		else	
+  		{
+    		%><body class="light" onload="menu_cascata_ruolo()"><%
+  		}
+	%>
         <center>
             <div>
                 <h1>logo</h1>
@@ -38,4 +47,4 @@
             </div>
         </center>
     </body>
-</html>l>
+</html>
