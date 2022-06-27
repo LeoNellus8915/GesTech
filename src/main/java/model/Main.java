@@ -1,16 +1,12 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-import jakarta.servlet.http.HttpSession;
-import model.Utente;
-import model.Bustepaga;
 
 public class Main
 {
@@ -210,6 +206,7 @@ public class Main
         return profili;
 	}
 	
+	
 	public List ricercaCommenti(String id)
 	{
 		List commenti = new ArrayList();
@@ -236,7 +233,7 @@ public class Main
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		System.out.println(id);
-        Query q = controllo.createQuery("from Profilo where id = " + id);   //id
+        Query q = controllo.createQuery("from Profilo where id = " + id);
         List lista = q.list();
         profilo = (Profilo) lista.get(0);
         profili.add(profilo.getNome_cognome()!=null?profilo.getNome_cognome():"");
@@ -287,21 +284,21 @@ public class Main
         controllo.close();
         return profili;
 	}
-	public void aggiorna_cv (String nome, String cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+	public void aggiorna_cv (String nome_cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 			String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q = controllo.createQuery("update Profilo set nome = '" + nome + "', cognome = '" + cognome + "', recapito = '" + recapito 
+		Query q = controllo.createQuery("update Profilo set nome_cognome = '" + nome_cognome + "', recapito = '" + recapito 
 				+ "', email = '" + email + "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
 				+ "', data_colloquio = '" + data_colloquio + "', anno_colloquio = '" + anno_colloquio + "', esito_colloquio = '" + esito_colloquio
 				+ "', fonte_reperimento = '" + fonte_reperimento + "', costo_giornaliero = '" + costo_giornaliero 
 				+ "', possibilita_lavorativa = '" + possibilita_lavorativa + "', skill = '" + skill + "', tech1 = '" + tech1 + "', tech2 = '" + tech2
 				+ "', tech3 = '" + tech3 + "', tech4 = '" + tech4 + "', tech_campo_libero = '" + tech_campo_libero + "', lingua1 = '" + lingua1 + "', lingua2 = '" + lingua2
 				+ "', lingua3 = '" + lingua3 + "', competenze_totali = '" + competenze_totali + "', certificazioni = '" + certificazioni
-				+ "', seniority = '" + seniority + "' where nome = '" + nome + "' and cognome = '" + cognome + "'");
+				+ "', seniority = '" + seniority + "' where email = '" + email + "'");
 		q.executeUpdate();
 		controllo.close();
 	}
