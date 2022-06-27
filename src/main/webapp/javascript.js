@@ -274,7 +274,9 @@ function stampa_profilo()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_profilo = xhttp.responseText;
-			profilo = risposta_profilo.split(", ");
+			profilo = risposta_profilo.split(", -");    // cambiano tutti i riferimenti pr modifica al Db
+			alert(risposta_profilo);
+			alert(profilo);
 			document.getElementById("nome_cognome").innerHTML = profilo[1] + " " + profilo[2];  // Home > Ricerca > Nome&Cognome
 			
 			document.getElementById("nome").value =  profilo[1];

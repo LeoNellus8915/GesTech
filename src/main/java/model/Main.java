@@ -130,7 +130,7 @@ public class Main
 		data.add(" ");
 		return data;
 	}
-	public void salva (String nome, String cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+	public void salva (String nome_cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 						String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
@@ -144,8 +144,7 @@ public class Main
         	profilo.setId((Integer)list.get(0) + 1);
         else
         	profilo.setId(0);
-        profilo.setNome(nome);
-        profilo.setCognome(cognome);
+        profilo.setNome_cognome(nome_cognome);
         profilo.setRecapito(recapito);
         profilo.setEmail(email);
         profilo.setCitta_allocazione(citta_allocazione);
@@ -197,19 +196,17 @@ public class Main
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
         Query q_id = controllo.createQuery("select id from Profilo");
-        Query q_nome = controllo.createQuery("select nome from Profilo");
-        Query q_cognome = controllo.createQuery("select cognome from Profilo");
+        Query q_nome_cognome = controllo.createQuery("select nome_cognome from Profilo");
         Query q_recapito = controllo.createQuery("select recapito from Profilo");
         Query q_esito_colloquio = controllo.createQuery("select esito_colloquio from Profilo");
         Query q_ruolo = controllo.createQuery("select ruolo from Profilo");
         List lista_id = q_id.list();
-        List lista_nomi = q_nome.list();
-        List lista_cognomi = q_cognome.list();
+        List lista_nome_cognome = q_nome_cognome.list();
         List lista_recapito = q_recapito.list();
         List lista_esito_colloquio = q_esito_colloquio.list();
         List lista_ruolo = q_ruolo.list();
         for (int c=0; c<lista_id.size(); c++)
-        	profili.add((Integer)lista_id.get(c) + " " + (String)lista_nomi.get(c) + " " + (String)lista_cognomi.get(c)
+        	profili.add((Integer)lista_id.get(c) + " " + (String)lista_nome_cognome.get(c)
         	+ " " + (String)lista_recapito.get(c) + " " + (String)lista_esito_colloquio.get(c) + " " 
         	+ (String)lista_ruolo.get(c));
         profili.add(" ");
@@ -243,13 +240,11 @@ public class Main
 		profili.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-        Query q = controllo.createQuery("from Profilo where id = " + id);
-        q.uniqueResult();
+		System.out.println(id);
+        Query q = controllo.createQuery("from Profilo where id = " + id);   //id
         List lista = q.list();
-        System.out.println(lista);
         profilo = (Profilo) lista.get(0);
-        profili.add(profilo.getNome()!=null?profilo.getNome():"");
-        profili.add(profilo.getCognome()!=null?profilo.getCognome():"");
+        profili.add(profilo.getNome_cognome()!=null?profilo.getNome_cognome():"");
         profili.add(profilo.getRecapito()!=null?profilo.getRecapito():"");
         profili.add(profilo.getEmail()!=null?profilo.getEmail():"");
         profili.add(profilo.getCitta_allocazione()!=null?profilo.getCitta_allocazione():"");

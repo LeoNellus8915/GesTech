@@ -3,8 +3,7 @@ package model;
 public class Profilo
 {
 	private int id;
-	private String nome;
-	private String cognome;
+	private String nome_cognome;
 	private String recapito;
 	private String email;
 	private String citta_allocazione;
@@ -31,14 +30,13 @@ public class Profilo
 	
 	public Profilo () {}
 	
-	public Profilo (int id, String nome, String cognome, String recapito, String email, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
+	public Profilo (int id, String nome_cognome, String recapito, String email, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
 					String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)
 	{
 		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;
+		this.nome_cognome = nome_cognome;
 		this.recapito = recapito;
 		this.email = email;
 		this.citta_allocazione = citta_allocazione;
@@ -73,25 +71,15 @@ public class Profilo
 	{
 		this.id = id;
 	}
-	
-	public String getNome()
+
+	public String getNome_cognome()
 	{
-		return nome;
+		return nome_cognome;
 	}
 
-	public void setNome(String nome)
+	public void setNome_cognome(String nome_cognome)
 	{
-		this.nome = nome;
-	}
-
-	public String getCognome()
-	{
-		return cognome;
-	}
-
-	public void setCognome(String cognome)
-	{
-		this.cognome = cognome;
+		this.nome_cognome = nome_cognome;
 	}
 
 	public String getRecapito()

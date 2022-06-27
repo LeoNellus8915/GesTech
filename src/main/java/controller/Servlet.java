@@ -51,8 +51,7 @@ public class Servlet extends HttpServlet
 		}
 		if (servlet.equals("profilo"))
 		{
-			String nome = request.getParameter("nome");
-			String cognome = request.getParameter("cognome");
+			String nome_cognome = request.getParameter("nome_cognome");
 			String recapito = request.getParameter("recapito");
 			String email = request.getParameter("email");
 			String citta_allocazione = request.getParameter("citta_allocazione");
@@ -77,7 +76,7 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String impressioni = request.getParameter("impressioni");
-			main.salva(nome, cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
+			main.salva(nome_cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
 			String utente = (String) session.getAttribute("Utente");

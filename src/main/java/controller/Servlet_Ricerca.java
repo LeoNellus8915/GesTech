@@ -38,6 +38,7 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			List profili = main.ricercaProfilo(info[1]);
 			List commenti = main.ricercaCommenti(info[1]);
+			System.out.println("Profili: " + profili);
 			response.getWriter().println(profili);
 			response.getWriter().println(commenti);
 		}
