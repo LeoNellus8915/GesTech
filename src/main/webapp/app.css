@@ -243,10 +243,10 @@ th {
 tbody td:nth-child(odd)
 {
 }
-
+s
 tbody td:nth-child(even)
 {
-	background-color: #eee;
+	background-color: transparent;
 }
 
 label {
@@ -32356,7 +32356,8 @@ table.dataTable.nowrap th {
 div.dataTables_wrapper div.dataTables_length label {
     font-weight: 400;
     text-align: left;
-    white-space: nowrap
+    white-space: nowrap;
+    position: absolute !important;
 }
 
 div.dataTables_wrapper div.dataTables_length select {
@@ -32371,7 +32372,7 @@ div.dataTables_wrapper div.dataTables_filter {
 div.dataTables_wrapper div.dataTables_filter label {
     font-weight: 400;
     white-space: nowrap;
-    text-align: left
+    text-align: right;
 }
 
 div.dataTables_wrapper div.dataTables_filter input {
@@ -32382,13 +32383,15 @@ div.dataTables_wrapper div.dataTables_filter input {
 
 div.dataTables_wrapper div.dataTables_info {
     padding-top: .85em;
-    white-space: nowrap
+    white-space: nowrap;
+    position: absolute;
 }
 
 div.dataTables_wrapper div.dataTables_paginate {
     margin: 0;
     white-space: nowrap;
-    text-align: right
+    text-align: right;
+        margin-top: 20px;
 }
 
 div.dataTables_wrapper div.dataTables_paginate ul.pagination {
@@ -36642,6 +36645,18 @@ sticky:before {
     width: 24px
 }
 
+.bordo {
+    border-top: 1px solid #e1e8ee !important;
+}
+
+.giallo {
+    background: #fcd12a;
+}
+
+.rosso {
+    background: red;
+}
+
 .material-switch>input[type=checkbox]:checked+label::before {
     background: inherit;
     opacity: .5
@@ -36901,3 +36916,15 @@ html[dir=rtl] .form-group.has-icon input {
   }
   
   
+.paginate_button.current {
+    background: #007bff;
+    padding: 10px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.paginate_button {
+    padding: 10px;
+}
+
+

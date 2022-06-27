@@ -6,7 +6,7 @@
     	%><html>
 <head>
 <title>Unico</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"rel="stylesheet">
@@ -71,6 +71,12 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <title>Unico</title>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+	<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="app.css">
+<script type="text/javascript" src="javascript.js"></script>
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -83,7 +89,7 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="app.css">
 <script type="text/javascript" src="javascript.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,12 +108,6 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
 	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 	crossorigin="anonymous"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-	<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
-<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-<link rel="stylesheet" href="app.css">
-<script type="text/javascript" src="javascript.js"></script>
 <style>
 .loader {
 	position: fixed;
@@ -229,17 +229,17 @@
 		
 		
 		
-		<div class="table-responsive">
+		<div class="container mb-3 mt-3" >
 			
-				<table id="prova" class="table table-striped table-hover r-0">
-					<thead>
+				<table id="prova" class="table table-striped table-bordered" cellspacing="0" width="100%">
+					<thead><br>
 						<tr class="no-b">
 							<th style="width: 30px">
-								<div class="custom-control custom-checkbox">
-									<input type="checkbox" id="checkedAll"
-										class="custom-control-input"><label
-										class="custom-control-label" for="checkedAll"></label>
-								</div>
+<!-- 								<div class="custom-control custom-checkbox">  -->
+<!-- 									<input type="checkbox" id="checkedAll" -->
+<!-- 										class="custom-control-input"><label -->
+<!-- 										class="custom-control-label" for="checkedAll"></label> -->
+<!-- 								</div> -->
 							</th>
 							<th class="titolotabella">NOME E COGNOME</th>
 							<th class="titolotabella">TELEFONO</th>

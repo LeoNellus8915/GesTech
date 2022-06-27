@@ -10,6 +10,12 @@ button.tabella
     border: none;
     border-radius: 30px;
 }
+
+.bordo {
+    border-top: 1px solid #e1e8ee !important;
+}
+
+
 button.esci
 {
     background-color: rgb(12, 12, 135);
@@ -251,3 +257,4 @@ to {
 .blue4 {
     background-color: #18448f!important;
 }
+

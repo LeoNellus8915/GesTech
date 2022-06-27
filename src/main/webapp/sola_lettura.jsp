@@ -93,7 +93,7 @@ if (session.getAttribute("Login") == null) {
 <link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
 <title>RPCTech - Recruiting - Profilo</title>
 <!-- CSS -->
-<link rel="stylesheet" href="assets/css/app.css">
+<link rel="stylesheet" href="app.css">
 <style>
 .loader {
 	position: fixed;
@@ -213,8 +213,8 @@ if (session.getAttribute("Login") == null) {
                                 </div>
                                 <a href="#" class="btn btn-success  mt-3">Scarica CV</a>
                                 <a href="#" class="btn btn-success  mt-3">Genera CV</a>
-                                <a href="#" class="btn btn-success  mt-3">Modifica</a>
-                                <a href="#" class="btn btn-success  mt-3">Elimina</a>
+                                <a href="#" class="btn btn-success giallo mt-3">Modifica</a>
+                                <a href="#" class="btn btn-success rosso  mt-3">Elimina</a>
                                 <div class="mt-5">
                                     <ul class="social social list-inline">
                                         <li class="list-inline-item"><a href="#" class="grey-text"><i class="icon-linkedin"></i></a></li>
@@ -275,7 +275,7 @@ if (session.getAttribute("Login") == null) {
                         </div> <!-- fine campi stretti -->
                       </div>                      
                         
-                        <div class="p5 b-b"> <!-- inizio campi larghi --> 
+                        <div class="p5 b-b bordo"> <!-- inizio campi larghi --> 
                                 <div class="pl-4 mt-4">
                                     <h5>Colloquio</h5>
                                 </div>
