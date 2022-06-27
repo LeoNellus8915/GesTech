@@ -177,6 +177,10 @@ function remove(input, div, piu, meno)
 	if (document.getElementById(piu) != null)
 		document.getElementById(piu).style.display = 'none';
 }
+function setStorage(id)
+{
+	localStorage.setItem("dato", id);
+}
 
 function ricerca()
 {
@@ -196,9 +200,9 @@ function ricerca()
 			for (var c = 1; c < profili.length - 1; c++)
 			{
 				valori = profili[c].split(" ");
-				var b1 = '<a href="sola_lettura.jsp" id="'+valori[0]+'" onclick="function(){localStorage.setItem(\"dato\", this.id);}"><i class="icon-eye mr-3"></i></a>';
-				var b2 = '<a href="stampa_profilo.jsp" id="'+valori[0]+'" onclick="function(){localStorage.setItem(\"dato\", this.id);}"><i class="icon-pencil"></i></a>';
-				var a1 = document.createElement('a');
+				var b1 = '<a href="sola_lettura.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-eye mr-3"></i></a>';
+				var b2 = '<a href="stampa_profilo.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-pencil"></i></a>';
+				/*var a1 = document.createElement('a');
 				a1.href = "sola_lettura.jsp";
 				a1.id = valori[0];
 				a1.onclick = function()
@@ -218,7 +222,7 @@ function ricerca()
 				}
 				var i2 = document.createElement('i');
 				i2.className = "icon-pencil";
-				a2.appendChild(i2);
+				a2.appendChild(i2);*/
 				arrayRow.push([
 					 valori[0],valori[1] + " " + valori[2], valori[3],valori[4], valori[5],
 					b1 +b2
@@ -263,7 +267,6 @@ function ricerca()
 }*/
 function stampa_profilo()
 {
-
 	var xhttp = new XMLHttpRequest();
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
