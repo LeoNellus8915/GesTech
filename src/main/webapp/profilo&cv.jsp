@@ -109,12 +109,12 @@
 						</i> <span>Tutte le risorse</span>
 					</a></li>
 					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input type="hidden" name="Servlet"
+							class="icon icon-account_box light-green-text s-18"> <input type="hidden" name="Servlet"
 								value="logout">
 						</i> <span>Aggiungi risorsa</span>
 					</a></li>
-					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input
+					<li class="treeview"><a href="nuovoutente.jsp"> <i
+							class="icon icon-account_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
@@ -442,6 +442,27 @@
 			</div>
 		</div>
 		</div>
+		<a href="ricerca.jsp"
+			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary chiudiruota"><i
+			class="icon-add"></i></a>
+		<div class="page has-sidebar-left">
+			<div class="pos-f-t">
+				<div class="collapse" id="navbarToggleExternalContent">
+					<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+						<div class="search-bar">
+							<input
+								class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
+								type="text" placeholder="start typing...">
+						</div>
+						<a href="#" data-toggle="collapse"
+							data-target="#navbarToggleExternalContent" aria-expanded="false"
+							aria-label="Toggle navigation"
+							class="paper-nav-toggle paper-nav-white active "><i></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 	</body>
 </html>
 <%}%>

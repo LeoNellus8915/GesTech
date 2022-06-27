@@ -206,6 +206,15 @@ pre {
     overflow: auto
 }
 
+a.btn-fab.btn-fab-md.fab-right.fab-right-bottom-fixed.shadow.btn-primary.chiudiruota {
+    transform: rotate(45deg) !important;
+    background: red;
+}
+
+a.btn-fab.btn-fab-md.fab-right.fab-right-bottom-fixed.shadow.btn-primary {
+    background: green;
+}
+
 figure {
     margin: 0 0 1rem
 }

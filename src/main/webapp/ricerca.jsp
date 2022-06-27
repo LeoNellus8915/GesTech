@@ -104,12 +104,12 @@
 						</i> <span>Tutte le risorse</span>
 					</a></li>
 						<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi risorsa</span>
 					</a></li>
-					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input
+					<li class="treeview"><a href="nuovoutente.jsp"> <i
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
