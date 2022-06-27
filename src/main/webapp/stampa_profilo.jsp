@@ -214,7 +214,7 @@
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA' DI ALLOCAZIONE</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
-													placeholder="Inserisci Citt� di Allocazione"
+													placeholder="Inserisci Citta' di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
 													data-time-picker="false" data-format-date='Y/m/d'
 													type="text">
@@ -310,7 +310,7 @@
 													class="col-form-label s-12">POSSIBILITA' LAVORATIVA</label>
 												<input id="possibilita_lavorativa"
 													name="possibilita_lavorativa"
-													placeholder="Insersci Possibilit� Lavorativa"
+													placeholder="Insersci Possibilita' Lavorativa"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>

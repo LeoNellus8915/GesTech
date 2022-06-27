@@ -204,8 +204,8 @@ public class Main
         for (int c=0; c<lista.size(); c++)
         {
         	profilo = (Profilo)lista.get(c);
-        	profili.add(profilo.getId() + " " + profilo.getNome_cognome()
-        	+ " " + profilo.getRecapito() + " " + profilo.getEsito_colloquio() + " " 
+        	profili.add(profilo.getId() + "-" + profilo.getNome_cognome()
+        	+ "-" + profilo.getRecapito() + "-" + profilo.getEsito_colloquio() + "-" 
         	+ profilo.getRuolo());
         }
         profili.add(" ");

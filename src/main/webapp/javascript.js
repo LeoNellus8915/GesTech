@@ -196,10 +196,12 @@ function ricerca()
 		{
 			var risposta = xhttp.responseText;
 			profili = risposta.split(", ");
+			profili.pop();
+			profili.shift();
 			var arrayRow = [];
-			for (var c = 1; c < profili.length - 1; c++)
+			for (var c = 0; c < profili.length ; c++)
 			{
-				valori = profili[c].split(" ");
+				valori = profili[c].split("-");
 				var b1 = '<a href="sola_lettura.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-eye mr-3"></i></a>';
 				var b2 = '<a href="stampa_profilo.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-pencil"></i></a>';
 				/*var a1 = document.createElement('a');
@@ -224,8 +226,7 @@ function ricerca()
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);*/
 				arrayRow.push([
-					 valori[0],valori[1] + " " + valori[2], valori[3],valori[4], valori[5],
-					b1 +b2
+					 valori[0], valori[1], valori[2], valori[3],valori[4], b1 +b2
 				]);
 			}
 			$('#prova').DataTable({
@@ -281,7 +282,7 @@ function stampa_profilo()
 			
 			menu_cascata2(profilo[13], profilo[14], profilo[15], profilo[16], profilo[17], profilo[19], profilo[20], 
 						  profilo[21], profilo[24], profilo[9]);
-			
+						  
 			document.getElementById("nome_cognome").innerHTML = profilo[1]// Home > Ricerca > Nome&Cognome
 			
 			document.getElementById("nome_cognome").value = profilo[1]
@@ -294,27 +295,27 @@ function stampa_profilo()
 			
 			document.getElementById("data_colloquio").value = profilo[7];
 			document.getElementById("anno_colloquio").value = profilo[8];
-			document.getElementById("esito_colloquio").value = profilo[9];
+			//document.getElementById("esito_colloquio").value = profilo[9];
 			
 			document.getElementById("fonte_reperimento").value = profilo[10];
 			
 			document.getElementById("costo_giornaliero").value = profilo[11];
 			document.getElementById("possibilita_lavorativa").value = profilo[12];
 			
-			document.getElementById("skill").value = profilo[13];
+			/*document.getElementById("skill").value = profilo[13];
 			document.getElementById("tech_1").value = profilo[14];   // prima tech
 			document.getElementById("tech_2").value = profilo[15];
 			document.getElementById("tech_3").value = profilo[16];
-			document.getElementById("tech_4").value = profilo[17];
+			document.getElementById("tech_4").value = profilo[17];*/
 			document.getElementById("tech_campo_libero").value = profilo[18];
 			
-			document.getElementById("lingua_1").value = profilo[19];
+			/*document.getElementById("lingua_1").value = profilo[19];
 			document.getElementById("lingua_2").value = profilo[20];
-			document.getElementById("lingua_3").value = profilo[21];
+			document.getElementById("lingua_3").value = profilo[21];*/
 			
 			document.getElementById("competenze_totali").value = profilo[22];
 			document.getElementById("certificazioni").value = profilo[23];
-			document.getElementById("seniority").value = profilo[24];
+			//document.getElementById("seniority").value = profilo[24];
 			
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
@@ -807,8 +808,10 @@ function menu_cascata_esito_colloquio2(esito_colloquio_1)
 				const esito_colloquio = document.createElement("option");
 				esito_colloquio.value = esito_colloqui[c];
 				esito_colloquio.innerHTML = esito_colloqui[c];
-				if (esito_colloqui[c] == esito_colloquio_1)
-					esito_colloquio.selected = true;
+				//alert(esito_colloquio_1[1]);
+				if (esito_colloqui[c] == esito_colloquio_1){
+					console.log("aaaaaaaaaaaa");
+					esito_colloquio.selected = true;}
 				document.getElementById('esito_colloquio').appendChild(esito_colloquio);
 			}
 		}
