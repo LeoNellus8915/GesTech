@@ -215,15 +215,21 @@ public class Main
 	public List ricercaCommenti(String id)
 	{
 		List commenti = new ArrayList();
-		Commento commento = new Commento();
+		Stampa_Commenti commento = new Stampa_Commenti();
 		commenti.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-        Query q = controllo.createQuery("Select commento from Commento where fk_profilo = " + id);
-        q.getResultList();
-        List lista = q.list();
-        for (Object object : lista) {
-			commenti.add(object);
+		//Query q = controllo.createQuery("Select u.nome_cognome, c.data, c.commento from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
+		Query user = controllo.createQuery("Select u.nome_cognome from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
+        Query data = controllo.createQuery("Select data from Commento where fk_profilo =" + id);
+        Query com = controllo.createQuery("Select commento from Commento where fk_profilo =" + id);
+        List lista_user = user.list();
+        List lista_data = data.list();
+        List lista_commenti = com.list();
+        for (int i = 0; i < lista_commenti.size(); i++) {
+			commenti.add(lista_user.get(i).toString());
+			commenti.add(lista_data.get(i).toString());
+			commenti.add(lista_commenti.get(i).toString());
 		}
         commenti.add(" ");
         controllo.close();
