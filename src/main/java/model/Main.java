@@ -9,7 +9,6 @@ import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
-
 public class Main
 {
 	public boolean Login(String email, String password)
@@ -23,8 +22,7 @@ public class Main
         {
         	user = (Utente) users.get(c);
         	if ((user.getEmail().equals(email)) && (user.getPassword().equals(password)))
-        	{
-        		
+        	{		
         		return true;
         	}	
         }
@@ -239,7 +237,6 @@ public class Main
 		profili.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		System.out.println(id);
         Query q = controllo.createQuery("from Profilo where id = " + id);
         List lista = q.list();
         profilo = (Profilo) lista.get(0);
@@ -407,5 +404,18 @@ public class Main
 		List list = q.list();
 		controllo.close();
 		return (String)list.get(0);
+	}
+	public int cambiaPassword(String password, String nome_cognome)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q_controllo = controllo.createQuery("select password from Utente where nome_cognome = '" + nome_cognome + "'");
+		List lista = q_controllo.list();
+		if (password.equals((String)lista.get(0)))
+			return 0;
+		Query q_aggiorna = controllo.createQuery("update Utente set password = '" + password + "' where nome_cognome = '" + nome_cognome + "'");
+		q_aggiorna.executeUpdate();
+		controllo.close();
+		return 1;
 	}
 }

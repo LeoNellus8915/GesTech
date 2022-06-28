@@ -26,7 +26,6 @@ public class Servlet extends HttpServlet
 		HttpSession session = request.getSession(true);
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet"); 
-		
 		if (servlet.equals("register"))
 		{
 			String nome_cognome = request.getParameter("nome_cognome");
@@ -79,9 +78,7 @@ public class Servlet extends HttpServlet
 			main.salva(nome_cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
-			System.out.println("Session Utente: " + session.getAttribute("Utente"));
 			String utente = (String) session.getAttribute("Utente");
-			System.out.println("Utente: " + utente);
 			main.salvaCommento(impressioni, utente, email);
 			disp = request.getRequestDispatcher("profilo&cv.jsp");
 			disp.forward(request, response);

@@ -65,13 +65,11 @@
 	<%
   		if (session.getAttribute("Login") == null)
     	{	
-  			%><body onload="errore()"><%
+  			%><body onload="errore()"></body></html><%
     	}
   		else	
   		{
-    		%><body class="light" onload="ricerca()"><%
-  		}
-	%>
+    		%><body class="light" onload="ricerca()">
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>
@@ -93,7 +91,7 @@
 						<div class="clearfix"></div>
 						<div id="userSettingsCollapse">
 							<div class="list-group mt-3 shadow">
-								<a href="#" class="list-group-item list-group-item-action"><i
+								<a href="cambiapassword.jsp" class="list-group-item list-group-item-action"><i
 									class="mr-2 icon-security text-purple"></i>Cambia Password</a>
 							</div>
 						</div>
@@ -222,3 +220,4 @@
 	<script scr="./js/app.js"></script>
 	</body>
 </html>
+<%}%>

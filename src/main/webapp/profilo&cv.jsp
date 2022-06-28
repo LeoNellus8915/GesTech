@@ -96,7 +96,7 @@
 						<div class="clearfix"></div>
 						<div id="userSettingsCollapse">
 							<div class="list-group mt-3 shadow">
-								<a href="#" class="list-group-item list-group-item-action"><i
+								<a href="cambiapassword.jsp" class="list-group-item list-group-item-action"><i
 									class="mr-2 icon-security text-purple"></i>Cambia Password</a>
 							</div>
 						</div>

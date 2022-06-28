@@ -809,9 +809,8 @@ function menu_cascata_esito_colloquio2(esito_colloquio_1)
 				esito_colloquio.value = esito_colloqui[c];
 				esito_colloquio.innerHTML = esito_colloqui[c];
 				//alert(esito_colloquio_1[1]);
-				if (esito_colloqui[c] == esito_colloquio_1){
-					console.log("aaaaaaaaaaaa");
-					esito_colloquio.selected = true;}
+				if (esito_colloqui[c] == esito_colloquio_1)
+					esito_colloquio.selected = true;
 				document.getElementById('esito_colloquio').appendChild(esito_colloquio);
 			}
 		}
@@ -863,6 +862,39 @@ function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
 				if (tech[c] == tech_4)
 					techs4.selected = true;
 				document.getElementById('tech_4').appendChild(techs4);
+			}
+		}
+	}
+}
+function controlla()
+{
+	if (document.getElementById('password').value != document.getElementById('conferma_password').value)
+		alert("Le due password non coincidono");
+}	
+function cambia_password()
+{
+	var password = document.getElementById('password').value;
+	if (password != document.getElementById('conferma_password').value)
+		alert("Le due password non coincidono");
+	else
+	{
+		var xhttp = new XMLHttpRequest();
+	
+		xhttp.open("POST", 'Servlet_Ricerca', true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("Servlet=" + "cambia_password," + password);
+		xhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				var risposta = xhttp.responseText;
+				if (risposta[0] == 1)
+				{
+					window.open("ricerca.jsp", "_self");
+					alert("Password Aggiornata");
+				}
+				else
+					alert("La password è la stessa di prima");
 			}
 		}
 	}
