@@ -277,8 +277,6 @@ public class Main
         controllo.close();
         return profili;
 	}
-	
-	
 	public List filtra (String filtro)
 	{
 		List profili = new ArrayList();
@@ -431,8 +429,13 @@ public class Main
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q_commenti = controllo.createQuery("delete from Commento where fk_profilo = " + id);
-		q_commenti.executeUpdate();
+		Query q_controllo = controllo.createQuery("from Commento where fk_profilo = " + id);
+		List lista = q_controllo.list();
+		if (lista.get(0) != null)
+		{
+			Query q_commenti = controllo.createQuery("delete from Commento where fk_profilo = " + id);
+			q_commenti.executeUpdate();
+		}
 		Query q_profilo = controllo.createQuery("delete from Profilo where id = " + id);
 		q_profilo.executeUpdate();
 		controllo.close();
