@@ -80,8 +80,9 @@ public class Servlet extends HttpServlet
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
 			String utente = (String) session.getAttribute("Utente");
-			main.salvaCommento(impressioni, utente, email);
-			disp = request.getRequestDispatcher("profilo&cv.jsp");
+			if (!impressioni.equals(""))
+					main.salvaCommento(impressioni, utente, email);
+			disp = request.getRequestDispatcher("ricerca.jsp");
 			disp.forward(request, response);
 		}
 		if (servlet.equals("ricerca"))
@@ -126,7 +127,7 @@ public class Servlet extends HttpServlet
 			if (!"".equals(commento)) {
 				main.salvaCommento(commento, utente, email);
 			}
-			disp = request.getRequestDispatcher("stampa_profilo.jsp");
+			disp = request.getRequestDispatcher("ricerca.jsp");
 			disp.forward(request, response);
 		}
 		if (servlet.equals("get_skill"))

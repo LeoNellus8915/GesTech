@@ -220,21 +220,28 @@ public class Main
 		commenti.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		//Query q = controllo.createQuery("Select u.nome_cognome, c.data, c.commento from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
-		Query user = controllo.createQuery("Select u.nome_cognome from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id + "order by u.id desc");
-        Query data = controllo.createQuery("Select data from Commento where fk_profilo =" + id + "order by id desc");
-        Query com = controllo.createQuery("Select commento from Commento where fk_profilo =" + id + "order by id desc");
-        List lista_user = user.list();
-        List lista_data = data.list();
-        List lista_commenti = com.list();
-        for (int i = 0; i < lista_commenti.size(); i++) {
-			commenti.add(lista_user.get(i).toString());
-			commenti.add(lista_data.get(i).toString());
-			commenti.add(lista_commenti.get(i).toString());
+		Query q_controllo = controllo.createQuery("from Commento where fk_profilo = " + id);
+		List lista = q_controllo.list();
+		if (lista != null)
+		{
+			//Query q = controllo.createQuery("Select u.nome_cognome, c.data, c.commento from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
+			Query user = controllo.createQuery("Select u.nome_cognome from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id + "order by u.id desc");
+	        Query data = controllo.createQuery("Select data from Commento where fk_profilo =" + id + "order by id desc");
+	        Query com = controllo.createQuery("Select commento from Commento where fk_profilo =" + id + "order by id desc");
+	        List lista_user = user.list();
+	        List lista_data = data.list();
+	        List lista_commenti = com.list();
+	        for (int i = 0; i < lista_commenti.size(); i++)
+	        {
+				commenti.add(lista_user.get(i).toString());
+				commenti.add(lista_data.get(i).toString());
+				commenti.add(lista_commenti.get(i).toString());
+			}
+	        commenti.add(" ");
+	        controllo.close();
+	        return commenti;
 		}
-        commenti.add(" ");
-        controllo.close();
-        return commenti;
+		return null;
 	}
 	
 	public List ricercaProfilo(String id)
@@ -431,7 +438,7 @@ public class Main
 		controllo.beginTransaction();
 		Query q_controllo = controllo.createQuery("from Commento where fk_profilo = " + id);
 		List lista = q_controllo.list();
-		if (lista.get(0) != null)
+		if (lista != null)
 		{
 			Query q_commenti = controllo.createQuery("delete from Commento where fk_profilo = " + id);
 			q_commenti.executeUpdate();
