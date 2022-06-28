@@ -197,6 +197,7 @@
 													placeholder="Inserisci Nome e Cognome"
 													class="form-control r-0 light s-12 " type="text">
 											</div>
+											<input type="hidden" id="id" name="id">
 											<div class="form-group col-6 m-0">
 												<label for="recapito" class="col-form-label s-12">RECAPITO</label>
 												<input id="recapito" name="recapito"

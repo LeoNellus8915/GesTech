@@ -280,43 +280,42 @@ function stampa_profilo()
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
 			
-			menu_cascata2(profilo[13], profilo[14], profilo[15], profilo[16], profilo[17], profilo[19], profilo[20], 
-						  profilo[21], profilo[24], profilo[9]);
-						  
-			document.getElementById("nome_cognome").innerHTML = profilo[1]// Home > Ricerca > Nome&Cognome
+			menu_cascata2(profilo[14], profilo[15], profilo[16], profilo[17], profilo[18], profilo[20], profilo[21], 
+						  profilo[22], profilo[25], profilo[10]);
 			
-			document.getElementById("nome_cognome").value = profilo[1]
-			document.getElementById("recapito").value =  profilo[2];  // Controllo se profilo[] è null, se lo è campo vuoto
-			document.getElementById("email").value = profilo[3];
-			document.getElementById("profilo_linkedin").value = profilo[4];
-			document.getElementById("citta_di_allocazione").value = profilo[5];            // profilo[4]!=="null"?profilo[4]:"";
+			document.getElementById("id").value = profilo[1];
+			document.getElementById("nome_cognome").value = profilo[2];
+			document.getElementById("recapito").value =  profilo[3];  // Controllo se profilo[] è null, se lo è campo vuoto
+			document.getElementById("email").value = profilo[4];
+			document.getElementById("profilo_linkedin").value = profilo[5];
+			document.getElementById("citta_di_allocazione").value = profilo[6];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").value = profilo[6];
-			document.getElementById("competenza_principale").value = profilo[7];
+			document.getElementById("ruolo").value = profilo[7];
+			document.getElementById("competenza_principale").value = profilo[8];
 			
-			document.getElementById("data_colloquio").value = profilo[8];
-			document.getElementById("anno_colloquio").value = profilo[9];
-			//document.getElementById("esito_colloquio").value = profilo[10];
+			document.getElementById("data_colloquio").value = profilo[9];
+			document.getElementById("anno_colloquio").value = profilo[10];
+			//document.getElementById("esito_colloquio").value = profilo[11];
 			
-			document.getElementById("fonte_reperimento").value = profilo[11];
+			document.getElementById("fonte_reperimento").value = profilo[12];
 			
-			document.getElementById("costo_giornaliero").value = profilo[12];
-			document.getElementById("possibilita_lavorativa").value = profilo[13];
+			document.getElementById("costo_giornaliero").value = profilo[13];
+			document.getElementById("possibilita_lavorativa").value = profilo[14];
 			
-			/*document.getElementById("skill").value = profilo[14];
-			document.getElementById("tech_1").value = profilo[15];   // prima tech
-			document.getElementById("tech_2").value = profilo[16];
-			document.getElementById("tech_3").value = profilo[17];
-			document.getElementById("tech_4").value = profilo[18];*/
-			document.getElementById("tech_campo_libero").value = profilo[19];
+			/*document.getElementById("skill").value = profilo[15];
+			document.getElementById("tech_1").value = profilo[16];   // prima tech
+			document.getElementById("tech_2").value = profilo[17];
+			document.getElementById("tech_3").value = profilo[18];
+			document.getElementById("tech_4").value = profilo[19];*/
+			document.getElementById("tech_campo_libero").value = profilo[20];
 			
-			/*document.getElementById("lingua_1").value = profilo[20];
-			document.getElementById("lingua_2").value = profilo[21];
-			document.getElementById("lingua_3").value = profilo[22];*/
+			/*document.getElementById("lingua_1").value = profilo[21];
+			document.getElementById("lingua_2").value = profilo[22];
+			document.getElementById("lingua_3").value = profilo[23];*/
 			
-			document.getElementById("competenze_totali").value = profilo[23];
-			document.getElementById("certificazioni").value = profilo[24];
-			//document.getElementById("seniority").value = profilo[25];
+			document.getElementById("competenze_totali").value = profilo[24];
+			document.getElementById("certificazioni").value = profilo[25];
+			//document.getElementById("seniority").value = profilo[26];
 			
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
