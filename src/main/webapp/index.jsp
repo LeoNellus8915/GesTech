@@ -51,8 +51,10 @@
 	            <div class="row">
 	            	<div class="col-lg-2"></div>
 	            	<div class="col-lg-8 p-t-100">
+	            	    <div class="logo_cover">
+	            	    <img src="Immagini/logo_cover.png">
+	            	    </div>
 	            		<div class="text-white">
-	                		<h1>Bentornato/a</h1>
 	                		<p class="s-18 p-t-b-20 font-weight-lighter">Inserisci le credenziali per accedere al sistema</p>
 	                	</div>
 	            		<div class="col-lg-2"></div>
