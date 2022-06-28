@@ -380,7 +380,7 @@
                                     <h5>Commenti</h5>
                                 </div>
                                      <div class="row">
-								<div id="commenti" class="col-md-6 offset-1">
+								<div id="commento" class="col-md-6 offset-1">
 									<br>
 								</div>
 								<br>

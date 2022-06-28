@@ -275,16 +275,21 @@
 								<div class="form-row">
 									<div class="col-md-12">
 										<div class="form-row">
-											<div class="form-group col-6 m-0">
+											<div class="form-group col-4 m-0">
 												<label for="fonte_reperimento" class="col-form-label s-12">FONTE
 													REPERIMENTO</label> <input id="fonte_reperimento"
 													name="fonte_reperimento"
 													placeholder="Inserisci Fonte Reperimento"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
-											<div class="form-group col-6 m-0">
+											<div class="form-group col-4 m-0">
 												<label for="ruolo" class="col-form-label s-12">RUOLO</label>
 												<input id="ruolo" name="ruolo" placeholder="Insersci Ruolo"
+													class="form-control r-0 light s-12 date-picker" type="text">
+											</div>
+											<div class="form-group col-4 m-0">
+												<label for="competenza_principale" class="col-form-label s-12">COMPETENZA PRINCIPALE</label>
+												<input id="competenza_principale" name="competenza_principale" placeholder="Insersci Competenza Principale"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>

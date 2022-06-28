@@ -389,7 +389,7 @@ function stampa_profilo_lettura()
 			const paragrafo = document.createElement("p");
 			paragrafo.id = i;
 			paragrafo.innerText = profilo[i];
-			document.getElementById("commenti").appendChild(paragrafo);
+			document.getElementById("commento").appendChild(paragrafo);
 			}
 			
 			localStorage.setItem("nome_cognome", profilo[1]);
