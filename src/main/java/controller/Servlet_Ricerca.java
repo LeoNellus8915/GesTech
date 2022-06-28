@@ -74,5 +74,9 @@ public class Servlet_Ricerca extends HttpServlet
 			String data = dtf.format(now);  
 			main.bustepaga_data(data, info[1]);
 		}
+		if (info[0].equals("elimina_profilo"))
+		{
+			response.getWriter().println(main.eliminaProfilo(info[1]));
+		}
 	}
 }

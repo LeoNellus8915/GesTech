@@ -155,10 +155,11 @@
                                     <h4 class="p-t-10"> <span id="nome_cognome"></span></h4>
                                     <h5 class="p-t-10"> <span id="ruolo"></span></h5>
                                 </div>
+                                	<input type="hidden" id="id" name="id"> <!-- gjdgdjgirgdrjo0gjdrogjrjgtkjgigjdjbdjgdtgjitjbltlbibndigdgjdgdiogdgudgrhgdghdrgrhghdrghdhdrhgiohgdhighghrihgohg -->
 									<a onclick="scarica()" class="btn btn-success  mt-3">Scarica CV</a> 
 									<a onclick="genera_cv()" class="btn btn-success  mt-3">Genera CV</a> 
 									<a href="stampa_profilo.jsp" class="btn btn-success giallo mt-3">Modifica</a> 
-									<a href="#" class="btn btn-success rosso  mt-3">Elimina</a>
+									<a href="#" class="btn btn-success rosso  mt-3" onclick="elimina()">Elimina</a>
 
 									<div class="mt-5">
                                     <ul class="social social list-inline">

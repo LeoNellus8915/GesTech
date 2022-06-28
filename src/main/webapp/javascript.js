@@ -76,12 +76,11 @@ async function invio(mese, pdf)
 	var xhttp = new XMLHttpRequest();
 
 	var mese_corrente = document.getElementById(mese);
-	var conferma = null;
 	var colore = window.getComputedStyle(mese_corrente).color;
 
 	if (colore != "rgb(255, 0, 0)")
 	{
-		conferma = confirm("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
+		var conferma = confirm("Stai scaricando il pdf del mese di " + mese + ". Verra segnato l'orario del download.");
 		if (conferma == true)
 		{
 			document.getElementById(pdf).click();
@@ -139,12 +138,11 @@ async function invio2(anno, pdf)
 	var xhttp = new XMLHttpRequest();
 
 	var anno_corrente = document.getElementById(anno);
-	var conferma = null;
 	var colore = window.getComputedStyle(anno_corrente).color;
 
 	if (colore != "rgb(255, 0, 0)")
 	{
-		conferma = confirm("Stai scaricando il pdf dell'anno " + anno + ". Verra segnato l'orario del download.");
+		var conferma = confirm("Stai scaricando il pdf dell'anno " + anno + ". Verra segnato l'orario del download.");
 		if (conferma == true) {
 			document.getElementById(pdf).click();
 
@@ -226,7 +224,7 @@ function ricerca()
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);*/
 				arrayRow.push([
-					 valori[0], valori[1], valori[2], valori[3],valori[4], b1 +b2
+					 c+1, valori[1], valori[2], valori[3],valori[4], b1 +b2
 				]);
 			}
 			$('#prova').DataTable({
@@ -347,8 +345,10 @@ function stampa_profilo_lettura()
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
 			
+			document.getElementById("id").value = profilo[1];
 			
 			document.getElementById("nome_cognome").innerHTML = profilo[2]// Home > Ricerca > Nome&Cognome
+			document.getElementById("nome_cognome").value = profilo[2]// Home > Ricerca > Nome&Cognome
 			
 			document.getElementById("recapito").innerHTML =  profilo[3];  // Controllo se profilo[] è null, se lo è campo vuoto
 			document.getElementById("email").innerHTML = profilo[4]
@@ -896,6 +896,32 @@ function cambia_password()
 				}
 				else
 					alert("La password è la stessa di prima");
+			}
+		}
+	}
+}
+function elimina()
+{
+	var conferma = confirm("Sicuro di voler eliminare il profilo di " + document.getElementById("nome_cognome").value + "?");
+	if (conferma == true)
+	{
+		var xhttp = new XMLHttpRequest();
+		var id = document.getElementById("id").value;
+		
+		console.log("bella");
+		xhttp.open("POST", 'Servlet_Ricerca', true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("Servlet=" + "elimina_profilo," + id);
+		xhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				var risposta = xhttp.responseText;
+				if (risposta[0] == 1)
+				{
+					window.open("ricerca.jsp", "_self");
+					alert("Profilo eliminato con successo");
+				}
 			}
 		}
 	}

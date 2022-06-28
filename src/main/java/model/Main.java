@@ -427,4 +427,15 @@ public class Main
 		controllo.close();
 		return 1;
 	}
+	public int eliminaProfilo(String id)
+	{
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q_commenti = controllo.createQuery("delete from Commento where fk_profilo = " + id);
+		q_commenti.executeUpdate();
+		Query q_profilo = controllo.createQuery("delete from Profilo where id = " + id);
+		q_profilo.executeUpdate();
+		controllo.close();
+		return 1;
+	}
 }
