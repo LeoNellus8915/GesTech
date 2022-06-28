@@ -278,8 +278,8 @@ function stampa_profilo()
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
 			
-			menu_cascata2(profilo[14], profilo[15], profilo[16], profilo[17], profilo[18], profilo[20], profilo[21], 
-						  profilo[22], profilo[25], profilo[10]);
+			menu_cascata2(profilo[15], profilo[16], profilo[17], profilo[18], profilo[19], profilo[21], profilo[22], 
+						  profilo[23], profilo[26], profilo[11]);
 			
 			document.getElementById("id").value = profilo[1];
 			document.getElementById("nome_cognome").value = profilo[2];
