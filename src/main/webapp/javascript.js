@@ -348,46 +348,46 @@ function stampa_profilo_lettura()
 			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
 			
 			
-			document.getElementById("nome_cognome").innerHTML = profilo[1]// Home > Ricerca > Nome&Cognome
+			document.getElementById("nome_cognome").innerHTML = profilo[2]// Home > Ricerca > Nome&Cognome
 			
-			document.getElementById("recapito").innerHTML =  profilo[2];  // Controllo se profilo[] è null, se lo è campo vuoto
-			document.getElementById("email").innerHTML = profilo[3]
-			document.getElementById("profilo_linkedin").href = profilo[4];
-			document.getElementById("citta_di_allocazione").innerHTML = profilo[5];            // profilo[4]!=="null"?profilo[4]:"";
+			document.getElementById("recapito").innerHTML =  profilo[3];  // Controllo se profilo[] è null, se lo è campo vuoto
+			document.getElementById("email").innerHTML = profilo[4]
+			document.getElementById("profilo_linkedin").href = profilo[5];
+			document.getElementById("citta_di_allocazione").innerHTML = profilo[6];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").innerHTML = profilo[6];
-			document.getElementById("competenza_principale").innerHTML = profilo[7];
+			document.getElementById("ruolo").innerHTML = profilo[7];
+			document.getElementById("competenza_principale").innerHTML = profilo[8];
 			
-			document.getElementById("data_colloquio").innerHTML = profilo[8];
-			document.getElementById("anno_colloquio").innerHTML = profilo[9];
-			document.getElementById("esito_colloquio").innerHTML = profilo[10];
+			document.getElementById("data_colloquio").innerHTML = profilo[9];
+			document.getElementById("anno_colloquio").innerHTML = profilo[10];
+			document.getElementById("esito_colloquio").innerHTML = profilo[11];
 			
-			document.getElementById("fonte_reperimento").innerHTML = profilo[11];
+			document.getElementById("fonte_reperimento").innerHTML = profilo[12];
 			
-			document.getElementById("costo_giornaliero").innerHTML = profilo[12];
-			document.getElementById("possibilita_lavorativa").innerHTML = profilo[13];
+			document.getElementById("costo_giornaliero").innerHTML = profilo[13];
+			document.getElementById("possibilita_lavorativa").innerHTML = profilo[14];
 			
-			document.getElementById("skill").innerHTML = profilo[14];
-			document.getElementById("tech_1").innerHTML = profilo[15];   // prima tech
-			document.getElementById("tech_2").innerHTML = profilo[16];
-			document.getElementById("tech_3").innerHTML = profilo[17];
-			document.getElementById("tech_4").innerHTML = profilo[18];
-			document.getElementById("tech_campo_libero").innerHTML = profilo[19];
+			document.getElementById("skill").innerHTML = profilo[15];
+			document.getElementById("tech_1").innerHTML = profilo[16];   // prima tech
+			document.getElementById("tech_2").innerHTML = profilo[17];
+			document.getElementById("tech_3").innerHTML = profilo[18];
+			document.getElementById("tech_4").innerHTML = profilo[19];
+			document.getElementById("tech_campo_libero").innerHTML = profilo[20];
 			
-			document.getElementById("lingua_1").innerHTML = profilo[20];
-			document.getElementById("lingua_2").innerHTML = profilo[21];
-			document.getElementById("lingua_3").innerHTML = profilo[22];
+			document.getElementById("lingua_1").innerHTML = profilo[21];
+			document.getElementById("lingua_2").innerHTML = profilo[22];
+			document.getElementById("lingua_3").innerHTML = profilo[23];
 			
-			document.getElementById("competenze_totali").innerHTML = profilo[23];
-			document.getElementById("certificazioni").innerHTML = profilo[24];
-			document.getElementById("seniority").innerHTML = profilo[25];
+			document.getElementById("competenze_totali").innerHTML = profilo[24];
+			document.getElementById("certificazioni").innerHTML = profilo[25];
+			document.getElementById("seniority").innerHTML = profilo[26];
 			
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
 			
-			for(var i=27; i < profilo.length-1; i++){
-			const paragrafo = document.createElement("p");
+			for(var i=28; i < profilo.length-1; i++){
+			const paragrafo = document.createElement("span");
 			paragrafo.id = i;
 			paragrafo.innerText = profilo[i];
 			document.getElementById("commento").appendChild(paragrafo);
