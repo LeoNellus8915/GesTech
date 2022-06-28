@@ -287,41 +287,42 @@ function stampa_profilo()
 			
 			document.getElementById("nome_cognome").value = profilo[1]
 			document.getElementById("recapito").value =  profilo[2];  // Controllo se profilo[] è null, se lo è campo vuoto
-			document.getElementById("email").value = profilo[3]
-			document.getElementById("citta_di_allocazione").value = profilo[4];            // profilo[4]!=="null"?profilo[4]:"";
+			document.getElementById("email").value = profilo[3];
+			document.getElementById("profilo_linkedin").value = profilo[4];
+			document.getElementById("citta_di_allocazione").value = profilo[5];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").value = profilo[5];
-			document.getElementById("competenza_principale").value = profilo[6];
+			document.getElementById("ruolo").value = profilo[6];
+			document.getElementById("competenza_principale").value = profilo[7];
 			
-			document.getElementById("data_colloquio").value = profilo[7];
-			document.getElementById("anno_colloquio").value = profilo[8];
-			//document.getElementById("esito_colloquio").value = profilo[9];
+			document.getElementById("data_colloquio").value = profilo[8];
+			document.getElementById("anno_colloquio").value = profilo[9];
+			//document.getElementById("esito_colloquio").value = profilo[10];
 			
-			document.getElementById("fonte_reperimento").value = profilo[10];
+			document.getElementById("fonte_reperimento").value = profilo[11];
 			
-			document.getElementById("costo_giornaliero").value = profilo[11];
-			document.getElementById("possibilita_lavorativa").value = profilo[12];
+			document.getElementById("costo_giornaliero").value = profilo[12];
+			document.getElementById("possibilita_lavorativa").value = profilo[13];
 			
-			/*document.getElementById("skill").value = profilo[13];
-			document.getElementById("tech_1").value = profilo[14];   // prima tech
-			document.getElementById("tech_2").value = profilo[15];
-			document.getElementById("tech_3").value = profilo[16];
-			document.getElementById("tech_4").value = profilo[17];*/
-			document.getElementById("tech_campo_libero").value = profilo[18];
+			/*document.getElementById("skill").value = profilo[14];
+			document.getElementById("tech_1").value = profilo[15];   // prima tech
+			document.getElementById("tech_2").value = profilo[16];
+			document.getElementById("tech_3").value = profilo[17];
+			document.getElementById("tech_4").value = profilo[18];*/
+			document.getElementById("tech_campo_libero").value = profilo[19];
 			
-			/*document.getElementById("lingua_1").value = profilo[19];
-			document.getElementById("lingua_2").value = profilo[20];
-			document.getElementById("lingua_3").value = profilo[21];*/
+			/*document.getElementById("lingua_1").value = profilo[20];
+			document.getElementById("lingua_2").value = profilo[21];
+			document.getElementById("lingua_3").value = profilo[22];*/
 			
-			document.getElementById("competenze_totali").value = profilo[22];
-			document.getElementById("certificazioni").value = profilo[23];
-			//document.getElementById("seniority").value = profilo[24];
+			document.getElementById("competenze_totali").value = profilo[23];
+			document.getElementById("certificazioni").value = profilo[24];
+			//document.getElementById("seniority").value = profilo[25];
 			
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
 			
-			for(var i=26; i < profilo.length-1; i++){
+			for(var i=27; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("p");
 			paragrafo.id = i;
 			paragrafo.innerText = profilo[i];
@@ -352,40 +353,41 @@ function stampa_profilo_lettura()
 			
 			document.getElementById("recapito").innerHTML =  profilo[2];  // Controllo se profilo[] è null, se lo è campo vuoto
 			document.getElementById("email").innerHTML = profilo[3]
-			document.getElementById("citta_di_allocazione").innerHTML = profilo[4];            // profilo[4]!=="null"?profilo[4]:"";
+			document.getElementById("profilo_linkedin").href = profilo[4];
+			document.getElementById("citta_di_allocazione").innerHTML = profilo[5];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").innerHTML = profilo[5];
-			document.getElementById("competenza_principale").innerHTML = profilo[6];
+			document.getElementById("ruolo").innerHTML = profilo[6];
+			document.getElementById("competenza_principale").innerHTML = profilo[7];
 			
-			document.getElementById("data_colloquio").innerHTML = profilo[7];
-			document.getElementById("anno_colloquio").innerHTML = profilo[8];
-			document.getElementById("esito_colloquio").innerHTML = profilo[9];
+			document.getElementById("data_colloquio").innerHTML = profilo[8];
+			document.getElementById("anno_colloquio").innerHTML = profilo[9];
+			document.getElementById("esito_colloquio").innerHTML = profilo[10];
 			
-			document.getElementById("fonte_reperimento").innerHTML = profilo[10];
+			document.getElementById("fonte_reperimento").innerHTML = profilo[11];
 			
-			document.getElementById("costo_giornaliero").innerHTML = profilo[11];
-			document.getElementById("possibilita_lavorativa").innerHTML = profilo[12];
+			document.getElementById("costo_giornaliero").innerHTML = profilo[12];
+			document.getElementById("possibilita_lavorativa").innerHTML = profilo[13];
 			
-			document.getElementById("skill").innerHTML = profilo[13];
-			document.getElementById("tech_1").innerHTML = profilo[14];   // prima tech
-			document.getElementById("tech_2").innerHTML = profilo[15];
-			document.getElementById("tech_3").innerHTML = profilo[16];
-			document.getElementById("tech_4").innerHTML = profilo[17];
-			document.getElementById("tech_campo_libero").innerHTML = profilo[18];
+			document.getElementById("skill").innerHTML = profilo[14];
+			document.getElementById("tech_1").innerHTML = profilo[15];   // prima tech
+			document.getElementById("tech_2").innerHTML = profilo[16];
+			document.getElementById("tech_3").innerHTML = profilo[17];
+			document.getElementById("tech_4").innerHTML = profilo[18];
+			document.getElementById("tech_campo_libero").innerHTML = profilo[19];
 			
-			document.getElementById("lingua_1").innerHTML = profilo[19];
-			document.getElementById("lingua_2").innerHTML = profilo[20];
-			document.getElementById("lingua_3").innerHTML = profilo[21];
+			document.getElementById("lingua_1").innerHTML = profilo[20];
+			document.getElementById("lingua_2").innerHTML = profilo[21];
+			document.getElementById("lingua_3").innerHTML = profilo[22];
 			
-			document.getElementById("competenze_totali").innerHTML = profilo[22];
-			document.getElementById("certificazioni").innerHTML = profilo[23];
-			document.getElementById("seniority").innerHTML = profilo[24];
+			document.getElementById("competenze_totali").innerHTML = profilo[23];
+			document.getElementById("certificazioni").innerHTML = profilo[24];
+			document.getElementById("seniority").innerHTML = profilo[25];
 			
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
 			
-			for(var i=26; i < profilo.length-1; i++){
+			for(var i=27; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("p");
 			paragrafo.id = i;
 			paragrafo.innerText = profilo[i];
@@ -440,7 +442,7 @@ function genera_cv()
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
 	
-	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Email: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
+	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Email: ", "profilo_linkedin: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
 	"Anno Colloquio: ", "Esito Colloquio: ", "Impressioni: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];

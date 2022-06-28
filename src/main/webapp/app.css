@@ -24692,7 +24692,7 @@ ul li:before {
 }
 
 .social li a:hover {
-    box-shadow: 0 3px 9px 0 rgba(0, 0, 0, .26)
+    color: blue !important;
 }
 
 .social li i {

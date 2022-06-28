@@ -126,7 +126,7 @@ public class Main
 		data.add(" ");
 		return data;
 	}
-	public void salva (String nome_cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+	public void salva (String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 						String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
@@ -143,6 +143,7 @@ public class Main
         profilo.setNome_cognome(nome_cognome);
         profilo.setRecapito(recapito);
         profilo.setEmail(email);
+        profilo.setProfilo_linkedin(profilo_linkedin);
         profilo.setCitta_allocazione(citta_allocazione);
         profilo.setRuolo(ruolo);
         profilo.setCompetenza_principale(competenza_principale);
@@ -249,6 +250,7 @@ public class Main
         profili.add(profilo.getNome_cognome()!=null?profilo.getNome_cognome():"");
         profili.add(profilo.getRecapito()!=null?profilo.getRecapito():"");
         profili.add(profilo.getEmail()!=null?profilo.getEmail():"");
+        profili.add(profilo.getProfilo_linkedin()!=null?profilo.getProfilo_linkedin():"");
         profili.add(profilo.getCitta_allocazione()!=null?profilo.getCitta_allocazione():"");
         profili.add(profilo.getRuolo()!=null?profilo.getRuolo():"");
         profili.add(profilo.getCompetenza_principale()!=null?profilo.getCompetenza_principale():"");
@@ -294,7 +296,7 @@ public class Main
         controllo.close();
         return profili;
 	}
-	public void aggiorna_cv (String nome_cognome, String recapito, String email, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
+	public void aggiorna_cv (String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 			String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
@@ -302,7 +304,7 @@ public class Main
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("update Profilo set nome_cognome = '" + nome_cognome + "', recapito = '" + recapito 
-				+ "', email = '" + email + "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
+				+ "', email = '" + email + "', profilo_linkedin = '" + profilo_linkedin + "', citta_allocazione = '" + citta_allocazione + "', ruolo = '" + ruolo + "', competenza_principale = '" + competenza_principale 
 				+ "', data_colloquio = '" + data_colloquio + "', anno_colloquio = '" + anno_colloquio + "', esito_colloquio = '" + esito_colloquio
 				+ "', fonte_reperimento = '" + fonte_reperimento + "', costo_giornaliero = '" + costo_giornaliero 
 				+ "', possibilita_lavorativa = '" + possibilita_lavorativa + "', skill = '" + skill + "', tech1 = '" + tech1 + "', tech2 = '" + tech2

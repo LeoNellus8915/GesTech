@@ -6,6 +6,7 @@ public class Profilo
 	private String nome_cognome;
 	private String recapito;
 	private String email;
+	private String profilo_linkedin;
 	private String citta_allocazione;
 	private String ruolo;
 	private String competenza_principale;
@@ -30,7 +31,7 @@ public class Profilo
 	
 	public Profilo () {}
 	
-	public Profilo (int id, String nome_cognome, String recapito, String email, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
+	public Profilo (int id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
 					String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
 					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)
@@ -39,6 +40,7 @@ public class Profilo
 		this.nome_cognome = nome_cognome;
 		this.recapito = recapito;
 		this.email = email;
+		this.profilo_linkedin = profilo_linkedin;
 		this.citta_allocazione = citta_allocazione;
 		this.ruolo = ruolo;
 		this.competenza_principale = competenza_principale;
@@ -97,6 +99,14 @@ public class Profilo
 		this.email = email;
 	}
 	
+	public String getProfilo_linkedin() {
+		return profilo_linkedin;
+	}
+
+	public void setProfilo_linkedin(String profilo_linkedin) {
+		this.profilo_linkedin = profilo_linkedin;
+	}
+
 	public String getEmail()
 	{
 		return email;

@@ -213,6 +213,13 @@
 													type="text">
 											</div>
 											<div class="form-group col-6 m-0">
+												<label for="email" class="col-form-label s-12">PROFILO LINKEDIN</label>
+												<input id="profilo_linkedin" name="profilo_linkedin" placeholder="Linkedin URL"
+													class="form-control r-0 light s-12 datePicker"
+													data-time-picker="false" data-format-date='Y/m/d'
+													type="text">
+											</div>
+											<div class="form-group col-6 m-0">
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA' DI ALLOCAZIONE</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"

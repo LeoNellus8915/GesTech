@@ -53,6 +53,7 @@ public class Servlet extends HttpServlet
 			String nome_cognome = request.getParameter("nome_cognome");
 			String recapito = request.getParameter("recapito");
 			String email = request.getParameter("email");
+			String profilo_linkedin = request.getParameter("profilo_linkedin");
 			String citta_allocazione = request.getParameter("citta_di_allocazione");
 			String ruolo = request.getParameter("ruolo");
 			String competenza_principale = request.getParameter("competenza_principale");
@@ -75,7 +76,7 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String impressioni = request.getParameter("commento");
-			main.salva(nome_cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
+			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
 			String utente = (String) session.getAttribute("Utente");
@@ -93,6 +94,7 @@ public class Servlet extends HttpServlet
 			String nome_cognome = request.getParameter("nome_cognome");
 			String recapito = request.getParameter("recapito");
 			String email = request.getParameter("email");
+			String profilo_linkedin = request.getParameter("profilo_linkedin");
 			String citta_allocazione = request.getParameter("citta_di_allocazione");
 			String ruolo = request.getParameter("ruolo");
 			String competenza_principale = request.getParameter("competenza_principale");
@@ -115,7 +117,7 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String commento = request.getParameter("commento");
-			main.aggiorna_cv(nome_cognome, recapito, email, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
+			main.aggiorna_cv(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
 			

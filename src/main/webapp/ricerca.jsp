@@ -26,6 +26,7 @@
 			crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="app.css">
 		<script type="text/javascript" src="javascript.js"></script>
+		
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link
@@ -69,7 +70,9 @@
     	}
   		else	
   		{
-    		%><body class="light" onload="ricerca()">
+    		%>
+    		<body class="light" onload="ricerca()">
+    		
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>

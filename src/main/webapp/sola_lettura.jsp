@@ -162,7 +162,7 @@
 
 									<div class="mt-5">
                                     <ul class="social social list-inline">
-                                        <li class="list-inline-item"><a href="#" class="grey-text"><i class="icon-linkedin"></i></a></li>
+                                        <li class="list-inline-item"><a id="profilo_linkedin" class="grey-text"><i class="icon-linkedin"></i></a></li>
                                     </ul>
                                 </div>
                             </div>

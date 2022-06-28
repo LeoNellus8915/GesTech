@@ -8,6 +8,7 @@
 		<property name="nome_cognome" type="string" column="nome_cognome"/>
 		<property name="recapito" type="string" column="recapito"/>
 		<property name="email" type="string" column="email"/>
+		<property name="profilo_linkedin" type="string" column="profilo_linkedin"/>
 		<property name="citta_allocazione" type="string" column="citta_allocazione"/>
 		<property name="ruolo" type="string" column="ruolo"/>
 		<property name="competenza_principale" type="string" column="competenza_principale"/>
