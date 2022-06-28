@@ -221,9 +221,9 @@ public class Main
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		//Query q = controllo.createQuery("Select u.nome_cognome, c.data, c.commento from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
-		Query user = controllo.createQuery("Select u.nome_cognome from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id);
-        Query data = controllo.createQuery("Select data from Commento where fk_profilo =" + id);
-        Query com = controllo.createQuery("Select commento from Commento where fk_profilo =" + id);
+		Query user = controllo.createQuery("Select u.nome_cognome from Commento c join Utente u on c.id_utente = u.id where fk_profilo =" + id + "order by u.id desc");
+        Query data = controllo.createQuery("Select data from Commento where fk_profilo =" + id + "order by id desc");
+        Query com = controllo.createQuery("Select commento from Commento where fk_profilo =" + id + "order by id desc");
         List lista_user = user.list();
         List lista_data = data.list();
         List lista_commenti = com.list();

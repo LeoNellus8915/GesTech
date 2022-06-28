@@ -318,12 +318,22 @@ function stampa_profilo()
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
-			
-			for(var i=27; i < profilo.length-1; i++){
-			const paragrafo = document.createElement("p");
+			var x=0;
+			for(var i=28; i < profilo.length-1; i++){
+			const paragrafo = document.createElement("span");
 			paragrafo.id = i;
-			paragrafo.innerText = profilo[i];
+			paragrafo.innerText = profilo[i] + "  ";
 			document.getElementById("commenti").appendChild(paragrafo);
+			x++;
+			if(x==2){
+				const br = document.createElement("p");
+				document.getElementById("commenti").appendChild(br);
+			}
+			if(x==3){
+				const br = document.createElement("p");
+				document.getElementById("commenti").appendChild(br);
+				x=0;
+			}
 			}
 			
 			localStorage.setItem("nome_cognome", profilo[1]);
@@ -385,18 +395,25 @@ function stampa_profilo_lettura()
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
-			
+			var x=0;
 			for(var i=28; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("span");
 			paragrafo.id = i;
-			paragrafo.innerText = profilo[i];
+			paragrafo.innerText = profilo[i] + "  ";
 			document.getElementById("commento").appendChild(paragrafo);
+			x++;
+			if(x==2){
+				const br = document.createElement("p");
+				document.getElementById("commento").appendChild(br);
 			}
-			
-			localStorage.setItem("nome_cognome", profilo[1]);
-			localStorage.setItem("array", profilo);
-		}
+			if(x==3){
+				const br = document.createElement("p");
+				document.getElementById("commento").appendChild(br);
+				x=0;
+			}
+			}
 	}
+}
 }
 function cerca()
 {
