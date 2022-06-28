@@ -95,12 +95,12 @@
 						</i> <span>Tutte le risorse</span>
 					</a></li>
 					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input type="hidden" name="Servlet"
+							class="icon icon-add_box light-green-text s-18"> <input type="hidden" name="Servlet"
 								value="logout">
 						</i> <span>Aggiungi risorsa</span>
 					</a></li>
 					<li class="treeview"><a href="nuovoutente.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
@@ -155,11 +155,11 @@
                                     <h4 class="p-t-10"> <span id="nome_cognome"></span></h4>
                                     <h5 class="p-t-10"> <span id="ruolo"></span></h5>
                                 </div>
-                                	<input type="hidden" id="id" name="id"> <!-- gjdgdjgirgdrjo0gjdrogjrjgtkjgigjdjbdjgdtgjitjbltlbibndigdgjdgdiogdgudgrhgdghdrgrhghdrghdhdrhgiohgdhighghrihgohg -->
+                                    <input type="hidden" id="id" name="id">
 									<a onclick="scarica()" class="btn btn-success  mt-3">Scarica CV</a> 
 									<a onclick="genera_cv()" class="btn btn-success  mt-3">Genera CV</a> 
 									<a href="stampa_profilo.jsp" class="btn btn-success giallo mt-3">Modifica</a> 
-									<a href="#" class="btn btn-success rosso  mt-3" onclick="elimina()">Elimina</a>
+									<a href="#" class="btn btn-success rosso  mt-3">Elimina</a>
 
 									<div class="mt-5">
                                     <ul class="social social list-inline">
@@ -177,13 +177,13 @@
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Email</h4>
-                                           <h4 class="p-t-10"> <span id="email"></span></h4>
+                                           <h5 class="p-t-10"> <span id="email"></span></h5>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Recapito</h4>
-                                            <h4 class="p-t-10"> <span id="recapito"></span></h4>
+                                            <h5 class="p-t-10"> <span id="recapito"></span></h5>
                                         </div>
                                     </div>                                
                                 </div>
@@ -196,8 +196,8 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Città</h4>
-                                           <h4 class="p-t-10"> <span id="citta_di_allocazione"></span></h4>
+                                            <h5 class="text-black">Città</h5>
+                                           <h5 class="p-t-10"><span id="citta_di_allocazione"></span></h5>
                                         </div>
                                     </div>
                                     
@@ -212,8 +212,8 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="p-4">
-                                            <h4 class="text-black">Competenza Principale</h4>
-                                            <span id="competenza_principale"></span>
+                                            <h5 class="text-black">Competenza Principale</h5>
+                                            <h5 class="p-t-10"><span id="competenza_principale"></span></h5>
                                         </div>
                                     </div>
                                 </div>
@@ -228,33 +228,33 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Data Colloquio:</h4>
-                                            <span id="data_colloquio"></span>
+                                            <h5 class="text-black">Data Colloquio:</h5>
+                                            <h5 class="p-t-10"><span id="data_colloquio"></span></h5>
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Anno Colloquio:</h4>
-                                            <span id="anno_colloquio"></span>
+                                            <h5 class="p-t-10"><span id="anno_colloquio"></span></h5>
                                         </div>
                                     </div>   
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Esito Colloquio:</h4>
-                                            <span id="esito_colloquio"></span>
+                                            <h5 class="p-t-10"><span id="esito_colloquio"></span></h5>
                                         </div>
                                     </div>                                                         
                                 </div>
                             </div>
-                                  <div class="p5 b-b"> 
+                                   <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <span id="ruolo"></span>
+                                    <h5>Fonte Reperimento</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="p-4">
                                             <h4 class="text-black">Fonte Reperimento: </h4>
-                                           <span id="fonte_reperimento"></span>
+                                           <h5 class="p-t-10"><span id="fonte_reperimento"></span></h5>
                                         </div>
                                      </div>
                                 </div>   
@@ -268,13 +268,13 @@
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Costo Giornaliero:</h4>
-                                           <span id="costo_giornaliero"></span>
+                                           <h5 class="p-t-10"><span id="costo_giornaliero"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-6">
                                         <div class="p-4">
                                             <h4 class="text-black">Possibilità Lavorativa:</h4>
-                                            <span id="possibilita_lavorativa"></span>
+                                            <h5 class="p-t-10"><span id="possibilita_lavorativa"></span></h5>
                                         </div>
                                      </div> 
                                 </div>   
@@ -288,37 +288,37 @@
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Skill</h4>
-                                            <span id="skill"></span>
+                                            <h5 class="p-t-10"><span id="skill"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Tech 1</h4>
-                                            <span id="tech_1"></span>
+                                            <h5 class="p-t-10"><span id="tech_1"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Tech 2</h4>
-                                            <span id="tech_2"></span>
+                                            <h5 class="p-t-10"><span id="tech_2"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Tech 3</h4>
-                                            <span id="tech_3"></span>
+                                            <h5 class="p-t-10"><span id="tech_3"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Tech 4</h4>
-                                            <span id="tech_4"></span>
+                                            <h5 class="p-t-10"><span id="tech_4"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Tech campo libero</h4>
-                                            <span id="tech_campo_libero"></span>
+                                            <h5 class="p-t-10"><span id="tech_campo_libero"></span></h5>
                                         </div>
                                      </div> 
                                 </div>   
@@ -329,22 +329,22 @@
                                     <h5>Lingua</h5>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 1</h4>
-                                            <span id="lingua_1"></span>
+                                            <h5 class="p-t-10"><span id="lingua_1"></span></h5>
                                         </div>
                                      </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 2</h4>
-                                            <span id="lingua_2"></span>
+                                            <h5 class="p-t-10"><span id="lingua_2"></span></h5>
                                         </div>
                                      </div> 
-                                     <div class="col-md-3">
+                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Lingua 3</h4>
-                                            <span id="lingua_3"></span>
+                                            <h5 class="p-t-10"><span id="lingua_3"></span></h5>
                                         </div>
                                      </div>
                                </div>
@@ -358,19 +358,19 @@
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Competenze Totali:</h4>
-                                            <span id="competenze_totali"></span>
+                                            <h5 class="p-t-10"><span id="competenze_totali"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Certificazioni: </h4>
-                                            <span id="certificazioni"></span>
+                                            <h5 class="p-t-10"><span id="certificazioni"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
                                             <h4 class="text-black">Seniority: </h4>
-                                            <span id="seniority"></span>
+                                            <h5 class="p-t-10"><span id="seniority"></span></h5>
                                         </div>
                                      </div>
                                      </div>
@@ -418,4 +418,4 @@
        <div type="hidden" id="scarica_cv"></div>         
 	</body>
 </html>
-<%}%>
+<%}%> 

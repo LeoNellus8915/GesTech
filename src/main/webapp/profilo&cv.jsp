@@ -109,12 +109,12 @@
 						</i> <span>Tutte le risorse</span>
 					</a></li>
 					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input type="hidden" name="Servlet"
+							class="icon icon-add_box light-green-text s-18"> <input type="hidden" name="Servlet"
 								value="logout">
 						</i> <span>Aggiungi risorsa</span>
 					</a></li>
 					<li class="treeview"><a href="nuovoutente.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
@@ -148,7 +148,7 @@
 				<div class="relative">
 					<div class="d-flex">
 						<div class="d-none d-md-block">
-							<h1 class="nav-title text-white">Risorse</h1>
+							<h1 class="nav-title text-white">Aggiungi risorsa</h1>
 						</div>
 					</div>
 				</div>
@@ -165,11 +165,11 @@
 				<div class="row justify-content-between">
 					<ul class="nav nav-material nav-material-white responsive-tab"
 						id="v-pills-tab" role="tablist">
-						<li><a class="nav-link active" id="v-pills-all-tab"
+						<li><a class="nav-link" id="v-pills-all-tab"
 							data-toggle="pill" href="ricerca.jsp" role="tab"
 							aria-controls="v-pills-all"><i class="icon icon-user"></i>Tutte
 								le risorse</a></li>
-						<li class="float-right"><a class="nav-link"
+						<li class="float-right"><a class="nav-link active"
 							href="profilo&cv.jsp"><i class="icon icon-plus-circle"></i>
 								Aggiungi risorsa</a></li>
 					</ul>
