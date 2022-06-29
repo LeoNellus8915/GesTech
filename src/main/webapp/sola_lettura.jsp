@@ -70,13 +70,8 @@
 								<img class="user_avatar" src="Immagini/u2.png" alt="User Image">
 							</div>
 							<div class="float-left info">
-								<h6 class="font-weight-light mt-2 mb-1">
-									<%
-									String x = (String) session.getAttribute("Utente");
-									out.println(x);
-									%>
-								</h6>
-								<a href="#"> Recruiter</a>
+								<h6 class="font-weight-light mt-2 mb-1"><%String utente = (String)session.getAttribute("Utente"); out.println(utente);%></h6>
+								<a href="#"><%String ruolo = (String)session.getAttribute("Ruolo"); out.println(ruolo);%></a>
 							</div>
 						</div>
 						<div class="clearfix"></div>
@@ -159,7 +154,7 @@
 									<a onclick="scarica()" class="btn btn-success  mt-3">Scarica CV</a> 
 									<a onclick="genera_cv()" class="btn btn-success  mt-3">Genera CV</a> 
 									<a href="stampa_profilo.jsp" class="btn btn-success giallo mt-3">Modifica</a> 
-									<a href="#" class="btn btn-success rosso  mt-3">Elimina</a>
+									<a href="#" class="btn btn-success rosso  mt-3" onclick="elimina()">Elimina</a>
 
 									<div class="mt-5">
                                     <ul class="social social list-inline">

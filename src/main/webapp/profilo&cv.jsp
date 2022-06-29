@@ -85,12 +85,8 @@
 								<img class="user_avatar" src="Immagini/u2.png" alt="User Image">
 							</div>
 							<div class="float-left info">
-								<h6 class="font-weight-light mt-2 mb-1">
-									<%String utente = (String)session.getAttribute("Utente"); out.println(utente);%>
-								</h6>
-								<a href="#">
-									<%String ruolo = (String)session.getAttribute("Ruolo"); out.println(ruolo);%>
-								</a>
+								<h6 class="font-weight-light mt-2 mb-1"><%String utente = (String)session.getAttribute("Utente"); out.println(utente);%></h6>
+								<a href="#"><%String ruolo = (String)session.getAttribute("Ruolo"); out.println(ruolo);%></a>
 							</div>
 						</div>
 						<div class="clearfix"></div>
