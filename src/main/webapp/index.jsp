@@ -45,7 +45,17 @@
     	</style>
     </head>
     
-    <body class="light loaded">
+    <body id="body" class="light loaded">
+    	<script>
+	    	var email = document.getElementById("body");
+	        email.addEventListener("keypress", function(event)
+	        {
+	        	if (event.key === "Enter")
+	            {
+	            	 login();
+	                                        }
+	            });
+        </script>
         <div id="primary" class="blue4 p-t-b-100 height-full responsive-phone">
 	        <div class="container">
 	            <div class="row">
@@ -62,31 +72,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group has-icon"><i class="icon-envelope-o"></i>
                                     <input type="text" id="email" class="form-control form-control-lg no-b" name="email" placeholder="error@mail.com" required pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Esempio error@mail.com">
-                                    <script>
-	                                    var email = document.getElementById("email");
-	                                    email.addEventListener("keypress", function(event)
-	                                    {
-	                                        if (event.key === "Enter")
-	                                        {
-	                                            login();
-	                                        }
-	                                    });
-                                    </script>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group has-icon"><i class="icon-user-secret"></i>
                                     <input type="password" id="password" name="password" class="form-control form-control-lg no-b" placeholder="**********">
-                                    <script>
-	                                    var password = document.getElementById("password");
-	                                    password.addEventListener("keypress", function(event)
-	                                    {
-	                                        if (event.key === "Enter")
-	                                        {
-	                                            login();
-	                                        }
-	                                    });
-                                    </script>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-12">
