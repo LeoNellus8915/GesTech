@@ -231,7 +231,7 @@ public class Main
 	        List lista_user = user.list();
 	        List lista_data = data.list();
 	        List lista_commenti = com.list();
-	        if(lista_commenti.size()>0) {
+	        if(lista_commenti.get(0)!=null) {
 	        	
 	        
 	        for (int i = 0; i < lista_commenti.size(); i++)
