@@ -463,7 +463,7 @@ function genera_cv()
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
 	
-	var categorie = ["Nome e Cognome: ", "Recapito: ",  "Email: ", "Profilo Linkedin: ", "Citta': ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
+	var categorie = ["", "Nome e Cognome:", "Recapito: ",  "Email: ", "Profilo Linkedin: ", "Citta': ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
 	"Anno Colloquio: ", "Esito Colloquio: ", "Fonte Reperimento: ", "Costo Giornaliero: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];
@@ -473,9 +473,10 @@ function genera_cv()
 	array.pop();
 	array.shift();
 	var c=10;
-	for(let i=1; i<array.length;i++){
-		if(array[i]!=""){
+	for(let i=1; i<26;i++){
+		if(array[i]!="" && array[i]!=" "){
 			doc.text(categorie[i] + " " + array[i], 10, c);
+			console.log(categorie[i] + " " + array[i]);
 			c+=7;
 		}
 	}
