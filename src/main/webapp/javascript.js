@@ -460,7 +460,6 @@ function genera_cv()
 	"Anno Colloquio: ", "Esito Colloquio: ", "Fonte Reperimento: ", "Costo Giornaliero: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];
-	
 	str = localStorage.getItem("array");
 	array = str.split(",");
 	array.pop();
