@@ -231,12 +231,16 @@ public class Main
 	        List lista_user = user.list();
 	        List lista_data = data.list();
 	        List lista_commenti = com.list();
+	        if(lista_commenti.size()>0) {
+	        	
+	        
 	        for (int i = 0; i < lista_commenti.size(); i++)
 	        {
 				commenti.add(lista_user.get(i).toString());
 				commenti.add(lista_data.get(i).toString());
 				commenti.add(lista_commenti.get(i).toString());
 			}
+	        }
 	        commenti.add(" ");
 	        controllo.close();
 	        return commenti;

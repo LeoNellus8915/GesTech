@@ -332,7 +332,7 @@ function stampa_profilo()
 			}
 			}
 			
-			localStorage.setItem("nome_cognome", profilo[1]);
+			localStorage.setItem("nome_cognome", profilo[2]);
 			localStorage.setItem("array", profilo);
 		}
 	}
@@ -388,7 +388,7 @@ function stampa_profilo_lettura()
 			document.getElementById("certificazioni").innerHTML = profilo[25];
 			document.getElementById("seniority").innerHTML = profilo[26];
 			
-			localStorage.setItem("nome_cognome", profilo[1]);
+			localStorage.setItem("nome_cognome", profilo[2]);
 			localStorage.setItem("array", profilo);
 			
 			var x=0;
