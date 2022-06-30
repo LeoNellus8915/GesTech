@@ -314,10 +314,6 @@ function stampa_profilo()
 			document.getElementById("competenze_totali").value = profilo[24];
 			document.getElementById("certificazioni").value = profilo[25];
 			//document.getElementById("seniority").value = profilo[26];
-			
-			/*for(var i=0; i < profilo.length; i++){
-				console.log(profilo[i] + " " + i);
-			}*/
 			var x=0;
 			for(var i=28; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("span");
@@ -391,10 +387,6 @@ function stampa_profilo_lettura()
 			document.getElementById("competenze_totali").innerHTML = profilo[24];
 			document.getElementById("certificazioni").innerHTML = profilo[25];
 			document.getElementById("seniority").innerHTML = profilo[26];
-			
-			/*for(var i=0; i < profilo.length; i++){
-				console.log(profilo[i] + " " + i);
-			}*/
 			
 			localStorage.setItem("nome_cognome", profilo[1]);
 			localStorage.setItem("array", profilo);
@@ -474,9 +466,9 @@ function genera_cv()
 	array.shift();
 	var c=10;
 	for(let i=1; i<26;i++){
-		if(array[i]!="" && array[i]!=" "){
+		if(array[i]!="" && array[i]!=" ")
+		{
 			doc.text(categorie[i] + " " + array[i], 10, c);
-			console.log(categorie[i] + " " + array[i]);
 			c+=7;
 		}
 	}
@@ -492,7 +484,6 @@ function menu_cascata()
 }
 function menu_cascata_lingue()
 {
-	var lingue;   
 	var xhttp = new XMLHttpRequest();
 
 	xhttp.open("POST", 'Servlet', true);
@@ -528,7 +519,6 @@ function menu_cascata_lingue()
 }
 function menu_cascata_seniority()
 {
-	var seniority;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -554,7 +544,6 @@ function menu_cascata_seniority()
 }
 function menu_cascata_skill()
 {
-	var skill;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -580,7 +569,6 @@ function menu_cascata_skill()
 }
 function menu_cascata_esito_colloquio()
 {
-	var esito_colloqui;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -606,7 +594,6 @@ function menu_cascata_esito_colloquio()
 }
 function menu_cascata_tech()
 {
-	var tech;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -669,7 +656,6 @@ function login()
 }
 function menu_cascata_ruolo()
 {
-	var tech;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -709,7 +695,6 @@ function menu_cascata2(skill, tech1, tech2, tech3, tech4, lingua1, lingua2, ling
 
 function menu_cascata_lingue2(lingua_1, lingua_2, lingua_3)
 {
-	var lingue;   
 	var xhttp = new XMLHttpRequest();
 
 	xhttp.open("POST", 'Servlet', true);
@@ -752,8 +737,7 @@ function menu_cascata_lingue2(lingua_1, lingua_2, lingua_3)
 
 
 function menu_cascata_seniority2(seniority_1)
-{
-	var seniority;   
+{ 
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -783,7 +767,6 @@ function menu_cascata_seniority2(seniority_1)
 
 function menu_cascata_skill2(skill_1)
 {
-	var skill;   
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -812,8 +795,7 @@ function menu_cascata_skill2(skill_1)
 
 
 function menu_cascata_esito_colloquio2(esito_colloquio_1)
-{
-	var esito_colloqui;   
+{ 
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -842,8 +824,7 @@ function menu_cascata_esito_colloquio2(esito_colloquio_1)
 }
 
 function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
-{
-	var tech;   
+{ 
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
@@ -930,8 +911,7 @@ function elimina()
 	{
 		var xhttp = new XMLHttpRequest();
 		var id = document.getElementById("id").value;
-		
-		console.log("bella");
+
 		xhttp.open("POST", 'Servlet_Ricerca', true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 		xhttp.send("Servlet=" + "elimina_profilo," + id);
