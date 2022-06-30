@@ -53,8 +53,8 @@
 	        	if (event.key === "Enter")
 	            {
 	            	 login();
-	                                        }
-	            });
+	            }
+	        });
         </script>
         <div id="primary" class="blue4 p-t-b-100 height-full responsive-phone">
 	        <div class="container">
