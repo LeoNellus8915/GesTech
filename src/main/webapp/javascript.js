@@ -466,6 +466,7 @@ function genera_cv()
 	array.pop();
 	array.shift();
 	var c=30;
+	
 	doc.addImage(img, 'png', 10, 5, 60, 19)
 	for(let i=1; i<26;i++){
 		if(array[i]!="" && array[i]!=" ")
