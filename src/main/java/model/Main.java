@@ -198,7 +198,7 @@ public class Main
 		profili.add(" ");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-        Query q = controllo.createQuery("from Profilo");
+        Query q = controllo.createQuery("from Profilo order by id desc");
         List lista = q.list();
         for (int c=0; c<lista.size(); c++)
         {
@@ -231,15 +231,13 @@ public class Main
 	        List lista_user = user.list();
 	        List lista_data = data.list();
 	        List lista_commenti = com.list();
-	        if(lista_commenti.get(0)!=null) {
-	        	
-	        
-	        for (int i = 0; i < lista_commenti.size(); i++)
-	        {
-				commenti.add(lista_user.get(i).toString());
-				commenti.add(lista_data.get(i).toString());
-				commenti.add(lista_commenti.get(i).toString());
-			}
+	        if(!lista_commenti.equals(null)) {
+	        	for (int i = 0; i < lista_commenti.size(); i++)
+	        	{
+	        		commenti.add(lista_user.get(i).toString());
+	        		commenti.add(lista_data.get(i).toString());
+	        		commenti.add(lista_commenti.get(i).toString());
+	        	}
 	        }
 	        commenti.add(" ");
 	        controllo.close();

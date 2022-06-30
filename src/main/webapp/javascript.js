@@ -224,10 +224,10 @@ function ricerca()
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);*/
 				arrayRow.push([
-					 c+1, valori[1], valori[2], valori[3],valori[4], b1 +b2
+					 valori[1], valori[2], valori[3],valori[4], b1 +b2
 				]);
 			}
-			$('#prova').DataTable({
+			$('#tabella_ricerca').DataTable({
 				"data": arrayRow
 			});
 		}

@@ -180,10 +180,10 @@
 		
 		<div class="container mb-3 mt-3" >
 			
-				<table id="prova" class="table table-striped table-bordered" cellspacing="0" width="100%">
+				<table id="tabella_ricerca" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead><br>
 						<tr class="no-b">
-							<th style="width: 30px">
+<!-- 							<th style="width: 30px"> -->
 <!-- 								<div class="custom-control custom-checkbox">  -->
 <!-- 									<input type="checkbox" id="checkedAll" -->
 <!-- 										class="custom-control-input"><label -->
