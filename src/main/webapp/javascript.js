@@ -395,6 +395,10 @@ function stampa_profilo_lettura()
 			/*for(var i=0; i < profilo.length; i++){
 				console.log(profilo[i] + " " + i);
 			}*/
+			
+			localStorage.setItem("nome_cognome", profilo[1]);
+			localStorage.setItem("array", profilo);
+			
 			var x=0;
 			for(var i=28; i < profilo.length-1; i++){
 			const paragrafo = document.createElement("span");
@@ -412,6 +416,7 @@ function stampa_profilo_lettura()
 				x=0;
 			}
 			}
+			
 	}
 }
 }
@@ -458,8 +463,8 @@ function genera_cv()
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
 	
-	var categorie = ["Nome: ", "Cognome: ", "Recapito: ", "Email: ", "profilo_linkedin: ", "Citta' di Allocazione: ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
-	"Anno Colloquio: ", "Esito Colloquio: ", "Impressioni: ", "Fonte Reperimento: ", "Costo GG: ", "Possibilita' Lavorativa: ", "Skill: ",
+	var categorie = ["Nome e Cognome: ", "Recapito: ",  "Email: ", "Profilo Linkedin: ", "Citta': ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
+	"Anno Colloquio: ", "Esito Colloquio: ", "Fonte Reperimento: ", "Costo Giornaliero: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
 	"Seniority: "];
 	
@@ -468,7 +473,7 @@ function genera_cv()
 	array.pop();
 	array.shift();
 	var c=10;
-	for(let i=0; i<array.length;i++){
+	for(let i=1; i<array.length;i++){
 		if(array[i]!=""){
 			doc.text(categorie[i] + " " + array[i], 10, c);
 			c+=7;
