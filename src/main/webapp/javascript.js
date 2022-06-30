@@ -315,23 +315,26 @@ function stampa_profilo()
 			document.getElementById("certificazioni").value = profilo[25];
 			//document.getElementById("seniority").value = profilo[26];
 			var x=0;
-			for(var i=28; i < profilo.length-1; i++){
-			const paragrafo = document.createElement("span");
-			paragrafo.id = i;
-			paragrafo.innerText = profilo[i] + "  ";
-			document.getElementById("commenti").appendChild(paragrafo);
-			x++;
-			if(x==2){
-				const br = document.createElement("p");
-				document.getElementById("commenti").appendChild(br);
+			for(var i=28; i < profilo.length-1; i++)
+			{
+				const paragrafo = document.createElement("span");
+				paragrafo.id = i;
+				paragrafo.innerText = profilo[i] + "  ";
+				document.getElementById("commenti").appendChild(paragrafo);
+				x++;
+				if(x==2)
+				{
+					const br = document.createElement("p");
+					document.getElementById("commenti").appendChild(br);
+				}
+				if(x==3)
+				{
+					const br = document.createElement("p");
+					document.getElementById("commenti").appendChild(br);
+					x=0;
+				}
 			}
-			if(x==3){
-				const br = document.createElement("p");
-				document.getElementById("commenti").appendChild(br);
-				x=0;
-			}
-			}
-			
+				
 			localStorage.setItem("nome_cognome", profilo[2]);
 			localStorage.setItem("array", profilo);
 		}
@@ -392,25 +395,28 @@ function stampa_profilo_lettura()
 			localStorage.setItem("array", profilo);
 			
 			var x=0;
-			for(var i=28; i < profilo.length-1; i++){
-			const paragrafo = document.createElement("span");
-			paragrafo.id = i;
-			paragrafo.innerText = profilo[i] + "  ";
-			document.getElementById("commento").appendChild(paragrafo);
-			x++;
-			if(x==2){
-				const br = document.createElement("p");
-				document.getElementById("commento").appendChild(br);
-			}
-			if(x==3){
-				const br = document.createElement("p");
-				document.getElementById("commento").appendChild(br);
-				x=0;
-			}
-			}
-			
+			console.log(profilo.length);
+			for(var i=28; i < profilo.length-1; i++)
+			{
+				const paragrafo = document.createElement("span");
+				paragrafo.id = i;
+				paragrafo.innerText = profilo[i] + "  ";
+				document.getElementById("commento").appendChild(paragrafo);
+				x++;
+				if(x==2)
+				{
+					const br = document.createElement("p");
+					document.getElementById("commento").appendChild(br);
+				}
+				if(x==3)
+				{
+					const br = document.createElement("p");
+					document.getElementById("commento").appendChild(br);
+					x=0;
+				}
+			}	
+		}
 	}
-}
 }
 function cerca()
 {
@@ -467,13 +473,12 @@ function genera_cv()
 	var c=30;
 	
 	doc.addImage(img, 'png', 10, 5, 60, 19)
-	for(let i=1; i<26;i++){
+	for(let i=1; i<26;i++)
 		if(array[i]!="" && array[i]!=" ")
 		{
 			doc.text(categorie[i] + " " + array[i], 10, c);
 			c+=7;
 		}
-	}
 	doc.save(nome_cognome +  '_Cv.pdf')
 }
 function menu_cascata()
@@ -633,6 +638,25 @@ function menu_cascata_tech()
 			}
 		}
 	}
+}
+function tasto_invio()
+{
+	var email = document.getElementById("email");
+    email.addEventListener("keypress", function(event)
+    {
+        if (event.key === "Enter")
+        {
+            login();
+        }
+    });
+    var password = document.getElementById("password");
+    password.addEventListener("keypress", function(event)
+    {
+        if (event.key === "Enter")
+        {
+            login();
+        }
+    });
 }
 function login()
 {
