@@ -454,7 +454,8 @@ function genera_cv()
 {
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
-	
+	var img = new Image();
+	img.src="Immagini/logo.png";
 	var categorie = ["", "Nome e Cognome:", "Recapito: ",  "Email: ", "Profilo Linkedin: ", "Citta': ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
 	"Anno Colloquio: ", "Esito Colloquio: ", "Fonte Reperimento: ", "Costo Giornaliero: ", "Possibilita' Lavorativa: ", "Skill: ",
 	"Tech1: ", "Tech2: ", "Tech3: ", "Tech4: ", "Tech (Campo Libero): ", "Lingua1: ", "Lingua2: ", "Lingua3: ", "Competenze Totali: ", "Certificazioni: ",
@@ -464,7 +465,8 @@ function genera_cv()
 	array = str.split(",");
 	array.pop();
 	array.shift();
-	var c=10;
+	var c=55;
+	doc.addImage(img, 'png', 10, 5, 60, 19)
 	for(let i=1; i<26;i++){
 		if(array[i]!="" && array[i]!=" ")
 		{
