@@ -461,6 +461,7 @@ function genera_cv()
 	var nome_cognome = localStorage.getItem("nome_cognome");
 	var doc = new jsPDF();
 	var img = new Image();
+
 	
 	img.src="Immagini/logo_pdf.png";
 	var categorie = ["", "Nome e Cognome:", "Recapito: ",  "Email: ", "Profilo Linkedin: ", "Citta': ", "Ruolo: ", "Competenza Principale: ", "Data Colloquio: ", 
@@ -471,17 +472,21 @@ function genera_cv()
 	array = str.split(",");
 	array.pop();
 	array.shift();
-	var c=30;
+	var c=40;
 	doc.setFontSize(14);
 	doc.setFont('helvetica');
+    doc.setFontType('bold');
 	doc.text("Nome Recruiter", 100, 10);
 	doc.addImage(img, 'png', 10, 5, 60, 19);
+	doc.setDrawColor(255,215,0);
+	doc.setLineWidth(1);
+	doc.line(20, 25, 190, 25);
 	
 	for(let i=1; i<26;i++)
 		if(array[i]!="" && array[i]!=" ")
 		{
-			doc.text(categorie[i] + " " + array[i], 30, c);
-			c+=7;
+			doc.text(categorie[i] + " " + array[i], 20, c);
+			c+=10;
 		}
 	doc.save(nome_cognome +  '_Cv.pdf')
 }
@@ -642,25 +647,6 @@ function menu_cascata_tech()
 			}
 		}
 	}
-}
-function tasto_invio()
-{
-	var email = document.getElementById("email");
-    email.addEventListener("keypress", function(event)
-    {
-        if (event.key === "Enter")
-        {
-            login();
-        }
-    });
-    var password = document.getElementById("password");
-    password.addEventListener("keypress", function(event)
-    {
-        if (event.key === "Enter")
-        {
-            login();
-        }
-    });
 }
 function login()
 {
