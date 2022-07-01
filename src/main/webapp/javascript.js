@@ -476,7 +476,7 @@ function genera_cv()
 	doc.setFontSize(14);
 	doc.setFont('helvetica');
     doc.setFontType('bold');
-	doc.text(localStorage.getItem("nome_cognome"), 100, 10);
+	doc.text(localStorage.getItem("nome_utente"), 100, 10);
 	doc.addImage(img, 'png', 10, 5, 60, 19);
 	doc.setDrawColor(255,215,0);
 	doc.setLineWidth(1);
