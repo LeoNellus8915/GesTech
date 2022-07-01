@@ -456,6 +456,7 @@ function scarica()
 	document.getElementById("scarica_cv").appendChild(pdf);
 	document.getElementById(nome_cognome + "_pdf").click();
 }
+
 function genera_cv()
 {
 	var nome_cognome = localStorage.getItem("nome_cognome");
@@ -476,16 +477,18 @@ function genera_cv()
 	doc.setFontSize(14);
 	doc.setFont('helvetica');
     doc.setFontType('bold');
-	doc.text(localStorage.getItem("nome_utente"), 100, 10);
-	doc.addImage(img, 'png', 10, 5, 60, 19);
+    doc.text("Recruiter: ", 100, 10);
+	doc.text(localStorage.getItem("nome_utente"), 100, 20);
+	doc.addImage(img, 'PNG', 10, 5, 60, 19);
 	doc.setDrawColor(255,215,0);
 	doc.setLineWidth(1);
-	doc.line(20, 25, 190, 25);
+	doc.line(20, 30, 190, 30);
 	
 	for(let i=1; i<26;i++)
 		if(array[i]!="" && array[i]!=" ")
 		{
 			doc.text(categorie[i] + " " + array[i], 20, c);
+			doc.setTextColor(110, 110, 110, 1);
 			c+=10;
 		}
 	doc.save(nome_cognome +  '_Cv.pdf')
