@@ -476,7 +476,7 @@ function genera_cv()
 	doc.setFontSize(14);
 	doc.setFont('helvetica');
     doc.setFontType('bold');
-	doc.text("Nome Recruiter", 100, 10);
+	doc.text(localStorage.getItem("nome_cognome"), 100, 10);
 	doc.addImage(img, 'png', 10, 5, 60, 19);
 	doc.setDrawColor(255,215,0);
 	doc.setLineWidth(1);
@@ -663,10 +663,12 @@ function login()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var login = xhttp.responseText;
-			if (login == 1)
+			var dati = login.split(",");
+			if (dati[0] == 1)
 				window.open("ricerca.jsp", "_self");
 			else
 				alert("Credenziali Sbagliate");
+			localStorage.setItem("nome_utente", dati[1]);
 		}
 	}
 }

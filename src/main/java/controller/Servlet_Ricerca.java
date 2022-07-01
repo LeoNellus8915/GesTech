@@ -32,10 +32,11 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			if (main.Login(info[1], info[2]) == true)
 			{
+				String nome_utente = main.nomeUtente(info[1]);
 				session.setAttribute("Login", 1);
 				session.setAttribute("Ruolo", main.getRuolo(info[1]));
-				session.setAttribute("Utente", main.nomeUtente(info[1]));
-				response.getWriter().println(1);
+				session.setAttribute("Utente", nome_utente);
+				response.getWriter().println(1 + "," + nome_utente);
 			}
 		}
 		if (info[0].equals("stampa_profilo"))

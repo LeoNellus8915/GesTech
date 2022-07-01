@@ -233,7 +233,6 @@
 											id="fileUpload">
 											<div class="dz-default dz-message">
 												<div>Carica qui il CV</div>
-
 											</div>
 										</div>
 									</div>
@@ -441,10 +440,8 @@
 									<input type="hidden" name="Servlet" value="profilo">
 									<input type="submit" value="SALVA">
 								</div>
-
-
 							</div>
-								</div>
+						</div>
 					</form>
 				</div>
 			</div>
