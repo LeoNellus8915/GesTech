@@ -28,6 +28,10 @@ public class Servlet_Ricerca extends HttpServlet
 			String nome_cognome = (String)session.getAttribute("Utente");
 			response.getWriter().println(main.cambiaPassword(info[1], nome_cognome));
 		}
+		if (info[0].equals("register"))
+		{
+			response.getWriter().println(main.Register(info[1], info[2], info[3], info[4]));
+		}
 		if (info[0].equals("login"))
 		{
 			if (main.Login(info[1], info[2]) == true)

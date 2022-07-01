@@ -39,40 +39,34 @@ public class Main
 		return (String)ruolo.get(0);
 		
 	}
-	public void Register(String nome_cognome, String email, String password)
+	public int Register(String nome_cognome, String email, String ruolo, String password)
 	{
 		Utente user = new Utente();
+		List controllo_email = new ArrayList();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q = controllo.createQuery("select max(id) from Utente");
-		List list = q.list();
-        if ((Integer)list.get(0) != null)
-            user.setId((Integer)list.get(0) + 1);
-        user.setEmail(email);
-        user.setPassword(password);
-        user.setNome_cognome(nome_cognome);
-        user.setFk_ruolo(1);
-        controllo.save(user);
-        controllo.getTransaction().commit();
-        controllo.close();
-	}
-	public boolean Register2(String email)
-	{
-		Utente user = new Utente();
-		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
-		controllo.beginTransaction();
-		Query q = controllo.createQuery("from Utente");
-		List users = q.list();
-		for (int c=0; c<users.size(); c++)
+		Query q_utente = controllo.createQuery("select max(id) from Utente");
+		List list_utente = q_utente.list();
+        if ((Integer)list_utente.get(0) != null)
+            user.setId((Integer)list_utente.get(0) + 1);
+        Query q_ruolo = controllo.createQuery("select id from Ruolo where ruolo = '" + ruolo + "'");
+		List list_ruolo = q_ruolo.list();
+            user.setFk_ruolo((Integer)list_ruolo.get(0));
+        Query q_email = controllo.createQuery("from Utente where email = '" + email + "'");
+		List list_email = q_email.list();
+		System.out.println(list_email);
+        if (list_email.size() != 0)
+            return 0;
+        else
         {
-        	user = (Utente) users.get(c);
-        	if ((user.getEmail().equals(email)))
-        	{
-        		return true;
-        	}
+        	user.setEmail(email);
+	        user.setPassword(password);
+	        user.setNome_cognome(nome_cognome);
+	        controllo.save(user);
+	        controllo.getTransaction().commit();
+	        controllo.close();
+	        return 1;
         }
-		controllo.close();
-		return false;
 	}
 	public void bustepaga_data (String data, String mese)
 	{

@@ -149,42 +149,39 @@
 				<!--Top Menu Start -->
 
 			</div>
-				<form method="POST" action="Servlet">
-					<div class="row spazio">
-						<div class="form-group col-6 m-0">
-							<label for="nome_e_cognome" class="col-form-label s-12">Nome e cognome</label>
-							<input id="nome_e_cognome" name="nome_e_cognome"
-								placeholder="Inserisci nome e cognome"
-								class="form-control r-0 light s-12 date-picker" type="text">
-						</div>
-						<div class="form-group col-6 m-0 ruolo">
-							<label for="ruolo" class="col-form-label s-12">Ruolo</label>
-							<select name="ruolo" id="ruolo" class="cascata"></select>
-						</div>
-						<div class="form-group col-4 m-0">
-							<label for="email" class="col-form-label s-12">E-mail</label>
-							<input id="email" name="email"
-								placeholder="Inserisci email"
-								class="form-control r-0 light s-12 date-picker" type="text">
-						</div>
-						<div class="form-group col-4 m-0">
-							<label for="password" class="col-form-label s-12">Password</label>
-							<input id="password" name="password"
-								placeholder="**********"
-								class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
-						</div>
-						<div class="form-group col-4 m-0">
-							<label for="conferma_password" class="col-form-label s-12">Conferma Password</label>
-							<input id="conferma_password" name="password"
-								placeholder="**********"
-								class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
-						</div>
-	                    <input type="hidden" name="Servlet" value="register">
-	                    <div class="col-12">
-	                    	<input class="aggiungi_utente" type="submit" value="AGGIUNGI">
-	                    </div>
+				<div class="row spazio">
+					<div class="form-group col-6 m-0">
+						<label for="nome_e_cognome" class="col-form-label s-12">Nome e cognome</label>
+						<input id="nome_cognome" name="nome_cognome"
+							placeholder="Inserisci nome e cognome"
+							class="form-control r-0 light s-12 date-picker" type="text">
+					</div>
+					<div class="form-group col-6 m-0 ruolo">
+						<label for="ruolo" class="col-form-label s-12">Ruolo</label>
+						<select name="ruolo" id="ruolo" class="cascata"></select>
+					</div>
+					<div class="form-group col-4 m-0">
+						<label for="email" class="col-form-label s-12">E-mail</label>
+						<input id="email" name="email"
+							placeholder="Inserisci email"
+							class="form-control r-0 light s-12 date-picker" type="text">
+					</div>
+					<div class="form-group col-4 m-0">
+						<label for="password" class="col-form-label s-12">Password</label>
+						<input id="password" name="password"
+							placeholder="**********"
+							class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
+					</div>
+					<div class="form-group col-4 m-0">
+						<label for="conferma_password" class="col-form-label s-12">Conferma Password</label>
+						<input id="conferma_password" onblur="controlla()" name="password"
+							placeholder="**********"
+							class="form-control r-0 light s-12 date-picker" min="6" max="20" required="" type="password">
+					</div>
+                    <div class="col-12">
+                    	<input class="aggiungi_utente" onclick="register()" type="submit" value="AGGIUNGI">
                     </div>
-                </form>
+                   </div>
             </div>
 
 		</div>

@@ -651,6 +651,38 @@ function menu_cascata_tech()
 		}
 	}
 }
+function register()
+{
+	var password = document.getElementById('password').value;
+	if (password != document.getElementById('conferma_password').value)
+		alert("Le due password non coincidono");
+	else
+	{
+		var nome_cognome = document.getElementById("nome_cognome").value;
+		var email = document.getElementById("email").value;
+		var ruolo = document.getElementById("ruolo").value;
+		
+		var xhttp = new XMLHttpRequest();
+		
+		xhttp.open("POST", 'Servlet_Ricerca', true);
+		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		xhttp.send("Servlet=" + "register," + nome_cognome + "," + email + "," + ruolo + "," + password);
+		xhttp.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				var register = xhttp.responseText;
+				if (register[0] == 1)
+				{
+					alert ("Registrazione effettuata con successo");
+					window.open("ricerca.jsp", "_self");
+				}
+				else
+					alert ("Email già esistente");
+			}
+		}
+	}
+}
 function login()
 {
 	var email = document.getElementById("email").value;
