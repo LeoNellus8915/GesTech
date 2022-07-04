@@ -123,6 +123,7 @@
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Esci</span>
 					</a></li>
+				</ul>
 			</section>
 		</aside>
 		<!--Sidebar End-->
@@ -181,7 +182,7 @@
 		<div class="container mb-3 mt-3" >
 			
 				<table id="tabella_ricerca" class="table table-striped table-bordered" cellspacing="0" width="100%">
-					<thead><br>
+					<thead>
 						<tr class="no-b">
 <!-- 							<th style="width: 30px"> -->
 <!-- 								<div class="custom-control custom-checkbox">  -->
@@ -222,6 +223,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	<script scr="./js/app.js"></script>
 	</body>
 </html>

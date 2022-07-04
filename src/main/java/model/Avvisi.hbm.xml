@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+	<class name="model.Avvisi" table="avvisi">
+		<id name="id" type="int" column="id">
+			<generator class="native"/>
+		</id>
+		<property name="avviso" type="string" column="avvisso"/>
+		<property name="data_ora" type="string" column="data_ora"/>
+		<property name="nome_utente" type="string" column="nome_utente"/>
+		<property name="destinatari" type="string" column="destinatari"/>
+	</class>
+</hibernate-mapping>
