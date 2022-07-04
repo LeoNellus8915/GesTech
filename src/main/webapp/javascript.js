@@ -982,3 +982,34 @@ function elimina()
 		}
 	}
 }
+
+function stampa_avvisi()
+{
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "stampa_avvisi");
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta_avvisi = xhttp.responseText;
+			avvisi = risposta_avvisi.split(", ");
+			//alert(avvisi);
+			avvisi.pop();
+			avvisi.shift();
+			
+			for (var c = 0; c < avvisi.length; c++)
+			{
+			const avv = document.createElement("span");
+			avv.value = avvisi[c];
+			avv.innerHTML = avvisi[c];
+			document.getElementById('stampa').appendChild(avv);
+			
+			const br = document.createElement("br");
+			document.getElementById('stampa').appendChild(br);
+			}
+		}
+	}
+}

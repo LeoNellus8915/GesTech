@@ -161,7 +161,7 @@
 						<input type="checkbox" name="admin" value="admin">
   						<label>Admin</label><br>
   						<input type="checkbox" name="recruiter" value="recruiter">
-  						<label>Recriuter</label><br>
+  						<label>Recruiter</label><br>
   						<input type="checkbox" name="commerciale" value="commerciale">
   						<label>Commerciale</label><br>
   						<input type="checkbox" name="dipendente" value="dipendente">

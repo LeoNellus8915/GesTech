@@ -83,5 +83,10 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			response.getWriter().println(main.eliminaProfilo(info[1]));
 		}
+		if (info[0].equals("stampa_avvisi")) 
+		{
+			List avvisi = main.stampaAvvisi();
+			response.getWriter().println(avvisi);
+		}
 	}
 }
