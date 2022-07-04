@@ -6,7 +6,7 @@
 			<generator class="native"/>
 		</id>
 		<property name="avviso" type="string" column="avviso"/>
-		<property name="data_ora" type="string" column="data_ora"/>
+		<property name="data" type="string" column="data"/>
 		<property name="nome_utente" type="string" column="nome_utente"/>
 		<property name="destinatari" type="string" column="destinatari"/>
 	</class>

@@ -4,17 +4,17 @@ public class Avvisi
 {
 	private int id;
 	private String avviso;
-	private String data_ora;
+	private String data;
 	private String nome_utente;
 	private String destinatari;
 	
 	public Avvisi() {}
 	
-	public Avvisi(int id, String avviso, String data_ora, String nome_utente, String destiantari)
+	public Avvisi(int id, String avviso, String data, String nome_utente, String destiantari)
 	{
 		this.id=id;
 		this.avviso=avviso;
-		this.data_ora=data_ora;
+		this.data=data;
 		this.nome_utente=nome_utente;
 		this.destinatari=destiantari;
 	}
@@ -39,14 +39,14 @@ public class Avvisi
 		this.avviso = avviso;
 	}
 
-	public String getData_ora()
+	public String getData()
 	{
-		return data_ora;
+		return data;
 	}
 
-	public void setData_ora(String data_ora)
+	public void setData(String data)
 	{
-		this.data_ora = data_ora;
+		this.data = data;
 	}
 
 	public String getNome_utente()

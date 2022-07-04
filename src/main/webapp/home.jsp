@@ -4,8 +4,6 @@
 	<head>
 	    <script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-			<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet">
@@ -43,8 +41,6 @@
 			crossorigin="anonymous"></script>
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
-		<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
-		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<link rel="stylesheet" href="app.css">
 		<script type="text/javascript" src="javascript.js"></script>
 		<style>
@@ -158,28 +154,37 @@
 
 		</div>
 	</div>
-	<div class="page  has-sidebar-left height-full">
-		<a href="profilo&cv.jsp"
-			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
-			class="icon-add"></i></a>
-		<div class="page has-sidebar-left">
-			<div class="pos-f-t">
-				<div class="collapse" id="navbarToggleExternalContent">
-					<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-						<div class="search-bar">
-							<input
-								class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
-								type="text" placeholder="start typing...">
+		<div class="page  has-sidebar-left height-full">
+			<div class="page has-sidebar-left">
+				<div class="pos-f-t">
+					<form method="post" action="Servlet" id="form">
+						<input type="checkbox" name="admin" value="admin">
+  						<label>Admin</label><br>
+  						<input type="checkbox" name="recruiter" value="recruiter">
+  						<label>Recriuter</label><br>
+  						<input type="checkbox" name="commerciale" value="commerciale">
+  						<label>Commerciale</label><br>
+  						<input type="checkbox" name="dipendente" value="dipendente">
+  						<label>Dipendente</label><br>
+  						<input type="checkbox" name="tutti" value="tutti">
+  						<label>Tutti</label><br>
+						<input type="hidden" name="Servlet" value="registra_avviso">
+				  		<input type="submit">
+					</form>
+					<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
+					
+					<div class="collapse" id="navbarToggleExternalContent">
+						<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
+							<div class="search-bar">
+								<input
+									class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
+									type="text" placeholder="start typing...">
+							</div>
 						</div>
-						<a href="#" data-toggle="collapse"
-							data-target="#navbarToggleExternalContent" aria-expanded="false"
-							aria-label="Toggle navigation"
-							class="paper-nav-toggle paper-nav-white active "><i></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<script scr="./js/app.js"></script>
 	</body>
 </html>
