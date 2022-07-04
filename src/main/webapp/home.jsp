@@ -2,16 +2,14 @@
 	pageEncoding="ISO-8859-1"%>
 <html>
 	<head>
-		<link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-			rel="stylesheet">
-		<title>Unico</title>
-		<script
+	    <script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 			<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<link rel="stylesheet" href="app.css">
-		<script type="text/javascript" src="javascript.js"></script>
+		<link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+			rel="stylesheet">
+		<title>GesTech</title>
 		<link rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -24,7 +22,7 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="app.css">
+		<link rel="stylesheet" href="style.css">
 		<script type="text/javascript" src="javascript.js"></script>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,6 +41,12 @@
 			src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
 			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
 			crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+		<script type="text/javascript" src="js//jquery-3.5.1.js"></script>
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+		<link rel="stylesheet" href="app.css">
+		<script type="text/javascript" src="javascript.js"></script>
 		<style>
 		.loader {
 			position: fixed;
@@ -69,7 +73,8 @@
     	}
   		else	
   		{
-    		%><body class="light" onload="ricerca()">
+    		%><body class="light">
+    		
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>
@@ -104,12 +109,12 @@
 						</i> <span>Tutte le risorse</span>
 					</a></li>
 						<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi risorsa</span>
 					</a></li>
-					<li class="treeview"><a href="profilo&cv.jsp"> <i
-							class="icon icon-add"> <input
+					<li class="treeview"><a href="nuovoutente.jsp"> <i
+							class="icon icon-add_box light-green-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Aggiungi nuovo utente</span>
 					</a></li>
@@ -118,6 +123,7 @@
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Esci</span>
 					</a></li>
+				</ul>
 			</section>
 		</aside>
 		<!--Sidebar End-->
@@ -142,7 +148,7 @@
 				<div class="relative">
 					<div class="d-flex">
 						<div class="d-none d-md-block">
-							<h1 class="nav-title text-white">Risorse</h1>
+							<h1 class="nav-title text-white">Home</h1>
 						</div>
 					</div>
 				</div>
@@ -153,50 +159,6 @@
 		</div>
 	</div>
 	<div class="page  has-sidebar-left height-full">
-		<header class="blue accent-3 relative">
-			<div class="container-fluid text-white">
-				<div class="row p-t-b-10 "></div>
-				<div class="row justify-content-between">
-					<ul class="nav nav-material nav-material-white responsive-tab"
-						id="v-pills-tab" role="tablist">
-						<li><a class="nav-link active" id="v-pills-all-tab"
-							data-toggle="pill" href="#v-pills-all" role="tab"
-							aria-controls="v-pills-all"><i class="icon icon-user"></i>Tutte
-								le risorse</a></li>
-						<li class="float-right"><a class="nav-link"
-							href="profilo&cv.jsp"><i class="icon icon-plus-circle"></i>
-								Aggiungi risorsa</a></li>
-					</ul>
-				</div>
-			</div>
-		</header>
-		
-		
-		
-		<div class="container mb-3 mt-3" >
-			
-				<table id="prova" class="table table-striped table-bordered" cellspacing="0" width="100%">
-					<thead><br>
-						<tr class="no-b">
-							<th style="width: 30px">
-<!-- 								<div class="custom-control custom-checkbox">  -->
-<!-- 									<input type="checkbox" id="checkedAll" -->
-<!-- 										class="custom-control-input"><label -->
-<!-- 										class="custom-control-label" for="checkedAll"></label> -->
-<!-- 								</div> -->
-							</th>
-							<th class="titolotabella">NOME E COGNOME</th>
-							<th class="titolotabella">TELEFONO</th>
-							<th class="titolotabella">VALUTAZIONE</th>
-							<th class="titolotabella">RUOLO</th>
-							<th class="titolotabella">AZIONI</th>
-						</tr>
-					</thead>
-				</table>
-		</div>
-		<!-- table-responsive -->
-
-
 		<a href="profilo&cv.jsp"
 			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary"><i
 			class="icon-add"></i></a>
@@ -217,6 +179,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	<script scr="./js/app.js"></script>
 	</body>
 </html>

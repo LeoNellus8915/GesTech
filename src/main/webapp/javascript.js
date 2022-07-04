@@ -700,7 +700,7 @@ function login()
 			var login = xhttp.responseText;
 			var dati = login.split(",");
 			if (dati[0] == 1)
-				window.open("ricerca.jsp", "_self");
+				window.open("home.jsp", "_self");
 			else
 				alert("Credenziali Sbagliate");
 			localStorage.setItem("nome_utente", dati[1]);
