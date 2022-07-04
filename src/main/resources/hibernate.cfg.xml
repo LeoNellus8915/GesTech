@@ -7,7 +7,7 @@
    <session-factory>
       <property name = "hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
       <property name = "hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-      <property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/unico?serverTimezone=GMT</property>
+      <property name = "hibernate.connection.url">jdbc:mysql://localhost:3306/gestech?serverTimezone=GMT</property>
       <property name = "show_sql">true</property>
       <property name = "hibernate.current_session_context_class">thread</property>
       <property name = "hibernate.connection.username">root</property>
@@ -23,5 +23,6 @@
       <mapping resource = "model/Tech.hbm.xml"/>
       <mapping resource = "model/Esito_Colloquio.hbm.xml"/>
       <mapping resource = "model/Ruolo.hbm.xml"/>
+      <mapping resource = "model/Avvisi.hbm.xml"/>
    </session-factory>
 </hibernate-configuration>

@@ -1,7 +1,7 @@
 package model;
 
-public class Avvisi {
-
+public class Avvisi
+{
 	private int id;
 	private String avviso;
 	private String data_ora;
@@ -10,7 +10,8 @@ public class Avvisi {
 	
 	public Avvisi() {}
 	
-	public Avvisi(int id, String avviso, String data_ora, String nome_utente, String destiantari) {
+	public Avvisi(int id, String avviso, String data_ora, String nome_utente, String destiantari)
+	{
 		this.id=id;
 		this.avviso=avviso;
 		this.data_ora=data_ora;
@@ -18,43 +19,53 @@ public class Avvisi {
 		this.destinatari=destiantari;
 	}
 
-	public int getId() {
+	public int getId()
+	{
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(int id)
+	{
 		this.id = id;
 	}
 
-	public String getAvviso() {
+	public String getAvviso()
+	{
 		return avviso;
 	}
 
-	public void setAvviso(String avviso) {
+	public void setAvviso(String avviso)
+	{
 		this.avviso = avviso;
 	}
 
-	public String getData_ora() {
+	public String getData_ora()
+	{
 		return data_ora;
 	}
 
-	public void setData_ora(String data_ora) {
+	public void setData_ora(String data_ora)
+	{
 		this.data_ora = data_ora;
 	}
 
-	public String getNome_utente() {
+	public String getNome_utente()
+	{
 		return nome_utente;
 	}
 
-	public void setNome_utente(String nome_utente) {
+	public void setNome_utente(String nome_utente)
+	{
 		this.nome_utente = nome_utente;
 	}
 
-	public String getDestinatari() {
+	public String getDestinatari()
+	{
 		return destinatari;
 	}
 
-	public void setDestinatari(String destinatari) {
+	public void setDestinatari(String destinatari)
+	{
 		this.destinatari = destinatari;
 	}
 	
