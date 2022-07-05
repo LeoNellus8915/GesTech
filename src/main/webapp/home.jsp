@@ -154,24 +154,25 @@
 
 		</div>
 	</div>
-		<div class="page  has-sidebar-left height-full">
+		<div class="page avviso">
 			<div class="page has-sidebar-left">
 				<div class="pos-f-t">
+				<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
 					<form method="post" action="Servlet" id="form">
-						<input type="checkbox" name="admin" value="admin">
-  						<label>Admin</label><br>
+						<input  type="checkbox" name="admin" value="admin">
+  						<label>Admin</label>
   						<input type="checkbox" name="recruiter" value="recruiter">
-  						<label>Recruiter</label><br>
+  						<label>Recruiter</label>
   						<input type="checkbox" name="commerciale" value="commerciale">
-  						<label>Commerciale</label><br>
+  						<label>Commerciale</label>
   						<input type="checkbox" name="dipendente" value="dipendente">
-  						<label>Dipendente</label><br>
+  						<label>Dipendente</label>
   						<input type="checkbox" name="tutti" value="tutti">
-  						<label>Tutti</label><br>
+  						<label>Tutti</label>
 						<input type="hidden" name="Servlet" value="registra_avviso">
 				  		<input type="submit">
 					</form>
-					<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
+					
 					
 					<div class="collapse" id="navbarToggleExternalContent">
 						<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
@@ -182,6 +183,7 @@
 							</div>
 						</div>
 					</div>
+					
 				</div>
 			</div>
 		</div>

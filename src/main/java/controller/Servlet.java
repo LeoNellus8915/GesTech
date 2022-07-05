@@ -2,7 +2,10 @@ package controller;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServlet;
+
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -11,9 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.Part;
 import model.Main;
 
 public class Servlet extends HttpServlet
@@ -172,4 +178,32 @@ public class Servlet extends HttpServlet
 			disp.forward(request, response);
 		}
 	}
+	
+	@WebServlet(name="FileUpload", urlPatterns="/servlet/fileUpload")
+	@MultipartConfig
+	public class FileUpload extends HttpServlet {
+	   private static final long serialVersionUID = 1L;
+	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	      Part filePart = request.getPart("nomeFile");
+
+	      String nomeFile = getFilename(filePart);
+
+	      BufferedReader reader = new BufferedReader(new InputStreamReader(filePart.getInputStream()));
+	      String line = null;
+	      while ((line = reader.readLine()) != null);
+	         
+	   }
+	}
+	
+	private static String getFilename(Part part) {
+		   for (String cd : part.getHeader("content-disposition").split(";")) {
+		      if (cd.trim().startsWith("filename")) {
+		         String filename = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+		         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1); // MSIE fix.
+		      }
+		   }
+
+		   return null;
+		}
 }

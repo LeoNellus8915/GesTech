@@ -6164,6 +6164,14 @@ a.close.disabled {
     border-left-color: #fff
 }
 
+div#commento {
+    margin-left: 27px;
+}
+
+.commbg {
+    background: #f9f9f9;
+}
+
 .popover-header {
     padding: .5rem .75rem;
     margin-bottom: 0;
