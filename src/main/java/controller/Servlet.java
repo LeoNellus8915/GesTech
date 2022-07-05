@@ -173,7 +173,8 @@ public class Servlet extends HttpServlet
 			LocalDateTime now = LocalDateTime.now();
 			String data = dtf.format(now);
 			String nome_utente = (String)session.getAttribute("Utente");
-			main.registraAvviso(avviso, data, nome_utente, destinatario);
+			String titolo = request.getParameter("titolo");
+			main.registraAvviso(avviso, data, nome_utente, destinatario, titolo);
 			disp = request.getRequestDispatcher("home.jsp");
 			disp.forward(request, response);
 		}

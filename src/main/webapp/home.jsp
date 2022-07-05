@@ -157,6 +157,7 @@
 		<div class="page avviso">
 			<div class="page has-sidebar-left">
 				<div class="pos-f-t">
+				<input id="titolo" name="titolo" placeholder="Inserisci Titolo" form="form" type="text">
 				<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
 					<form method="post" action="Servlet" id="form">
 						<input  type="checkbox" name="admin" value="admin">

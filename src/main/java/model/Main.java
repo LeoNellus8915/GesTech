@@ -445,7 +445,7 @@ public class Main
 		controllo.close();
 		return 1;
 	}
-	public void registraAvviso(String testo, String data, String nome_utente, String destinatario)
+	public void registraAvviso(String testo, String data, String nome_utente, String destinatario, String titolo)
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
@@ -454,6 +454,7 @@ public class Main
 		avviso.setData(data);
 		avviso.setNome_utente(nome_utente);
 		avviso.setDestinatari(destinatario);
+		avviso.setTitolo(titolo);
 		controllo.save(avviso);
 	    controllo.getTransaction().commit();
 	    controllo.close();

@@ -7,16 +7,18 @@ public class Avvisi
 	private String data;
 	private String nome_utente;
 	private String destinatari;
+	private String titolo;
 	
 	public Avvisi() {}
 	
-	public Avvisi(int id, String avviso, String data, String nome_utente, String destiantari)
+	public Avvisi(int id, String avviso, String data, String nome_utente, String destiantari, String titolo)
 	{
 		this.id=id;
 		this.avviso=avviso;
 		this.data=data;
 		this.nome_utente=nome_utente;
 		this.destinatari=destiantari;
+		this.titolo=titolo;
 	}
 
 	public int getId()
@@ -67,6 +69,14 @@ public class Avvisi
 	public void setDestinatari(String destinatari)
 	{
 		this.destinatari = destinatari;
+	}
+
+	public String getTitolo() {
+		return titolo;
+	}
+
+	public void setTitolo(String titolo) {
+		this.titolo = titolo;
 	}
 	
 	
