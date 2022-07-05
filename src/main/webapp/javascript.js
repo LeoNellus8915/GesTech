@@ -448,13 +448,29 @@ function cerca()
 function scarica()
 {
 	var nome_cognome = localStorage.getItem("nome_cognome");
-	var pdf = document.createElement("a");
-	pdf.id = nome_cognome + "_pdf";
-	pdf.href = "PDF/" + nome_cognome + ".pdf";
-	pdf.download = nome_cognome;
-	pdf.type="hidden";
-	document.getElementById("scarica_cv").appendChild(pdf);
-	document.getElementById(nome_cognome + "_pdf").click();
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "scaricaCv," + nome_cognome);
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta = xhttp.responseText;
+			app = risposta.split("\\");
+			file = app[app.length-1];
+			alert(app[app.length-1]);
+			
+			var pdf = document.createElement("a");
+			pdf.id = file;
+			pdf.href = risposta;
+			pdf.download = nome_cognome;
+			pdf.type="hidden";
+			document.getElementById("scarica_cv").appendChild(pdf);
+			document.getElementById(file).click();
+			}
+		}
 }
 
 function genera_cv()

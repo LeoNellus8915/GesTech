@@ -7,7 +7,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -87,6 +86,11 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			List avvisi = main.stampaAvvisi();
 			response.getWriter().println(avvisi);
+		}
+		if (info[0].equals("scaricaCv")) 
+		{
+			String cv = main.scaricaCv(info[1]);
+			response.getWriter().println(cv);
 		}
 	}
 }

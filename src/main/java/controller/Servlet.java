@@ -4,6 +4,7 @@ import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.http.HttpServlet;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.Date;
@@ -12,6 +13,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.apache.tomcat.util.http.fileupload.FileUtils;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
@@ -70,9 +73,12 @@ public class Servlet extends HttpServlet
 			String impressioni = request.getParameter("commento");
 			
 			Part file = request.getPart("nomeFile");
-		    String nomeFile = getFilename(file);
-		    file.write("C:\\ProgramData\\GesTech Profili\\" + nomeFile);
-		    String percorso = "C:\\ProgramData\\GesTech Profili\\" + nomeFile;
+			String nomeFile = file.getSubmittedFileName();
+			String percorso = "";
+			if(!nomeFile.equals("")) {
+				file.write("C:\\GesTech Profili\\" + nomeFile);
+			    percorso = "C:\\GesTech Profili\\" + nomeFile;
+			}
 		    
 			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
@@ -188,16 +194,5 @@ public class Servlet extends HttpServlet
 			disp.forward(request, response);
 		}
 	}
-	private static String getFilename(Part part)
-	{
-	   for (String cd : part.getHeader("content-disposition").split(";"))
-	   {
-	      if (cd.trim().startsWith("filename"))
-	      {
-	         String filename = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
-	         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1);
-	      }
-	   }
-	   return null;
-	}
+	
 }

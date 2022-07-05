@@ -1,5 +1,6 @@
 package model;
 
+import java.nio.file.spi.FileSystemProvider;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -300,6 +301,17 @@ public class Main
         controllo.close();
         return profili;
 	}
+	
+	public String scaricaCv(String nome_cognome) {
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("select percorso_cv from Profilo where nome_cognome = '" + nome_cognome + "'");
+		List percorso = q.list();
+		System.out.println((String)percorso.get(0));
+		controllo.close();
+		return (String)percorso.get(0);
+	}
+	
 	public void aggiorna_cv (String id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 			String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
