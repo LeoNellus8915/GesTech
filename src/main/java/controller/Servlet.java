@@ -68,13 +68,15 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String impressioni = request.getParameter("commento");
-			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
-						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
-						competenze_totali, certificazioni, seniority);
 			
 			Part file = request.getPart("nomeFile");
 		    String nomeFile = getFilename(file);
-		    file.write( "C:\\Users\\Admin\\git\\GesTech\\src\\main\\webapp\\Profili\\" + nomeFile);
+		    file.write("C:\\Users\\Admin\\git\\GesTech\\src\\main\\webapp\\Profili\\" + nomeFile);
+		    String percorso = "C:\\Users\\Admin\\git\\GesTech\\src\\main\\webapp\\Profili\\" + nomeFile;
+		    
+			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
+						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
+						competenze_totali, certificazioni, seniority, percorso);
 			
 			String utente = (String) session.getAttribute("Utente");
 			if (!impressioni.equals(""))
@@ -193,7 +195,7 @@ public class Servlet extends HttpServlet
 	      if (cd.trim().startsWith("filename"))
 	      {
 	         String filename = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
-	         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1); // MSIE fix.
+	         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1);
 	      }
 	   }
 	   return null;

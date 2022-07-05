@@ -124,7 +124,7 @@ public class Main
 	public void salva (String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 						String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
-						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
+						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv)	
 	{
 		Profilo profilo = new Profilo();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
@@ -160,6 +160,7 @@ public class Main
         profilo.setCompetenze_totali(competenze_totali);
         profilo.setCertificazioni(certificazioni);
         profilo.setSeniority(seniority);
+        profilo.setPercorso_cv(percorso_cv);
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();

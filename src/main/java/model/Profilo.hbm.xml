@@ -30,5 +30,6 @@
 		<property name="competenze_totali" type="string" column="competenze_totali"/>
 		<property name="certificazioni" type="string" column="certificazioni"/>
 		<property name="seniority" type="string" column="seniority"/>
+		<property name="percorso_cv" type="string" column="percorso_cv"/>
 	</class>
 </hibernate-mapping>

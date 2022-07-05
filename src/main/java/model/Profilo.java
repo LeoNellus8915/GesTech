@@ -28,13 +28,14 @@ public class Profilo
 	private String competenze_totali;
 	private String certificazioni;
 	private String seniority;
+	private String percorso_cv;
 	
 	public Profilo () {}
 	
 	public Profilo (int id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
 					String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
-					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)
+					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv)
 	{
 		this.id = id;
 		this.nome_cognome = nome_cognome;
@@ -62,6 +63,7 @@ public class Profilo
 		this.competenze_totali = competenze_totali;
 		this.certificazioni = certificazioni;
 		this.seniority = seniority;
+		this.percorso_cv = percorso_cv;
 	}
 	
 	public int getId()
@@ -320,5 +322,15 @@ public class Profilo
 	public void setSeniority(String seniority)
 	{
 		this.seniority = seniority;
+	}
+	
+	public String getPercorso_cv()
+	{
+		return percorso_cv;
+	}
+	
+	public void setPercorso_cv(String percorso_cv)
+	{
+		this.percorso_cv = percorso_cv;
 	}
 }
