@@ -33129,11 +33129,6 @@ textarea.form-control-lg {
     padding: 0 .85rem
 }
 
-input[type=checkbox],
-input[type=radio] {
-    margin-right: 10px!important
-}
-
 .btn {
     border-radius: 3px;
     font-weight: 300
@@ -36959,4 +36954,10 @@ html[dir=rtl] .form-group.has-icon input {
     padding: 10px;
 }
 
+
+.cambiapass {
+    font-size: 12px;
+    margin-left: 13px;
+    font-weight: 400 !important;
+}
 

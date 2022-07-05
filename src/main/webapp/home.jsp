@@ -93,14 +93,19 @@
 						<div id="userSettingsCollapse">
 							<div class="list-group mt-3 shadow">
 								<a href="cambiapassword.jsp" class="list-group-item list-group-item-action"><i
-									class="mr-2 icon-security text-purple"></i>Cambia Password</a>
+									class="icon icon-lock black-text s-18"></i> <span class="cambiapass">Cambia Password</span></a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<ul class="sidebar-menu">
+				<li class="treeview"><a href="home.jsp"> <i
+							class="icon icon-home light-blue-text s-18"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Home/Avvisi</span>
+					</a></li>
 						<li class="treeview"><a href="ricerca.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input
+							class="icon icon-account_box red-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
 						</i> <span>Tutte le risorse</span>
 					</a></li>
@@ -160,8 +165,8 @@
 				<input id="titolo" name="titolo" placeholder="Inserisci Titolo" form="form" type="text">
 				<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
 					<form method="post" action="Servlet" id="form">
-						<input  type="checkbox" name="admin" value="admin">
-  						<label>Admin</label>
+						<input class="etisp" type="checkbox" name="admin" value="admin">
+  						<label class="nomeeti">Admin</label>
   						<input type="checkbox" name="recruiter" value="recruiter">
   						<label>Recruiter</label>
   						<input type="checkbox" name="commerciale" value="commerciale">

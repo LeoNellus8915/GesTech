@@ -97,16 +97,21 @@
 						<div id="userSettingsCollapse">
 							<div class="list-group mt-3 shadow">
 								<a href="cambiapassword.jsp" class="list-group-item list-group-item-action"><i
-									class="mr-2 icon-security text-purple"></i>Cambia Password</a>
+									class="icon icon-lock black-text s-18"></i> <span class="cambiapass">Cambia Password</span></a>
 							</div>
 						</div>
 					</div>
 				</div>
 				<ul class="sidebar-menu">
-						<li class="treeview"><a href="ricerca.jsp"> <i
-							class="icon icon-account_box light-green-text s-18"> <input
+				<li class="treeview"><a href="home.jsp"> <i
+							class="icon icon-home light-blue-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
-						</i> <span>Tutte le risorse</span>
+						</i> <span>Home</span>
+					</a></li>
+						<li class="treeview"><a href="ricerca.jsp"> <i
+							class="icon icon-account_box red-text s-18"> <input
+								type="hidden" name="Servlet" value="logout">
+						</i> <span>Home/Avvisi</span>
 					</a></li>
 						<li class="treeview"><a href="profilo&cv.jsp"> <i
 							class="icon icon-add_box light-green-text s-18"> <input
@@ -184,13 +189,6 @@
 				<table id="tabella_ricerca" class="table table-striped table-bordered" cellspacing="0" width="100%">
 					<thead>
 						<tr class="no-b">
-<!-- 							<th style="width: 30px"> -->
-<!-- 								<div class="custom-control custom-checkbox">  -->
-<!-- 									<input type="checkbox" id="checkedAll" -->
-<!-- 										class="custom-control-input"><label -->
-<!-- 										class="custom-control-label" for="checkedAll"></label> -->
-<!-- 								</div> 
-								</th>-->
 							<th class="titolotabella">NOME E COGNOME</th>
 							<th class="titolotabella">TELEFONO</th>
 							<th class="titolotabella">VALUTAZIONE</th>
