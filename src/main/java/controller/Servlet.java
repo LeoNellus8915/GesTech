@@ -22,6 +22,8 @@ import jakarta.servlet.http.HttpSession;
 import jakarta.servlet.http.Part;
 import model.Main;
 
+@WebServlet(name="FileUpload", urlPatterns="/servlet/fileUpload")
+@MultipartConfig
 public class Servlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
@@ -69,6 +71,11 @@ public class Servlet extends HttpServlet
 			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
 						competenze_totali, certificazioni, seniority);
+			
+			Part file = request.getPart("nomeFile");
+		    String nomeFile = getFilename(file);
+		    file.write( "C:\\Users\\Admin\\git\\GesTech\\src\\main\\webapp\\Profili\\" + nomeFile);
+			
 			String utente = (String) session.getAttribute("Utente");
 			if (!impressioni.equals(""))
 					main.salvaCommento(impressioni, utente, email);
@@ -179,32 +186,16 @@ public class Servlet extends HttpServlet
 			disp.forward(request, response);
 		}
 	}
-	
-	@WebServlet(name="FileUpload", urlPatterns="/servlet/fileUpload")
-	@MultipartConfig
-	public class FileUpload extends HttpServlet {
-	   private static final long serialVersionUID = 1L;
-	   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	      Part filePart = request.getPart("nomeFile");
-
-	      String nomeFile = getFilename(filePart);
-
-	      BufferedReader reader = new BufferedReader(new InputStreamReader(filePart.getInputStream()));
-	      String line = null;
-	      while ((line = reader.readLine()) != null);
-	         
+	private static String getFilename(Part part)
+	{
+	   for (String cd : part.getHeader("content-disposition").split(";"))
+	   {
+	      if (cd.trim().startsWith("filename"))
+	      {
+	         String filename = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
+	         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1); // MSIE fix.
+	      }
 	   }
+	   return null;
 	}
-	
-	private static String getFilename(Part part) {
-		   for (String cd : part.getHeader("content-disposition").split(";")) {
-		      if (cd.trim().startsWith("filename")) {
-		         String filename = cd.substring(cd.indexOf('=') + 1).trim().replace("\"", "");
-		         return filename.substring(filename.lastIndexOf('/') + 1).substring(filename.lastIndexOf('\\') + 1); // MSIE fix.
-		      }
-		   }
-
-		   return null;
-		}
 }

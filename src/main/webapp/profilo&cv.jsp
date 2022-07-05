@@ -181,7 +181,7 @@
 		<div class="container-fluid animatedParent animateOnce">
 			<div class="row my-3">
 				<div class="col-md-12">
-					<form method="post" action="Servlet" name="profilo">
+					<form method="post" action="Servlet" name="profilo" enctype ="multipart/form-data">
 						<div class="card no-b  no-r">
 							<div class="card-body">
 								<h5 class="card-title">Anagrafica</h5>
@@ -228,8 +228,8 @@
 											<div class="form-group col-6 m-0">
 											<label for="citta_di_allocazione"
 													class="col-form-label s-12">CARICA CV</label><br>
-									<form name="fileUpload" method="post" action="/servlet/fileUpload" enctype="multipart/form-data">
-         <input type="file" name="nomeFile" /></form>
+         					<input type="file" name="nomeFile" enctype="multipart/form-data">
+         				</form>
          </div>
 										</div>
 									</div>
