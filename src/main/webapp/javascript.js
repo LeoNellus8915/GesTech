@@ -1011,20 +1011,38 @@ function stampa_avvisi()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_avvisi = xhttp.responseText;
-			avvisi = risposta_avvisi.split(", ");
-			//alert(avvisi);
+			avvisi = risposta_avvisi.split(",");
 			avvisi.pop();
 			avvisi.shift();
 			
 			for (var c = 0; c < avvisi.length; c++)
 			{
-			const avv = document.createElement("span");
-			avv.value = avvisi[c];
-			avv.innerHTML = avvisi[c];
-			document.getElementById('stampa').appendChild(avv);
-			
-			const br = document.createElement("br");
-			document.getElementById('stampa').appendChild(br);
+				
+				const div = document.createElement("div");
+				div.classList.add('col-4');
+				div.id = "div_avvisi" + c;
+				document.getElementById("stampa_avvisi").appendChild(div);
+				
+				avvisi_split = avvisi[c].split("*")
+				
+				const data = document.createElement("p");
+				data.value = avvisi_split[0];
+				data.innerHTML = avvisi_split[0];
+				//data.classList.add('');
+				document.getElementById('div_avvisi' + c).appendChild(data);
+				
+				const titolo = document.createElement("p");
+				titolo.value = avvisi_split[1];
+				titolo.innerHTML = avvisi_split[1];
+				//titolo.classList.add('');
+				document.getElementById('div_avvisi' + c).appendChild(titolo);
+				
+				const avv = document.createElement("p");
+				avv.value = avvisi_split[2];
+				avv.innerHTML = avvisi_split[2];
+				//avv.classList.add('');
+				document.getElementById('div_avvisi' + c).appendChild(avv);
+				
 			}
 		}
 	}

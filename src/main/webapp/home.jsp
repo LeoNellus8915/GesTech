@@ -43,6 +43,7 @@
 			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 		<link rel="stylesheet" href="app.css">
 		<script type="text/javascript" src="javascript.js"></script>
+		
 		<style>
 		.loader {
 			position: fixed;
@@ -69,7 +70,7 @@
     	}
   		else	
   		{
-    		%><body class="light">
+    		%><body class="light" onload="stampa_avvisi()">
     		
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
@@ -178,46 +179,14 @@
 						<input type="hidden" name="Servlet" value="registra_avviso">
 				  		<input type="submit">
 					</form>
-					
-					
-					<div class="collapse" id="navbarToggleExternalContent">
-						<div class="bg-dark pt-2 pb-2 pl-4 pr-2">
-							<div class="search-bar">
-								<input
-									class="transparent s-24 text-white b-0 font-weight-lighter w-128 height-50"
-									type="text" placeholder="start typing...">
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="form-group col-6 m-0">
-							<table class="table table-striped">
-							  <thead>
-							    <tr>
-							      <th class="titolotabella">Data</th>
-							      <th class="titolotabella">Avviso da:</th>
-							      <th class="titolotabella">Titolo</th>
-							      <th class="titolotabella">Azioni</th>
-							    </tr>
-							  </thead>
-							 	 <tbody>
-							   		 <tr>
-								      <th scope="row">1</th>
-								      <td>Mario</td>
-								      <td>Verdi</td>
-								      <td>mario.verdi</td>
-							   		 </tr>
-							   	 </tbody>
-							  </table>
-					  	</div>
-					    <div class="form-group col-6 m-0 testoavvi">
-					      <p class="mb-4"><strong class="boldblack">Notification standard con testo</strong></p>
-					      <div class="notification" role="alert" aria-labelledby="not1a-title" id="not1a">
-					        <h5 id="not1a-title">Titolo notifica</h5>
-					        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…</p>
-					      </div>
-   						</div>
-			</div>		
+				</div>
+			</div>	
+		</div>
+		<div class="container has-sidebar-left">
+			<div class="row" id="stampa_avvisi">
+			
+			
+			</div>
 		</div>
 	<script scr="./js/app.js"></script>
 	
