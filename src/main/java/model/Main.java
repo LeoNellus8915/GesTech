@@ -477,7 +477,7 @@ public class Main
 	{
 		List avvisi = new ArrayList();
 		Avvisi avviso = new Avvisi();
-		avvisi.add(" ");
+		avvisi.add("**");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q_avvisi = controllo.createQuery("from Avvisi");
