@@ -1019,7 +1019,7 @@ function stampa_avvisi()
 			{
 				
 				const div = document.createElement("div");
-				div.classList.add('col-4');
+				div.classList.add('col-4 card_avvisi');
 				div.id = "div_avvisi" + c;
 				document.getElementById("stampa_avvisi").appendChild(div);
 				
