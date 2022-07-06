@@ -1032,7 +1032,7 @@ function stampa_avvisi()
 				document.getElementById('div_avvisi' + c).appendChild(data);
 				
 				const icona = document.createElement("i");
-				icona.innerHTML = '<i class="icon icon-account_box red-text s-18"></i><input type="hidden" name="Servlet" value="">';
+				icona.innerHTML = '<i class="icon icon-delete red-text s-18"></i><input type="hidden" name="Servlet" value="">';
 				document.getElementById('div_avvisi' + c).appendChild(icona);
 				
 				const titolo = document.createElement("p");

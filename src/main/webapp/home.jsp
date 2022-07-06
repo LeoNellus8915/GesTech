@@ -182,16 +182,17 @@
 					  	<div class="col-6">
 					  		<div class="btright"><input onclick="registra_avviso()" type="submit"></div>
 					  	</div>
+					  	<div class="col-12">
+					  		<div class="avvisi_cont">
+								<div class="row" id="stampa_avvisi">
+								</div>
+							</div>	
+						</div>	
 					</div>  		
 				</div>						
 			</div>		
 		</div>
-		<div class="container has-sidebar-left">
-			<div class="row" id="stampa_avvisi">
-			
-			
-			</div>
-		</div>
+
 	<script scr="./js/app.js"></script>
 	
 	</body>
