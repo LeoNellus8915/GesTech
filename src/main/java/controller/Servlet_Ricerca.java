@@ -21,7 +21,7 @@ public class Servlet_Ricerca extends HttpServlet
 		Main main = new Main();
 		String servlet = request.getParameter("Servlet");
 		HttpSession session = request.getSession(true);
-		String[] info = servlet.split(",");
+		String[] info = servlet.split("/,");
 		if (info[0].equals("cambia_password"))
 		{
 			String nome_cognome = (String)session.getAttribute("Utente");
@@ -99,6 +99,10 @@ public class Servlet_Ricerca extends HttpServlet
 			String data = dtf.format(now);
 			String nome_utente = (String)session.getAttribute("Utente");
 			response.getWriter().println(main.registraAvviso(info[1], info[2], info[3], data, nome_utente));
+		}
+		if (info[0].equals("elimina_avviso"))
+		{
+			main.eliminaAvviso(info[1]);
 		}
 	}
 }

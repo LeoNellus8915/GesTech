@@ -484,11 +484,18 @@ public class Main
 		List list_Avvisi = q_avvisi.list();
 		for(int i=0; i<list_Avvisi.size(); i++) {
 			avviso = (Avvisi)list_Avvisi.get(i);
-			avvisi.add(avviso.getData() + "*" + avviso.getTitolo() + "*" + avviso.getAvviso() + "**");
+			avvisi.add(avviso.getData() + "*" + avviso.getTitolo() + "*" + avviso.getAvviso() + "*" + avviso.getId() + "**");
 		}
 		avvisi.add(" ");
 		controllo.close();
 		return avvisi;
 		
+	}
+	public void eliminaAvviso(String id) {
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+		Query q = controllo.createQuery("delete from Avvisi where id = " + id);
+		q.executeUpdate();
+		controllo.close();
 	}
 }

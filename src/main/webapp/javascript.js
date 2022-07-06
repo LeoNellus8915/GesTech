@@ -12,7 +12,7 @@ function bustepaga()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "lettura_mese, ");
+	xhttp.send("Servlet=" + "lettura_mese/,");
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200)
 		{
@@ -87,7 +87,7 @@ async function invio(mese, pdf)
 
 			xhttp.open("POST", 'Servlet_Ricerca', true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("Servlet=" + "scrittura_mese," + mese);
+			xhttp.send("Servlet=" + "scrittura_mese/," + mese);
 
 			await sleep(1000);
 			bustepaga();
@@ -106,7 +106,7 @@ function certificazione_unica()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "lettura_anno, ");
+	xhttp.send("Servlet=" + "lettura_anno/,");
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200)
 		{
@@ -148,7 +148,7 @@ async function invio2(anno, pdf)
 
 			xhttp.open("POST", 'Servlet_Ricerca', true);
 			xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			xhttp.send("Servlet=" + "scrittura_anno," + anno);
+			xhttp.send("Servlet=" + "scrittura_anno/," + anno);
 			await sleep(1000);
 			certificazione_unica();
 		}
@@ -284,7 +284,7 @@ function stampa_profilo()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "stampa_profilo," + localStorage.getItem("dato"));
+	xhttp.send("Servlet=" + "stampa_profilo/," + localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
@@ -360,7 +360,7 @@ function stampa_profilo_lettura()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "stampa_profilo," + localStorage.getItem("dato"));
+	xhttp.send("Servlet=" + "stampa_profilo/," + localStorage.getItem("dato"));
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
@@ -439,7 +439,7 @@ function cerca()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "ricerca," + ricerca);
+	xhttp.send("Servlet=" + "ricerca/," + ricerca);
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
@@ -466,7 +466,7 @@ function scarica()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "scaricaCv," + nome_cognome);
+	xhttp.send("Servlet=" + "scaricaCv/," + nome_cognome);
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
@@ -696,7 +696,7 @@ function register()
 		
 		xhttp.open("POST", 'Servlet_Ricerca', true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Servlet=" + "register," + nome_cognome + "," + email + "," + ruolo + "," + password);
+		xhttp.send("Servlet=" + "register/," + nome_cognome + "/," + email + "/," + ruolo + "," + password);
 		xhttp.onreadystatechange = function()
 		{
 			if (this.readyState == 4 && this.status == 200)
@@ -722,7 +722,7 @@ function login()
 	
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "login," + email + "," + password);
+	xhttp.send("Servlet=" + "login/," + email + "/," + password);
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
@@ -970,7 +970,7 @@ function cambia_password()
 	
 		xhttp.open("POST", 'Servlet_Ricerca', true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Servlet=" + "cambia_password," + password);
+		xhttp.send("Servlet=" + "cambia_password/," + password);
 		xhttp.onreadystatechange = function()
 		{
 			if (this.readyState == 4 && this.status == 200)
@@ -997,7 +997,7 @@ function elimina()
 
 		xhttp.open("POST", 'Servlet_Ricerca', true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Servlet=" + "elimina_profilo," + id);
+		xhttp.send("Servlet=" + "elimina_profilo/," + id);
 		xhttp.onreadystatechange = function()
 		{
 			if (this.readyState == 4 && this.status == 200)
@@ -1046,7 +1046,7 @@ function stampa_avvisi()
 				document.getElementById('div_avvisi' + c).appendChild(data);
 				
 				const icona = document.createElement("i");
-				icona.innerHTML = '<i class="icon icon-delete red-text s-18"></i><input type="hidden" name="Servlet" value="">';
+				icona.innerHTML = '<a href="home.jsp"><i class="icon icon-delete red-text s-18" onclick="elimina_avviso('+avvisi_split[3]+')"></i>';
 				document.getElementById('div_avvisi' + c).appendChild(icona);
 				
 				const titolo = document.createElement("p");
@@ -1064,6 +1064,14 @@ function stampa_avvisi()
 			}
 		}
 	}
+}
+
+function elimina_avviso(id){
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "elimina_avviso/," + id);
 }
 function registra_avviso()
 {
@@ -1106,7 +1114,7 @@ function registra_avviso()
 
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "registra_avviso," + titolo + "," + avviso + "," + destinatario);
+	xhttp.send("Servlet=" + "registra_avviso/," + titolo + "/," + avviso + "/," + destinatario);
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
