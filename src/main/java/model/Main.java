@@ -201,8 +201,8 @@ public class Main
         {
         	profilo = (Profilo)lista.get(c);
         	profili.add(profilo.getId() + "-" + profilo.getNome_cognome()
-        	+ "-" + profilo.getRecapito() + "-" + profilo.getEsito_colloquio() + "-" 
-        	+ profilo.getRuolo());
+        	+ "-" + profilo.getCitta_allocazione() + "-" + profilo.getRecapito() + "-" 
+        	+ profilo.getEsito_colloquio() + "-" + profilo.getRuolo());
         }
         profili.add(" ");
         controllo.close();

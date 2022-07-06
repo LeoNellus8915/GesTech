@@ -196,6 +196,7 @@ function ricerca()
 			profili = risposta.split(", ");
 			profili.pop();
 			profili.shift();
+			console.log(profili);
 			var arrayRow = [];
 			for (var c = 0; c < profili.length ; c++)
 			{
@@ -223,12 +224,25 @@ function ricerca()
 				var i2 = document.createElement('i');
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);*/
-				arrayRow.push([
-					 valori[1], valori[2], valori[3], valori[4], b1 +b2
-				]);
+				arrayRow.push([valori[1], valori[2], valori[3], valori[4], valori[5], b1 + b2]);				
 			}
 			$('#tabella_ricerca').DataTable({
-				"data": arrayRow
+				data: arrayRow,
+				createdRow: function( row, data, dataIndex )
+				{
+				    if ( data['jobStatus'] == "red" ) 
+				    {
+				        $(row).addClass( 'lightRed' );
+				    }
+				    else if(data['jobStatus'] == "green")
+				    {
+				        $(row).addClass( 'lightGreen' );
+				    }
+				    else if(data['jobStatus'] == "amber")
+				    {
+				        $(row).addClass( 'lightAmber' );
+				    }
+				}
 			});
 		}
 	}

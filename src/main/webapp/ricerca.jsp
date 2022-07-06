@@ -74,7 +74,7 @@
   		else	
   		{
     		%><body class="light" onload="ricerca()">
-    		
+    	
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>
@@ -190,6 +190,7 @@
 					<thead>
 						<tr class="no-b">
 							<th class="titolotabella">NOME E COGNOME</th>
+							<th class="titolotabella">CITTA'</th>
 							<th class="titolotabella">TELEFONO</th>
 							<th class="titolotabella">VALUTAZIONE</th>
 							<th class="titolotabella">RUOLO</th>

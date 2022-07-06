@@ -205,7 +205,7 @@
 											</div>
 											<div class="form-group col-6 m-0">
 												<label for="citta_di_allocazione"
-													class="col-form-label s-12">CITTA' DI ALLOCAZIONE</label> <input
+													class="col-form-label s-12">CITTA'</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
 													placeholder="Inserisci Città di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
