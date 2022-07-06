@@ -127,7 +127,9 @@ public class Servlet extends HttpServlet
 			Part file = request.getPart("nomeFile");
 			String nomeFile = file.getSubmittedFileName();
 			String percorso = "";
-			if(!nomeFile.equals("")) {
+			
+			if(!nomeFile.equals(""))
+			{
 				file.write("C:\\GesTech Profili\\" + nomeFile);
 			    percorso = "C:\\GesTech Profili\\" + nomeFile;
 			}
@@ -136,7 +138,8 @@ public class Servlet extends HttpServlet
 						competenze_totali, certificazioni, seniority, percorso);
 			
 			String utente = (String) session.getAttribute("Utente");
-			if (!"".equals(commento)) {
+			if (!"".equals(commento))
+			{
 				main.salvaCommento(commento, utente, email);
 			}
 			disp = request.getRequestDispatcher("ricerca.jsp");

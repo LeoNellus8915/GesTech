@@ -244,7 +244,7 @@ function ricerca()
       					"next": "Prossima"
       				},
 		            "search": "Cerca"
-        }
+        		}
 			});
 		}
 	}

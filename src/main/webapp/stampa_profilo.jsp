@@ -215,8 +215,8 @@
 											<div class="form-group col-6 m-0">
 											<label for="citta_di_allocazione"
 													class="col-form-label s-12">CARICA CV</label><br>
+							
          					<input type="file" name="nomeFile" enctype="multipart/form-data">
-         				</form>
          </div>
 										</div>
 									</div>
@@ -422,13 +422,15 @@
 								<hr>
 
 								<div class="card-body">
+									<input type="hidden" id="id" name="id">
 									<input type="hidden" name="Servlet" value="aggiorna_cv">
 									<input type="submit" value="SALVA">
 								</div>
 
 
 							</div>
-								</div>
+						</div>
+						
 					</form>
 				</div>
 			</div>
