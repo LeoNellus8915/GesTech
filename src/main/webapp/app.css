@@ -308,7 +308,17 @@ button {
 [type=reset]:not(:disabled),
 [type=submit]:not(:disabled),
 button:not(:disabled) {
-    cursor: pointer
+    cursor: pointer;
+    float: right;
+}
+
+
+.btright {
+    float: right;
+}
+
+.marbot {
+    margin-bottom: 18px;
 }
 
 [type=button]::-moz-focus-inner,

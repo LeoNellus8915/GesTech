@@ -82,7 +82,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                <input type="submit" onclick="login()" class="btn btn-success btn-lg btn-block" value="Accedi">
+                                <input type="submit" onclick="login()" class="btn btn-success btn-lg btn-block marbot" value="Accedi">
                                 <p class="forget-pass text-white">Hai dimenticato il nome utente o la password?</p>
                             </div>
                         </div>

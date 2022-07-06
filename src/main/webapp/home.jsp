@@ -166,21 +166,27 @@
 				<input id="titolo" name="titolo" placeholder="Inserisci Titolo" form="form" type="text">
 				<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
 					<form method="post" action="Servlet" id="form">
-						<input class="etisp" type="checkbox" name="admin" value="admin">
-  						<label class="nomeeti">Admin</label>
-  						<input type="checkbox" name="recruiter" value="recruiter">
-  						<label>Recruiter</label>
-  						<input type="checkbox" name="commerciale" value="commerciale">
-  						<label>Commerciale</label>
-  						<input type="checkbox" name="dipendente" value="dipendente">
-  						<label>Dipendente</label>
-  						<input type="checkbox" name="tutti" value="tutti">
-  						<label>Tutti</label>
-						<input type="hidden" name="Servlet" value="registra_avviso">
-				  		<input type="submit">
-					</form>
-				</div>
-			</div>	
+						<div class="row">
+							<div class="col-6">
+								<input class="etisp" type="checkbox" name="admin" value="admin">
+		  						<label class="nomeeti">Admin</label>
+		  						<input type="checkbox" name="recruiter" value="recruiter">
+		  						<label>Recruiter</label>
+		  						<input type="checkbox" name="commerciale" value="commerciale">
+		  						<label>Commerciale</label>
+		  						<input type="checkbox" name="dipendente" value="dipendente">
+		  						<label>Dipendente</label>
+		  						<input type="checkbox" name="tutti" value="tutti">
+		  						<label>Tutti</label>
+								<input type="hidden" name="Servlet" value="registra_avviso">
+						  	</div>	
+						  	<div class="col-6">
+						  		<div class="btright"><input  type="submit"></div>
+						  	</div>
+						</div>  		
+							</form>
+				</div>						
+			</div>		
 		</div>
 		<div class="container has-sidebar-left">
 			<div class="row" id="stampa_avvisi">

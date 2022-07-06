@@ -24,7 +24,7 @@ textarea#avviso {
 }
 
 input[type="submit"] {
-    float: left;
+    float: left !important;
 }
 
 
