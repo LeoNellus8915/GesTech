@@ -299,3 +299,7 @@ input.aggiungi_utente {
     margin-top: 30px;
     border-radius: 5px;
 }
+.rosso_tabella_ricerca
+{
+	background-color: #f08080;
+}

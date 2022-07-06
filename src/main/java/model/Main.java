@@ -491,11 +491,13 @@ public class Main
 		return avvisi;
 		
 	}
-	public void eliminaAvviso(String id) {
+	public int eliminaAvviso(String id) 
+	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q = controllo.createQuery("delete from Avvisi where id = " + id);
 		q.executeUpdate();
 		controllo.close();
+		return 1;
 	}
 }

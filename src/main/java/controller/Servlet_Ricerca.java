@@ -102,7 +102,7 @@ public class Servlet_Ricerca extends HttpServlet
 		}
 		if (info[0].equals("elimina_avviso"))
 		{
-			main.eliminaAvviso(info[1]);
+			response.getWriter().println(main.eliminaAvviso(info[1]));
 		}
 	}
 }

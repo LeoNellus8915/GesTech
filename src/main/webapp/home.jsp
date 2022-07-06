@@ -2,6 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <html>
 	<head>
+		<style>
+			.rosso
+			{
+				background-colo:red;
+			}
+		</style>
 	    <script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
 		<link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">

@@ -196,7 +196,6 @@ function ricerca()
 			profili = risposta.split(", ");
 			profili.pop();
 			profili.shift();
-			console.log(profili);
 			var arrayRow = [];
 			for (var c = 0; c < profili.length ; c++)
 			{
@@ -228,21 +227,24 @@ function ricerca()
 			}
 			$('#tabella_ricerca').DataTable({
 				data: arrayRow,
-				createdRow: function( row, data, dataIndex )
+				createdRow: function(row, data)
 				{
-				    if ( data['jobStatus'] == "red" ) 
-				    {
-				        $(row).addClass( 'lightRed' );
-				    }
-				    else if(data['jobStatus'] == "green")
-				    {
-				        $(row).addClass( 'lightGreen' );
-				    }
-				    else if(data['jobStatus'] == "amber")
-				    {
-				        $(row).addClass( 'lightAmber' );
-				    }
-				}
+				    if (data[3] == 'Inaffidabile') 
+				        $(row).addClass('rosso_tabella_ricerca');
+				},
+				language: {
+		            "lengthMenu": "Schermo _MENU_ record per pagina",
+		            "zeroRecords": "Nessun riscontro",
+		            "info": "Visualizzazione della pagine _PAGE_ di _PAGES_",
+		            "infoEmpty": "Nessun riscontro disponibile",
+		            "infoFiltered": "(filtered from _MAX_ total records)",
+		            "paginate":
+		            {
+      					"previous": "Precedente",
+      					"next": "Prossima"
+      				},
+		            "search": "Cerca"
+        }
 			});
 		}
 	}
@@ -1046,7 +1048,7 @@ function stampa_avvisi()
 				document.getElementById('div_avvisi' + c).appendChild(data);
 				
 				const icona = document.createElement("i");
-				icona.innerHTML = '<a href="home.jsp"><i class="icon icon-delete red-text s-18" onclick="elimina_avviso('+avvisi_split[3]+')"></i>';
+				icona.innerHTML = '<a href="#"><i class="icon icon-delete red-text s-18" onclick="elimina_avviso('+avvisi_split[3]+')"></i>';
 				document.getElementById('div_avvisi' + c).appendChild(icona);
 				
 				const titolo = document.createElement("p");
@@ -1072,6 +1074,18 @@ function elimina_avviso(id){
 	xhttp.open("POST", 'Servlet_Ricerca', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("Servlet=" + "elimina_avviso/," + id);
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta = xhttp.responseText;
+			if (risposta[0] == 1)
+			{
+				alert("Avviso eliminato con successo");
+				window.open("home.jsp", "_self");
+			}
+		}
+	}
 }
 function registra_avviso()
 {
