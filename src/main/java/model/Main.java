@@ -458,7 +458,7 @@ public class Main
 		controllo.close();
 		return 1;
 	}
-	public void registraAvviso(String testo, String data, String nome_utente, String destinatario, String titolo)
+	public int registraAvviso(String titolo, String testo, String destinatario, String data, String nome_utente)
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
@@ -471,6 +471,7 @@ public class Main
 		controllo.save(avviso);
 	    controllo.getTransaction().commit();
 	    controllo.close();
+	    return 1;
 	}
 	public List stampaAvvisi()
 	{
@@ -483,7 +484,7 @@ public class Main
 		List list_Avvisi = q_avvisi.list();
 		for(int i=0; i<list_Avvisi.size(); i++) {
 			avviso = (Avvisi)list_Avvisi.get(i);
-			avvisi.add(avviso.getData() + "*" + avviso.getTitolo() + "*" + avviso.getAvviso());
+			avvisi.add(avviso.getData() + "*" + avviso.getTitolo() + "*" + avviso.getAvviso() + "**");
 		}
 		avvisi.add(" ");
 		controllo.close();

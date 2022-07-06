@@ -92,5 +92,13 @@ public class Servlet_Ricerca extends HttpServlet
 			String cv = main.scaricaCv(info[1]);
 			response.getWriter().println(cv);
 		}
+		if (info[0].equals("registra_avviso"))
+		{
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now();
+			String data = dtf.format(now);
+			String nome_utente = (String)session.getAttribute("Utente");
+			response.getWriter().println(main.registraAvviso(info[1], info[2], info[3], data, nome_utente));
+		}
 	}
 }

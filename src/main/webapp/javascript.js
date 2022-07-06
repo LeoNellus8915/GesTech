@@ -1011,7 +1011,7 @@ function stampa_avvisi()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_avvisi = xhttp.responseText;
-			avvisi = risposta_avvisi.split(",");
+			avvisi = risposta_avvisi.split("**,");
 			avvisi.pop();
 			avvisi.shift();
 			
@@ -1047,6 +1047,61 @@ function stampa_avvisi()
 				avv.classList.add('testo_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(avv);
 				
+			}
+		}
+	}
+}
+function registra_avviso()
+{
+	var titolo = document.getElementById("titolo").value;
+	var avviso = document.getElementById("avviso").value;
+	
+	var admin;
+	if (document.getElementById("admin").checked)
+		admin = document.getElementById("admin").value;
+	else
+		admin = "";
+		
+	var recruiter;
+	if (document.getElementById("recruiter").checked)
+		recruiter = document.getElementById("recruiter").value;
+	else
+		recruiter = "";
+		
+	var commerciale;
+	if (document.getElementById("commerciale").checked)
+		commerciale = document.getElementById("commerciale").value;
+	else
+		commerciale = "";
+	
+	var dipendente;
+	if (document.getElementById("dipendente").checked)
+		dipendente = document.getElementById("dipendente").value;
+	else
+		dipendente = "";
+	
+	var tutti;
+	if (document.getElementById("tutti").checked)
+		tutti = document.getElementById("tutti").value;
+	else
+		tutti = "";
+	
+	var destinatario = admin + "." + recruiter + "." + commerciale + "." + dipendente + "." + tutti;
+	
+	var xhttp = new XMLHttpRequest();
+
+	xhttp.open("POST", 'Servlet_Ricerca', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send("Servlet=" + "registra_avviso," + titolo + "," + avviso + "," + destinatario);
+	xhttp.onreadystatechange = function()
+	{
+		if (this.readyState == 4 && this.status == 200)
+		{
+			var risposta = xhttp.responseText;
+			if (risposta[0] == 1)
+			{
+				alert("Avviso pubblicato con successo");
+				window.open("home.jsp", "_self");
 			}
 		}
 	}

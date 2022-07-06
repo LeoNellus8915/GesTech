@@ -172,34 +172,6 @@ public class Servlet extends HttpServlet
 			List ruolo = main.get_ruolo();
 			response.getWriter().println(ruolo);
 		}
-		if (servlet.equals("registra_avviso"))
-		{
-			String avviso = request.getParameter("avviso");
-			String admin = request.getParameter("admin");
-			String commerciale = request.getParameter("commerciale");
-			String recruiter = request.getParameter("recruiter");
-			String dipendente = request.getParameter("dipendente");
-			String tutti = request.getParameter("tutti");
-			if (admin == null)
-				admin = "";
-			if (commerciale == null)
-				commerciale = "";
-			if (recruiter == null)
-				recruiter = "";
-			if (dipendente == null)
-				dipendente = "";
-			if (tutti == null)
-				tutti = "";
-			String destinatario = admin + "," + commerciale + "," + recruiter + "" + dipendente + "," + tutti;
-			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
-			LocalDateTime now = LocalDateTime.now();
-			String data = dtf.format(now);
-			String nome_utente = (String)session.getAttribute("Utente");
-			String titolo = request.getParameter("titolo");
-			main.registraAvviso(avviso, data, nome_utente, destinatario, titolo);
-			disp = request.getRequestDispatcher("home.jsp");
-			disp.forward(request, response);
-		}
 	}
 	
 }

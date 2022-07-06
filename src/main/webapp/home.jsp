@@ -163,28 +163,26 @@
 		<div class="page avviso">
 			<div class="page has-sidebar-left">
 				<div class="pos-f-t">
-				<input id="titolo" name="titolo" placeholder="Inserisci Titolo" form="form" type="text">
-				<textarea name="avviso" id="avviso" form="form" placeholder="Inserire l'avviso"></textarea>
-					<form method="post" action="Servlet" id="form">
-						<div class="row">
-							<div class="col-6">
-								<input class="etisp" type="checkbox" name="admin" value="admin">
-		  						<label class="nomeeti">Admin</label>
-		  						<input type="checkbox" name="recruiter" value="recruiter">
-		  						<label>Recruiter</label>
-		  						<input type="checkbox" name="commerciale" value="commerciale">
-		  						<label>Commerciale</label>
-		  						<input type="checkbox" name="dipendente" value="dipendente">
-		  						<label>Dipendente</label>
-		  						<input type="checkbox" name="tutti" value="tutti">
-		  						<label>Tutti</label>
-								<input type="hidden" name="Servlet" value="registra_avviso">
-						  	</div>	
-						  	<div class="col-6">
-						  		<div class="btright"><input  type="submit"></div>
-						  	</div>
-						</div>  		
-							</form>
+				<input id="titolo" id="titolo" placeholder="Inserisci Titolo" type="text">
+				<textarea name="avviso" id="avviso" placeholder="Inserire l'avviso"></textarea>
+					<div class="row">
+						<div class="col-6">
+							<input class="etisp" id="admin" type="checkbox" value="admin">
+	  						<label class="nomeeti">Admin</label>
+	  						<input type="checkbox" id="recruiter" value="recruiter">
+	  						<label>Recruiter</label>
+	  						<input type="checkbox" id="commerciale" value="commerciale">
+	  						<label>Commerciale</label>
+	  						<input type="checkbox" id="dipendente" value="dipendente">
+	  						<label>Dipendente</label>
+	  						<input type="checkbox" id="tutti" value="tutti">
+	  						<label>Tutti</label>
+							<input type="hidden" name="Servlet" value="registra_avviso">
+					  	</div>	
+					  	<div class="col-6">
+					  		<div class="btright"><input onclick="registra_avviso()" type="submit"></div>
+					  	</div>
+					</div>  		
 				</div>						
 			</div>		
 		</div>
