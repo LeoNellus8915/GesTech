@@ -229,6 +229,8 @@ function ricerca()
 				data: arrayRow,
 				createdRow: function(row, data)
 				{
+					console.log(data);
+					console.log(row);
 				    if (data[3] == 'Inaffidabile') 
 				        $(row).addClass('rosso_tabella_ricerca');
 				},

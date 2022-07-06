@@ -22,6 +22,7 @@ public class Servlet_Ricerca extends HttpServlet
 		String servlet = request.getParameter("Servlet");
 		HttpSession session = request.getSession(true);
 		String[] info = servlet.split("/,");
+		System.out.println(info[1]);
 		if (info[0].equals("cambia_password"))
 		{
 			String nome_cognome = (String)session.getAttribute("Utente");
@@ -82,7 +83,7 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			response.getWriter().println(main.eliminaProfilo(info[1]));
 		}
-		if (info[0].equals("stampa_avvisi")) 
+		if (info[0].equals("stampa_avvisi"))
 		{
 			List avvisi = main.stampaAvvisi();
 			response.getWriter().println(avvisi);

@@ -87,7 +87,7 @@ public class Servlet extends HttpServlet
 			String utente = (String) session.getAttribute("Utente");
 			if (!impressioni.equals(""))
 					main.salvaCommento(impressioni, utente, email);
-			disp = request.getRequestDispatcher("profilo&cv.jsp");
+			disp = request.getRequestDispatcher("ricerca.jsp");
 			disp.forward(request, response);
 		}
 		if (servlet.equals("ricerca"))
@@ -168,7 +168,9 @@ public class Servlet extends HttpServlet
 		if (servlet.equals("get_esito_colloquio"))
 		{
 			List esito_colloquio = main.get_esito_colloquio();
+			System.out.println(esito_colloquio);
 			response.getWriter().println(esito_colloquio);
+			
 		}
 		if (servlet.equals("get_ruolo"))
 		{

@@ -301,5 +301,5 @@ input.aggiungi_utente {
 }
 .rosso_tabella_ricerca
 {
-	background-color: #f08080;
+	background-color: #f08080 !important;
 }
