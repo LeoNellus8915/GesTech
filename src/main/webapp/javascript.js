@@ -1025,22 +1025,26 @@ function stampa_avvisi()
 				
 				avvisi_split = avvisi[c].split("*")
 				
-				const data = document.createElement("p");
+				const data = document.createElement("span");
 				data.value = avvisi_split[0];
 				data.innerHTML = avvisi_split[0];
-				//data.classList.add('');
+				data.classList.add('data_ora_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(data);
+				
+				const icona = document.createElement("i");
+				icona.innerHTML = '<i class="icon icon-account_box red-text s-18"></i><input type="hidden" name="Servlet" value="">';
+				document.getElementById('div_avvisi' + c).appendChild(icona);
 				
 				const titolo = document.createElement("p");
 				titolo.value = avvisi_split[1];
 				titolo.innerHTML = avvisi_split[1];
-				//titolo.classList.add('');
+				titolo.classList.add('titolo_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(titolo);
 				
 				const avv = document.createElement("p");
 				avv.value = avvisi_split[2];
 				avv.innerHTML = avvisi_split[2];
-				//avv.classList.add('');
+				avv.classList.add('testo_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(avv);
 				
 			}
