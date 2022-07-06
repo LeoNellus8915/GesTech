@@ -317,8 +317,42 @@ button:not(:disabled) {
     float: right;
 }
 
+i.icon.icon-delete.red-text.s-18 {
+    float: right;
+}
+
 .marbot {
     margin-bottom: 18px;
+}
+
+span.data_ora_avvisi {
+    font-size: 12px;
+}
+
+p.titolo_avvisi {
+    margin-top: 18px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    font-variant: all-petite-caps;
+}
+
+.eliav {
+    float: right;
+}
+
+.card_avvisi {
+    padding: 40px;
+    background: #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    margin-left: 15px;
+    max-width: 30.9% !important;
+    margin-left: 15px;
+}
+
+div#stampa_avvisi {
+    margin-top: 60px;
 }
 
 [type=button]::-moz-focus-inner,

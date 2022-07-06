@@ -480,7 +480,7 @@ public class Main
 		avvisi.add("**");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
-		Query q_avvisi = controllo.createQuery("from Avvisi");
+		Query q_avvisi = controllo.createQuery("from Avvisi order by id desc");
 		List list_Avvisi = q_avvisi.list();
 		for(int i=0; i<list_Avvisi.size(); i++) {
 			avviso = (Avvisi)list_Avvisi.get(i);
