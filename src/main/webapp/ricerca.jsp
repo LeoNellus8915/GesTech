@@ -106,12 +106,12 @@
 				<li class="treeview"><a href="home.jsp"> <i
 							class="icon icon-home light-blue-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
-						</i> <span>Home</span>
+						</i> <span>Home/Avvisi</span>
 					</a></li>
 						<li class="treeview"><a href="ricerca.jsp"> <i
 							class="icon icon-account_box red-text s-18"> <input
 								type="hidden" name="Servlet" value="logout">
-						</i> <span>Home/Avvisi</span>
+						</i> <span>Tutte le risorse</span>
 					</a></li>
 						<li class="treeview"><a href="profilo&cv.jsp"> <i
 							class="icon icon-add_box light-green-text s-18"> <input
