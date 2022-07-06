@@ -36961,3 +36961,13 @@ html[dir=rtl] .form-group.has-icon input {
     font-weight: 400 !important;
 }
 
+.testoavvi {
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 5px;
+}
+
+.boldblack {
+    font-weight: bold;
+    color: #000 !important;
+}

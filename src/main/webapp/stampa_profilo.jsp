@@ -168,20 +168,19 @@
 		<div class="container-fluid animatedParent animateOnce">
 			<div class="row my-3">
 				<div class="col-md-12">
-					<form method="post" action="Servlet" name="profilo">
+					<form method="post" action="Servlet" name="profilo" enctype ="multipart/form-data">
 						<div class="card no-b  no-r">
 							<div class="card-body">
 								<h5 class="card-title">Anagrafica</h5>
 								<div class="form-row">
-									<div class="col-md-8">
+									<div class="col-md-12">
 										<div class="form-row">
 											<div class="form-group col-6 m-0">
-												<label for="nome_cognome" class="col-form-label s-12">NOME
+												<label for="nome_congnome" class="col-form-label s-12">NOME
 													E COGNOME</label> <input id="nome_cognome" name="nome_cognome"
 													placeholder="Inserisci Nome e Cognome"
 													class="form-control r-0 light s-12 " type="text">
 											</div>
-											<input type="hidden" id="id" name="id">
 											<div class="form-group col-6 m-0">
 												<label for="recapito" class="col-form-label s-12">RECAPITO</label>
 												<input id="recapito" name="recapito"
@@ -208,24 +207,21 @@
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA' DI ALLOCAZIONE</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
-													placeholder="Inserisci Citta' di Allocazione"
+													placeholder="Inserisci Città di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
 													data-time-picker="false" data-format-date='Y/m/d'
 													type="text">
 											</div>
+											<div class="form-group col-6 m-0">
+											<label for="citta_di_allocazione"
+													class="col-form-label s-12">CARICA CV</label><br>
+         					<input type="file" name="nomeFile" enctype="multipart/form-data">
+         				</form>
+         </div>
 										</div>
 									</div>
-									<div class="col-md-3 offset-md-1">
-										<input type="hidden" id="file" name="file" />
-										<div class="dropzone dropzone-file-area pt-4 pb-4"
-											id="fileUpload">
-											<div class="dz-default dz-message">
-												<div>Carica qui il CV</div>
-
-											</div>
-										</div>
 									</div>
-								</div>
+								
 								<!-- Fine row -->
 							</div>
 							<!-- Fine Card -->

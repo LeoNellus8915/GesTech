@@ -24,8 +24,10 @@ textarea#avviso {
 }
 
 input[type="submit"] {
-    float: right;
+    float: left;
 }
+
+
 
 .avviso {
    margin: 15px;

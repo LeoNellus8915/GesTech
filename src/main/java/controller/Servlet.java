@@ -124,9 +124,16 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String commento = request.getParameter("commento");
+			Part file = request.getPart("nomeFile");
+			String nomeFile = file.getSubmittedFileName();
+			String percorso = "";
+			if(!nomeFile.equals("")) {
+				file.write("C:\\GesTech Profili\\" + nomeFile);
+			    percorso = "C:\\GesTech Profili\\" + nomeFile;
+			}
 			main.aggiorna_cv(id, nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
 						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
-						competenze_totali, certificazioni, seniority);
+						competenze_totali, certificazioni, seniority, percorso);
 			
 			String utente = (String) session.getAttribute("Utente");
 			if (!"".equals(commento)) {

@@ -315,7 +315,7 @@ public class Main
 	public void aggiorna_cv (String id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 			String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 			String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
-			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority)	
+			String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv)	
 	{
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
@@ -326,7 +326,7 @@ public class Main
 				+ "', possibilita_lavorativa = '" + possibilita_lavorativa + "', skill = '" + skill + "', tech1 = '" + tech1 + "', tech2 = '" + tech2
 				+ "', tech3 = '" + tech3 + "', tech4 = '" + tech4 + "', tech_campo_libero = '" + tech_campo_libero + "', lingua1 = '" + lingua1 + "', lingua2 = '" + lingua2
 				+ "', lingua3 = '" + lingua3 + "', competenze_totali = '" + competenze_totali + "', certificazioni = '" + certificazioni
-				+ "', seniority = '" + seniority + "' where id = '" + id + "'");
+				+ "', seniority = '" + seniority + "',  percorso_cv = '" + percorso_cv + "' where id = '" + id + "'");
 		q.executeUpdate();
 		controllo.close();
 	}
