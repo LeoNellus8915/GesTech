@@ -1,3 +1,9 @@
+function stopLoader() {
+	
+}
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("loader").style.display = "none";
+});
 
 
 function controllo_caratteri(id_input){
