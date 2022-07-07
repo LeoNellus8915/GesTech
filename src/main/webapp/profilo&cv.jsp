@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 	pageEncoding="ISO-8859-1"%>
 <html>
 	<head>
@@ -268,7 +268,7 @@
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA'</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
-													placeholder="Inserisci Città di Allocazione"
+													placeholder="Inserisci CittÃ  di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
 													data-time-picker="false" data-format-date='Y/m/d'
 													type="text">
@@ -371,7 +371,7 @@
 													class="col-form-label s-12">POSSIBILITA' LAVORATIVA</label>
 												<input id="possibilita_lavorativa"
 													name="possibilita_lavorativa"
-													placeholder="Insersci Possibilità Lavorativa"
+													placeholder="Insersci PossibilitÃ  Lavorativa"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>

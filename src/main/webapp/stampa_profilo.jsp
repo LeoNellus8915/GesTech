@@ -453,7 +453,7 @@
 												<label for="commento" class="col-form-label s-12">COMMENTO</label>
 												<label class="error" id="label-error-text" style="display:none">Il testo non pu&ograve; contenere i seguenti caratteri: % &</label>
 												<input id="commento" name="commento"
-													placeholder="Insersci Commento" onkeyup="controllo_caratteri('commento')"
+													placeholder="Insersci Commento"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 											<div id="commenti" class="col-md-6 offset-1"></div>
