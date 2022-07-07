@@ -192,6 +192,9 @@
 
 		</div>
 	</div>
+	<a href="home.jsp"
+			class="btn-fab btn-fab-md fab-right fab-right-bottom-fixed shadow btn-primary chiudiruota"><i
+			class="icon-add"></i></a>
 	<div class="page  has-sidebar-left height-full">
 		
 	</div>

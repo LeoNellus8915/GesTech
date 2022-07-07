@@ -78,6 +78,7 @@
   		{
     		%><body class="light" onload="stampa_avvisi()">
     		
+    		
 	<div id="app">
 		<aside class="main-sidebar fixed offcanvas shadow"
 			data-toggle='offcanvas'>

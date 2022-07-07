@@ -24652,6 +24652,8 @@ ul li:before {
 
 .loaded {
     overflow: visible
+    
+    
 }
 
 .loader-fade {
@@ -36988,7 +36990,7 @@ html[dir=rtl] .form-group.has-icon input {
   
   
 .paginate_button.current {
-    background: #007bff;
+    background: #18448f;
     padding: 10px;
     color: #fff;
     margin-left: 10px;
