@@ -700,7 +700,7 @@ function register()
 		
 		xhttp.open("POST", 'Servlet_Ricerca', true);
 		xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-		xhttp.send("Servlet=" + "register/," + nome_cognome + "/," + email + "/," + ruolo + "," + password);
+		xhttp.send("Servlet=" + "register/," + nome_cognome + "/," + email + "/," + ruolo + "/," + password);
 		xhttp.onreadystatechange = function()
 		{
 			if (this.readyState == 4 && this.status == 200)
@@ -709,7 +709,7 @@ function register()
 				if (register[0] == 1)
 				{
 					alert ("Registrazione effettuata con successo");
-					window.open("ricerca.jsp", "_self");
+					window.open("home.jsp", "_self");
 				}
 				else
 					alert ("Email già esistente");

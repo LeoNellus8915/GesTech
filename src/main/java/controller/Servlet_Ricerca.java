@@ -22,14 +22,13 @@ public class Servlet_Ricerca extends HttpServlet
 		String servlet = request.getParameter("Servlet");
 		HttpSession session = request.getSession(true);
 		String[] info = servlet.split("/,");
-		System.out.println(info[1]);
 		if (info[0].equals("cambia_password"))
 		{
 			String nome_cognome = (String)session.getAttribute("Utente");
 			response.getWriter().println(main.cambiaPassword(info[1], nome_cognome));
 		}
 		if (info[0].equals("register"))
-		{
+		{	
 			response.getWriter().println(main.Register(info[1], info[2], info[3], info[4]));
 		}
 		if (info[0].equals("login"))
