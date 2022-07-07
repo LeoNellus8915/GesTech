@@ -1,7 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<link rel="icon" href="assets/img/basic/favicon.ico" type="image/x-icon">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 			rel="stylesheet">
@@ -207,7 +207,7 @@
 												<label for="citta_di_allocazione"
 													class="col-form-label s-12">CITTA'</label> <input
 													id="citta_di_allocazione" name="citta_di_allocazione"
-													placeholder="Inserisci Città di Allocazione"
+													placeholder="Inserisci CittÃ  di Allocazione"
 													class="form-control r-0 light s-12 datePicker"
 													data-time-picker="false" data-format-date='Y/m/d'
 													type="text">
@@ -408,8 +408,9 @@
 										<div class="form-row">
 											<div class="form-group col-12 m-0">
 												<label for="commento" class="col-form-label s-12">COMMENTO</label>
+												<label class="error" id="label-error-text" style="display:none">Il testo non pu&ograve; contenere i seguenti caratteri: % &</label>
 												<input id="commento" name="commento"
-													placeholder="Insersci Commento"
+													placeholder="Insersci Commento" onkeyup="controllo_caratteri('commento')"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 											<div id="commenti" class="col-md-6 offset-1"></div>

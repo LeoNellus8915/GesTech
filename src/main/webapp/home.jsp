@@ -171,7 +171,8 @@
 			<div class="page has-sidebar-left">
 				<div class="pos-f-t">
 				<input id="titolo" id="titolo" placeholder="Inserisci Titolo" type="text">
-				<textarea name="avviso" id="avviso" placeholder="Inserire l'avviso"></textarea>
+				<label class="error" id="label-error-text" style="display:none">Il testo non pu&ograve; contenere i seguenti caratteri: % &</label>
+				<textarea name="avviso" id="avviso" onkeyup="controllo_caratteri('avviso')" placeholder="Inserire l'avviso"></textarea>
 					<div class="row">
 						<div class="col-6">
 							<input class="etisp" id="admin" type="checkbox" value="admin">

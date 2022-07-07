@@ -1,3 +1,20 @@
+
+
+function controllo_caratteri(id_input){
+	var text = document.getElementById(id_input).value;
+
+	if(text.match(/(%|&)/)){
+		console.log("VALORI NON AMMESSI");
+		document.getElementById("label-error-text").style.display = "block";
+	} 
+	else {
+		document.getElementById("label-error-text").style.display = "none";
+	}
+	
+}
+
+
+
 function controlla()
 {
 	var e1 = document.getElementById("password").value;
@@ -225,6 +242,10 @@ function ricerca()
 				a2.appendChild(i2);*/
 				arrayRow.push([valori[1], valori[2], valori[3], valori[4], valori[5], b1 + b2]);				
 			}
+			$('#tabella_ricerca thead tr')
+        	.clone(true)
+        	.addClass('filters')
+        	.appendTo('#tabella_ricerca thead');
 			$('#tabella_ricerca').DataTable({
 				data: arrayRow,
 				createdRow: function(row, data)
@@ -234,6 +255,63 @@ function ricerca()
 				    if (data[3] == 'Inaffidabile') 
 				        $(row).addClass('rosso_tabella_ricerca');
 				},
+				
+				orderCellsTop: true,
+        		fixedHeader: true,
+        		initComplete: function () {
+           		var api = this.api();
+ 
+           		// For each column
+            	api
+                .columns()
+                .eq(0)
+                .each(function (colIdx) {
+                    // Set the header cell to contain the input element
+                    
+                    var cell = $('.filters th').eq(
+                        $(api.column(colIdx).header()).index()
+                    );
+                    var title = $(cell).text();
+                   if(colIdx != 5) {  // Controlla l'id della colonna per non creare l'input type AZIONI
+					 $(cell).html('<input type="text" placeholder="' + title + '" />');
+					} else {
+						$(cell).text("");  // Per non duplicare il th AZIONI
+					}
+                   
+                    // On every keypress in this input
+                    $(
+                        'input',
+                        $('.filters th').eq($(api.column(colIdx).header()).index())
+                    )
+                        .off('keyup change')
+                        .on('change', function (e) {
+                            // Get the search value
+                            $(this).attr('title', $(this).val());
+                            var regexr = '({search})'; //$(this).parents('th').find('select').val();
+ 
+                            var cursorPosition = this.selectionStart;
+                            // Search the column for that value
+                            api
+                                .column(colIdx)
+                                .search(
+                                    this.value != ''
+                                        ? regexr.replace('{search}', '(((' + this.value + ')))')
+                                        : '',
+                                    this.value != '',
+                                    this.value == ''
+                                )
+                                .draw();
+                        })
+                        .on('keyup', function (e) {
+                            e.stopPropagation();
+ 
+                            $(this).trigger('change');
+                            $(this)
+                                .focus()[0]
+                                .setSelectionRange(cursorPosition, cursorPosition);
+                        });
+                });
+        },
 				language: {
 		            "lengthMenu": "Schermo _MENU_ record per pagina",
 		            "zeroRecords": "Nessun riscontro",
@@ -1104,6 +1182,9 @@ function elimina_avviso(id){
 		}
 	}
 }
+
+
+
 function registra_avviso()
 {
 	var titolo = document.getElementById("titolo").value;

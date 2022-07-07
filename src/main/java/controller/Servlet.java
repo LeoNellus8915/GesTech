@@ -124,6 +124,7 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String commento = request.getParameter("commento");
+			System.out.println("Commento:   " + commento);
 			Part file = request.getPart("nomeFile");
 			String nomeFile = file.getSubmittedFileName();
 			String percorso = "";
