@@ -1065,6 +1065,21 @@ function stampa_avvisi()
 				avv.classList.add('testo_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(avv);
 				
+				const destinatari = document.createElement("p");
+				var destinatari_split = avvisi_split[4].split(".")
+				var value = " ";
+				for(var i=0; i<destinatari_split.length;i++){
+					if(destinatari_split[i] != ""){
+						value += destinatari_split[i] + " ";
+					}
+				}
+				destinatari.value = value;
+				destinatari.innerHTML = value;
+				destinatari.classList.add('destinatari_avvisi');
+				document.getElementById('div_avvisi' + c).appendChild(destinatari);
+				
+				
+				
 			}
 		}
 	}
