@@ -1149,7 +1149,24 @@ function stampa_avvisi()
 				avv.classList.add('testo_avvisi');
 				document.getElementById('div_avvisi' + c).appendChild(avv);
 				
-				const destinatari = document.createElement("p");
+				const destinatari = document.createElement("span");
+				
+				var destinatari_split = avvisi_split[4].split(".")
+				
+				for(var i=0; i<destinatari_split.length;i++){
+					if(destinatari_split[i] != ""){
+						const ruolo = document.createElement("span");
+						ruolo.value = destinatari_split[i] + " ";
+						ruolo.innerHTML = destinatari_split[i];
+						ruolo.classList.add('destinatari_avvisi');
+						//document.getElementById('destinatari').appendChild(ruolo);
+						destinatari.appendChild(ruolo);
+					}
+				}
+				
+				document.getElementById('div_avvisi' + c).appendChild(destinatari);
+				
+				/*const destinatari = document.createElement("p");
 				var destinatari_split = avvisi_split[4].split(".")
 				var value = " ";
 				for(var i=0; i<destinatari_split.length;i++){
@@ -1160,7 +1177,7 @@ function stampa_avvisi()
 				destinatari.value = value;
 				destinatari.innerHTML = value;
 				destinatari.classList.add('destinatari_avvisi');
-				document.getElementById('div_avvisi' + c).appendChild(destinatari);
+				*/
 				
 				
 				
