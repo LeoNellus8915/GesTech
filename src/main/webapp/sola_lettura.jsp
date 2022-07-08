@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <html>
 	<head>
 		<title>GesTech</title>
@@ -200,8 +199,8 @@
                                     <h5 class="p-t-10"> <span id="ruolo"></span></h5>
                                 </div>
                                     <input type="hidden" id="id" name="id">
-									<a onclick="scarica()" class="btn btn-success  mt-3">Scarica CV</a> 
-									<a onclick="genera_cv()" class="btn btn-success  mt-3">Genera CV</a> 
+									<a onclick="scarica()" class="btn btn-success  mt-3 martopsu">Scarica CV</a> 
+									<a onclick="genera_cv()" class="btn btn-success  mt-3 martopsu">Genera CV</a> 
 									<a href="stampa_profilo.jsp" class="btn btn-success giallo mt-3">Modifica</a> 
 									<a href="#" class="btn btn-success rosso  mt-3" onclick="elimina()">Elimina</a>
 
@@ -215,7 +214,6 @@
                         <div class="col-md-8">
                             <div class="p5 b-b">
                                 <div class="pl-4 mt-4">
-                                    <h5>Recapiti</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -235,12 +233,11 @@
                            
                             <div class="p5 b-b">
                                 <div class="pl-4 mt-4">
-                                    <h5>Anagrafica</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h5 class="text-black">Citt‡</h5>
+                                            <h5 class="text-black">Citt√†</h5>
                                            <h5 class="p-t-10"><span id="citta_di_allocazione"></span></h5>
                                         </div>
                                     </div>
@@ -251,7 +248,6 @@
 
                             <div class="p5 b-b">
                                 <div class="pl-4 mt-4">
-                                    <h5>Competenze</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -267,7 +263,6 @@
                         
                         <div class="p5 b-b bordo"> <!-- inizio campi larghi --> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Colloquio</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -292,7 +287,6 @@
                             </div>
                                    <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Fonte Reperimento</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -306,7 +300,6 @@
                                
                                <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Costo Impiego</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
@@ -317,7 +310,7 @@
                                      </div>
                                     <div class="col-md-6">
                                         <div class="p-4">
-                                            <h4 class="text-black">Possibilit‡ Lavorativa:</h4>
+                                            <h4 class="text-black">Possibilit√† Lavorativa:</h4>
                                             <h5 class="p-t-10"><span id="possibilita_lavorativa"></span></h5>
                                         </div>
                                      </div> 
@@ -326,7 +319,6 @@
                               
                               <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Skill-Tech</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -370,7 +362,6 @@
                               
                               <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Lingua</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -396,7 +387,6 @@
                                
                               <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Info Extra</h5>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-4">
@@ -422,7 +412,7 @@
                                      
                                      <div class="p5 b-b"> 
                                 <div class="pl-4 mt-4">
-                                    <h5>Commenti</h5>
+                                    <h4 class="text-black">Commenti</h4>
                                 </div>
                                      <div class="row">
 								<div id="commento" class="col-md-10 offset-1">
