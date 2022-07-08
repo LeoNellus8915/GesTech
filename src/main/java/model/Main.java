@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.internal.build.AllowSysOut;
 import org.hibernate.query.Query;
 
 public class Main
@@ -179,6 +180,7 @@ public class Main
 		impressione.setId_utente((Integer)list_utente.get(0));
 		impressione.setId_profilo((Integer)list_profilo.get(0));
 		impressione.setCommento(commento);
+		System.out.println("aaaaa    " + impressione.getCommento());
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy");  
 		LocalDateTime now = LocalDateTime.now();  
 		String data = dtf.format(now);
@@ -214,7 +216,7 @@ public class Main
 	{
 		List commenti = new ArrayList();
 		Stampa_Commenti commento = new Stampa_Commenti();
-		commenti.add(" ");
+		commenti.add("#");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
 		Query q_controllo = controllo.createQuery("from Commento where fk_profilo = " + id);
@@ -231,12 +233,12 @@ public class Main
 	        if(!lista_commenti.equals(null)) {
 	        	for (int i = 0; i < lista_commenti.size(); i++)
 	        	{
-	        		commenti.add(lista_user.get(i).toString());
-	        		commenti.add(lista_data.get(i).toString());
-	        		commenti.add(lista_commenti.get(i).toString());
+	        		commenti.add("#"+lista_user.get(i).toString());
+	        		commenti.add("#"+lista_data.get(i).toString());
+	        		commenti.add("#"+lista_commenti.get(i).toString());
 	        	}
 	        }
-	        commenti.add(" ");
+	        commenti.add("#");
 	        controllo.close();
 	        return commenti;
 		}
@@ -247,39 +249,39 @@ public class Main
 	{
 		List profili = new ArrayList();
 		Profilo profilo = new Profilo();
-		profili.add(" ");
+		profili.add("#");
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
 		controllo.beginTransaction();
         Query q = controllo.createQuery("from Profilo where id = " + id);
         List lista = q.list();
         profilo = (Profilo) lista.get(0);
-        profili.add((Integer)profilo.getId()!=null?profilo.getId():"");
-        profili.add(profilo.getNome_cognome()!=null?profilo.getNome_cognome():"");
-        profili.add(profilo.getRecapito()!=null?profilo.getRecapito():"");
-        profili.add(profilo.getEmail()!=null?profilo.getEmail():"");
-        profili.add(profilo.getProfilo_linkedin()!=null?profilo.getProfilo_linkedin():"");
-        profili.add(profilo.getCitta_allocazione()!=null?profilo.getCitta_allocazione():"");
-        profili.add(profilo.getRuolo()!=null?profilo.getRuolo():"");
-        profili.add(profilo.getCompetenza_principale()!=null?profilo.getCompetenza_principale():"");
-        profili.add(profilo.getData_colloquio()!=null?profilo.getData_colloquio():"");
-        profili.add(profilo.getAnno_colloquio()!=null?profilo.getAnno_colloquio():"");
-        profili.add(profilo.getEsito_colloquio()!=null?profilo.getEsito_colloquio():"");
-        profili.add(profilo.getFonte_reperimento()!=null?profilo.getFonte_reperimento():"");
-        profili.add(profilo.getCosto_giornaliero()!=null?profilo.getCosto_giornaliero():"");
-        profili.add(profilo.getPossibilita_lavorativa()!=null?profilo.getPossibilita_lavorativa():"");
-        profili.add(profilo.getSkill()!=null?profilo.getSkill():"");
-        profili.add(profilo.getTech1()!=null?profilo.getTech1():"");
-        profili.add(profilo.getTech2()!=null?profilo.getTech2():"");
-        profili.add(profilo.getTech3()!=null?profilo.getTech3():"");
-        profili.add(profilo.getTech4()!=null?profilo.getTech4():"");
-        profili.add(profilo.getTech_campo_libero()!=null?profilo.getTech_campo_libero():"");
-        profili.add(profilo.getLingua1()!=null?profilo.getLingua1():"");
-        profili.add(profilo.getLingua2()!=null?profilo.getLingua2():"");
-        profili.add(profilo.getLingua3()!=null?profilo.getLingua3():"");
-        profili.add(profilo.getCompetenze_totali()!=null?profilo.getCompetenze_totali():"");
-        profili.add(profilo.getCertificazioni()!=null?profilo.getCertificazioni():"");
-        profili.add(profilo.getSeniority()!=null?profilo.getSeniority():"");
-        profili.add(" ");
+        profili.add((Integer)profilo.getId()!=null?"#"+profilo.getId():"#");
+        profili.add(profilo.getNome_cognome()!=null?"#"+profilo.getNome_cognome():"#");
+        profili.add(profilo.getRecapito()!=null?"#"+profilo.getRecapito():"#");
+        profili.add(profilo.getEmail()!=null?"#"+profilo.getEmail():"#");
+        profili.add(profilo.getProfilo_linkedin()!=null?"#"+profilo.getProfilo_linkedin():"#");
+        profili.add(profilo.getCitta_allocazione()!=null?"#"+profilo.getCitta_allocazione():"#");
+        profili.add(profilo.getRuolo()!=null?"#"+profilo.getRuolo():"#");
+        profili.add(profilo.getCompetenza_principale()!=null?"#"+profilo.getCompetenza_principale():"#");
+        profili.add(profilo.getData_colloquio()!=null?"#"+profilo.getData_colloquio():"#");
+        profili.add(profilo.getAnno_colloquio()!=null?"#"+profilo.getAnno_colloquio():"#");
+        profili.add(profilo.getEsito_colloquio()!=null?"#"+profilo.getEsito_colloquio():"#");
+        profili.add(profilo.getFonte_reperimento()!=null?"#"+profilo.getFonte_reperimento():"#");
+        profili.add(profilo.getCosto_giornaliero()!=null?"#"+profilo.getCosto_giornaliero():"#");
+        profili.add(profilo.getPossibilita_lavorativa()!=null?"#"+profilo.getPossibilita_lavorativa():"#");
+        profili.add(profilo.getSkill()!=null?"#"+profilo.getSkill():"#");
+        profili.add(profilo.getTech1()!=null?"#"+profilo.getTech1():"#");
+        profili.add(profilo.getTech2()!=null?"#"+profilo.getTech2():"#");
+        profili.add(profilo.getTech3()!=null?"#"+profilo.getTech3():"#");
+        profili.add(profilo.getTech4()!=null?"#"+profilo.getTech4():"#");
+        profili.add(profilo.getTech_campo_libero()!=null?"#"+profilo.getTech_campo_libero():"#");
+        profili.add(profilo.getLingua1()!=null?"#"+profilo.getLingua1():"#");
+        profili.add(profilo.getLingua2()!=null?"#"+profilo.getLingua2():"#");
+        profili.add(profilo.getLingua3()!=null?"#"+profilo.getLingua3():"#");
+        profili.add(profilo.getCompetenze_totali()!=null?"#"+profilo.getCompetenze_totali():"#");
+        profili.add(profilo.getCertificazioni()!=null?"#"+profilo.getCertificazioni():"#");
+        profili.add(profilo.getSeniority()!=null?"#"+profilo.getSeniority():"#");
+        profili.add("#");
         controllo.close();
         return profili;
 	}

@@ -378,7 +378,7 @@ function stampa_profilo()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_profilo = xhttp.responseText;
-			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
+			profilo = risposta_profilo.split(", #");    // cambiano tutti i riferimenti pr modifica al Db
 			
 			menu_cascata2(profilo[15], profilo[16], profilo[17], profilo[18], profilo[19], profilo[21], profilo[22], 
 						  profilo[23], profilo[26], profilo[11]);
@@ -462,8 +462,8 @@ function stampa_profilo_lettura()
 		if (this.readyState == 4 && this.status == 200)
 		{
 			var risposta_profilo = xhttp.responseText;
-			profilo = risposta_profilo.split(", ");    // cambiano tutti i riferimenti pr modifica al Db
-			
+			profilo = risposta_profilo.split(", #");    // cambiano tutti i riferimenti pr modifica al Db
+			console.log(risposta_profilo);
 			document.getElementById("id").value = profilo[1];
 			
 			document.getElementById("nome_cognome").innerHTML = profilo[2]// Home > Ricerca > Nome&Cognome
