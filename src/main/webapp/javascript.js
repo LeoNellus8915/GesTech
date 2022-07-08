@@ -416,12 +416,20 @@ function stampa_profilo()
 			document.getElementById("competenze_totali").value = profilo[24];
 			document.getElementById("certificazioni").value = profilo[25];
 			//document.getElementById("seniority").value = profilo[26];
+			
+			
 			var x=0;
 			for(var i=28; i < profilo.length-1; i++)
 			{
 				const paragrafo = document.createElement("span");
 				paragrafo.id = i;
 				paragrafo.innerText = profilo[i] + "  ";
+				if(x==0 || x==1){
+					paragrafo.classList.add('ruolo_data_commenti');
+				}
+				if(x==2){
+					paragrafo.classList.add('testo_commenti');
+				}
 				document.getElementById("commenti").appendChild(paragrafo);
 				x++;
 				if(x==2)
@@ -503,16 +511,24 @@ function stampa_profilo_lettura()
 				const paragrafo = document.createElement("span");
 				paragrafo.id = i;
 				paragrafo.innerText = profilo[i] + "  ";
+				if(x==0 || x==1){
+					paragrafo.classList.add('ruolo_data_commenti');
+				}
+				if(x==2){
+					paragrafo.classList.add('testo_commenti');
+				}
 				document.getElementById("commento").appendChild(paragrafo);
 				x++;
 				if(x==2)
 				{
 					const br = document.createElement("p");
+					br.classList.add('admin_data_commenti');
 					document.getElementById("commento").appendChild(br);
 				}
 				if(x==3)
 				{
 					const br = document.createElement("p");
+					br.classList.add('testo_commenti');
 					document.getElementById("commento").appendChild(br);
 					x=0;
 				}
