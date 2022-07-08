@@ -103,7 +103,9 @@
 			data-toggle='offcanvas'>
 			<section class="sidebar">
 				<div class="mt-3 mb-3 ml-3">
-					<img src="Immagini/logo.png" alt="">
+					<a href="home.jsp">
+					<input type="image" src="Immagini/logo.png" alt="">
+					</a>
 				</div>
 				<div class="relative">
 					<div class="user-panel p-3 light mb-2">
