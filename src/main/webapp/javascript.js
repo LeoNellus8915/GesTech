@@ -504,6 +504,7 @@ function stampa_profilo_lettura()
 			localStorage.setItem("nome_cognome", profilo[2]);
 			localStorage.setItem("array", profilo);
 			
+			
 			var x=0;
 			console.log(profilo.length);
 			for(var i=28; i < profilo.length-1; i++)
