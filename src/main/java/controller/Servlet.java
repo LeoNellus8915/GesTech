@@ -43,6 +43,7 @@ public class Servlet extends HttpServlet
 			disp = request.getRequestDispatcher("index.jsp");
 			disp.forward(request, response);
 		}
+		
 		if (servlet.equals("profilo"))
 		{
 			String nome_cognome = request.getParameter("nome_cognome");

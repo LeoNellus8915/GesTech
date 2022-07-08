@@ -377,6 +377,7 @@ function stampa_profilo()
 	{
 		if (this.readyState == 4 && this.status == 200)
 		{
+			
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", #");    // cambiano tutti i riferimenti pr modifica al Db
 			
