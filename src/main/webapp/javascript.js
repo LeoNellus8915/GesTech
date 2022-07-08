@@ -440,7 +440,7 @@ function stampa_profilo()
 				}
 				if(x==3)
 				{
-					const br = document.createElement("p");
+					const br = document.createElement("hr");
 					document.getElementById("commenti").appendChild(br);
 					x=0;
 				}
@@ -523,13 +523,11 @@ function stampa_profilo_lettura()
 				if(x==2)
 				{
 					const br = document.createElement("p");
-					br.classList.add('admin_data_commenti');
 					document.getElementById("commento").appendChild(br);
 				}
 				if(x==3)
 				{
-					const br = document.createElement("p");
-					br.classList.add('testo_commenti');
+					const br = document.createElement("hr");
 					document.getElementById("commento").appendChild(br);
 					x=0;
 				}
