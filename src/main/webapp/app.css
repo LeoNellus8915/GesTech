@@ -37000,11 +37000,32 @@ html[dir=rtl] .form-group.has-icon input {
     padding: 10px;
 }
 
+span.destinatari_avvisi {
+    background: #f1f1f1;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    color: #18448f;
+}
 
+h5.p-t-10 {
+    color: #18448f!important;
+}
+
+span#nome_cognome {
+    font-size: 24px;
+    color: #18448f!important;
+    font-weight: bold;
+    line-height: 0px;
+}
 .cambiapass {
     font-size: 12px;
     margin-left: 13px;
     font-weight: 400 !important;
+}
+
+.martopsu {
+    margin-top: 50px !important;
 }
 
 .testoavvi {
