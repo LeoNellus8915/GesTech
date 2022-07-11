@@ -31,5 +31,6 @@
 		<property name="certificazioni" type="string" column="certificazioni"/>
 		<property name="seniority" type="string" column="seniority"/>
 		<property name="percorso_cv" type="string" column="percorso_cv"/>
+		<property name="data_inserimento" type="string" column="data_inserimento"/>
 	</class>
 </hibernate-mapping>

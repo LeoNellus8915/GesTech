@@ -198,7 +198,7 @@
                             <div class="text-center p-5 mt-5">
                                 <div>
                                     <h4 class="p-t-10"> <span id="nome_cognome"></span></h4>
-                                    <h5 class="p-t-10"> <span id="ruolo"></span></h5>
+                                    <h5 class="p-t-10"> <span id="ruolo_profilo"></span></h5>
                                 </div>
                                     <input type="hidden" id="id" name="id">
 									<a onclick="scarica()" class="btn btn-success  mt-3 martopsu">Scarica CV</a> 
@@ -237,10 +237,16 @@
                                 <div class="pl-4 mt-4">
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <div class="p-4">
                                             <h5 class="text-black">Città</h5>
                                            <h5 class="p-t-10"><span id="citta_di_allocazione"></span></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="p-4">
+                                            <h5 class="text-black">Data di Inseriemento</h5>
+                                           <h5 class="p-t-10"><span id="data_inserimento"></span></h5>
                                         </div>
                                     </div>
                                     
@@ -325,38 +331,38 @@
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Skill</h4>
-                                            <h5 class="p-t-10"><span id="skill"></span></h5>
+                                            <h4 class="text-black">Skill 1</h4>
+                                            <h5 class="p-t-10"><span id="skill_1"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech 1</h4>
-                                            <h5 class="p-t-10"><span id="tech_1"></span></h5>
+                                            <h4 class="text-black">Skill 2</h4>
+                                            <h5 class="p-t-10"><span id="skill_2"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech 2</h4>
-                                            <h5 class="p-t-10"><span id="tech_2"></span></h5>
+                                            <h4 class="text-black">Skill 3</h4>
+                                            <h5 class="p-t-10"><span id="skill_3"></span></h5>
                                         </div>
                                      </div>
                                     <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech 3</h4>
-                                            <h5 class="p-t-10"><span id="tech_3"></span></h5>
+                                            <h4 class="text-black">Skill 4</h4>
+                                            <h5 class="p-t-10"><span id="skill_4"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech 4</h4>
-                                            <h5 class="p-t-10"><span id="tech_4"></span></h5>
+                                            <h4 class="text-black">Skill 5</h4>
+                                            <h5 class="p-t-10"><span id="skill_5"></span></h5>
                                         </div>
                                      </div> 
                                      <div class="col-md-4">
                                         <div class="p-4">
-                                            <h4 class="text-black">Tech campo libero</h4>
-                                            <h5 class="p-t-10"><span id="tech_campo_libero"></span></h5>
+                                            <h4 class="text-black">Skill campo libero</h4>
+                                            <h5 class="p-t-10"><span id="skill_campo_libero"></span></h5>
                                         </div>
                                      </div> 
                                 </div>   

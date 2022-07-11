@@ -51,7 +51,7 @@ public class Servlet extends HttpServlet
 			String email = request.getParameter("email");
 			String profilo_linkedin = request.getParameter("profilo_linkedin");
 			String citta_allocazione = request.getParameter("citta_di_allocazione");
-			String ruolo = request.getParameter("ruolo");
+			String ruolo_profilo = request.getParameter("ruolo_profilo");
 			String competenza_principale = request.getParameter("competenza_principale");
 			String data_colloquio = request.getParameter("data_colloquio");
 			String anno_colloquio = request.getParameter("anno_colloquio");
@@ -59,12 +59,12 @@ public class Servlet extends HttpServlet
 			String fonte_reperimento = request.getParameter("fonte_reperimento");
 			String costo_giornaliero = request.getParameter("costo_giornaliero");
 			String possibilita_lavorativa = request.getParameter("possibilita_lavorativa");
-			String skill = request.getParameter("skill");
-			String tech1 = request.getParameter("tech_1");
-			String tech2 = request.getParameter("tech_2");
-			String tech3 = request.getParameter("tech_3");
-			String tech4 = request.getParameter("tech_4");
-			String tech_campo_libero = request.getParameter("tech_campo_libero");
+			String skill_1 = request.getParameter("skill_1");
+			String skill_2 = request.getParameter("skill_2");
+			String skill_3 = request.getParameter("skill_3");
+			String skill_4 = request.getParameter("skill_4");
+			String skill_5 = request.getParameter("skill_5");
+			String skill_campo_libero = request.getParameter("skill_campo_libero");
 			String lingua1 = request.getParameter("lingua_1");
 			String lingua2 = request.getParameter("lingua_2");
 			String lingua3 = request.getParameter("lingua_3");
@@ -72,6 +72,10 @@ public class Servlet extends HttpServlet
 			String certificazioni = request.getParameter("certificazioni");
 			String seniority = request.getParameter("seniority");
 			String impressioni = request.getParameter("commento");
+			
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");  
+			LocalDateTime now = LocalDateTime.now();
+			String data_inserimento = dtf.format(now);
 			
 			Part file = request.getPart("nomeFile");
 			String nomeFile = file.getSubmittedFileName();
@@ -81,9 +85,9 @@ public class Servlet extends HttpServlet
 			    percorso = "C:\\GesTech Profili\\" + nomeFile;
 			}
 		    
-			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
-						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill, tech1, tech2, tech3, tech4, tech_campo_libero, lingua1, lingua2, lingua3,
-						competenze_totali, certificazioni, seniority, percorso);
+			main.salva(nome_cognome, recapito, email, profilo_linkedin, citta_allocazione, ruolo_profilo, competenza_principale, data_colloquio, anno_colloquio, esito_colloquio,
+						fonte_reperimento, costo_giornaliero, possibilita_lavorativa, skill_1, skill_2, skill_3, skill_4, skill_5, skill_campo_libero, lingua1, lingua2, lingua3,
+						competenze_totali, certificazioni, seniority, percorso, data_inserimento);
 			
 			String utente = (String) session.getAttribute("Utente");
 			if (!impressioni.equals(""))
@@ -104,7 +108,7 @@ public class Servlet extends HttpServlet
 			String email = request.getParameter("email");
 			String profilo_linkedin = request.getParameter("profilo_linkedin");
 			String citta_allocazione = request.getParameter("citta_di_allocazione");
-			String ruolo = request.getParameter("ruolo");
+			String ruolo = request.getParameter("ruolo_profilo");
 			String competenza_principale = request.getParameter("competenza_principale");
 			String data_colloquio = request.getParameter("data_colloquio");
 			String anno_colloquio = request.getParameter("anno_colloquio");
@@ -112,12 +116,12 @@ public class Servlet extends HttpServlet
 			String fonte_reperimento = request.getParameter("fonte_reperimento");
 			String costo_giornaliero = request.getParameter("costo_giornaliero");
 			String possibilita_lavorativa = request.getParameter("possibilita_lavorativa");
-			String skill = request.getParameter("skill");
-			String tech1 = request.getParameter("tech_1");
-			String tech2 = request.getParameter("tech_2");
-			String tech3 = request.getParameter("tech_3");
-			String tech4 = request.getParameter("tech_4");
-			String tech_campo_libero = request.getParameter("tech_campo_libero");
+			String skill = request.getParameter("skill_1");
+			String tech1 = request.getParameter("skill_2");
+			String tech2 = request.getParameter("skill_3");
+			String tech3 = request.getParameter("skill_4");
+			String tech4 = request.getParameter("skill_5");
+			String tech_campo_libero = request.getParameter("skill_campo_libero");
 			String lingua1 = request.getParameter("lingua_1");
 			String lingua2 = request.getParameter("lingua_2");
 			String lingua3 = request.getParameter("lingua_3");
@@ -146,9 +150,9 @@ public class Servlet extends HttpServlet
 			disp = request.getRequestDispatcher("ricerca.jsp");
 			disp.forward(request, response);
 		}
-		if (servlet.equals("get_skill"))
+		if (servlet.equals("get_ruolo_profilo"))
 		{
-			List skill = main.get_skill();
+			List skill = main.get_ruolo_profilo();
 			response.getWriter().println(skill);
 		}
 		if (servlet.equals("get_lingua"))
@@ -161,9 +165,9 @@ public class Servlet extends HttpServlet
 			List seniority = main.get_seniority();
 			response.getWriter().println(seniority);
 		}
-		if (servlet.equals("get_tech"))
+		if (servlet.equals("get_skill"))
 		{
-			List tech = main.get_tech();
+			List tech = main.get_skill();
 			response.getWriter().println(tech);
 		}
 		if (servlet.equals("get_esito_colloquio"))

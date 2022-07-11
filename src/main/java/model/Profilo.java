@@ -29,13 +29,14 @@ public class Profilo
 	private String certificazioni;
 	private String seniority;
 	private String percorso_cv;
+	private String data_inserimento;
 	
 	public Profilo () {}
 	
-	public Profilo (int id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazone, String ruolo, String competenza_principale, String data_colloquio, 
+	public Profilo (int id, String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio, 
 					String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
-					String possiblita_lavorativa, String skill2, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
-					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv)
+					String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
+					String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv, String data_inserimento)
 	{
 		this.id = id;
 		this.nome_cognome = nome_cognome;
@@ -64,6 +65,7 @@ public class Profilo
 		this.certificazioni = certificazioni;
 		this.seniority = seniority;
 		this.percorso_cv = percorso_cv;
+		this.data_inserimento = data_inserimento;
 	}
 	
 	public int getId()
@@ -333,4 +335,15 @@ public class Profilo
 	{
 		this.percorso_cv = percorso_cv;
 	}
+
+	
+	public String getData_inserimento() {
+		return data_inserimento;
+	}
+	
+
+	public void setData_inserimento(String data_inserimento) {
+		this.data_inserimento = data_inserimento;
+	}
+	
 }

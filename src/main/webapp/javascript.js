@@ -222,7 +222,7 @@ function ricerca()
 			var arrayRow = [];
 			for (var c = 0; c < profili.length ; c++)
 			{
-				valori = profili[c].split("-");
+				valori = profili[c].split("#");
 				var b1 = '<a href="sola_lettura.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-eye mr-3"></i></a>';
 				var b2 = '<a href="stampa_profilo.jsp" id='+valori[0]+' onclick="setStorage('+valori[0]+')"><i class="icon-pencil"></i></a>';
 				/*var a1 = document.createElement('a');
@@ -254,13 +254,11 @@ function ricerca()
         	.appendTo('#tabella_ricerca thead');
 			$('#tabella_ricerca').DataTable({
 				data: arrayRow,
-				createdRow: function(row, data)
+				/*createdRow: function(row, valori)
 				{
-					console.log(data);
-					console.log(row);
-				    if (data[3] == 'Inaffidabile') 
+				    if (valori[6] == 'Inaffidabile') 
 				        $(row).addClass('rosso_tabella_ricerca');
-				},
+				},*/
 				
 				orderCellsTop: true,
         		fixedHeader: true,
@@ -381,7 +379,7 @@ function stampa_profilo()
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", #");    // cambiano tutti i riferimenti pr modifica al Db
 			
-			menu_cascata2(profilo[15], profilo[16], profilo[17], profilo[18], profilo[19], profilo[21], profilo[22], 
+			menu_cascata2(profilo[7], profilo[15], profilo[16], profilo[17], profilo[18], profilo[19], profilo[21], profilo[22], 
 						  profilo[23], profilo[26], profilo[11]);
 			
 			document.getElementById("id").value = profilo[1];
@@ -391,7 +389,7 @@ function stampa_profilo()
 			document.getElementById("profilo_linkedin").value = profilo[5];
 			document.getElementById("citta_di_allocazione").value = profilo[6];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").value = profilo[7];
+			//document.getElementById("ruolo").value = profilo[15];   // 7
 			document.getElementById("competenza_principale").value = profilo[8];
 			
 			document.getElementById("data_colloquio").value = profilo[9];
@@ -408,7 +406,7 @@ function stampa_profilo()
 			document.getElementById("tech_2").value = profilo[17];
 			document.getElementById("tech_3").value = profilo[18];
 			document.getElementById("tech_4").value = profilo[19];*/
-			document.getElementById("tech_campo_libero").value = profilo[20];
+			document.getElementById("skill_campo_libero").value = profilo[20];
 			
 			/*document.getElementById("lingua_1").value = profilo[21];
 			document.getElementById("lingua_2").value = profilo[22];
@@ -420,7 +418,7 @@ function stampa_profilo()
 			
 			
 			var x=0;
-			for(var i=28; i < profilo.length-1; i++)
+			for(var i=29; i < profilo.length-1; i++)
 			{
 				const paragrafo = document.createElement("span");
 				paragrafo.id = i;
@@ -464,7 +462,6 @@ function stampa_profilo_lettura()
 		{
 			var risposta_profilo = xhttp.responseText;
 			profilo = risposta_profilo.split(", #");    // cambiano tutti i riferimenti pr modifica al Db
-			console.log(risposta_profilo);
 			document.getElementById("id").value = profilo[1];
 			
 			document.getElementById("nome_cognome").innerHTML = profilo[2]// Home > Ricerca > Nome&Cognome
@@ -475,7 +472,7 @@ function stampa_profilo_lettura()
 			document.getElementById("profilo_linkedin").href = profilo[5];
 			document.getElementById("citta_di_allocazione").innerHTML = profilo[6];            // profilo[4]!=="null"?profilo[4]:"";
 			
-			document.getElementById("ruolo").innerHTML = profilo[7];
+			document.getElementById("ruolo_profilo").innerHTML = profilo[7];
 			document.getElementById("competenza_principale").innerHTML = profilo[8];
 			
 			document.getElementById("data_colloquio").innerHTML = profilo[9];
@@ -487,12 +484,12 @@ function stampa_profilo_lettura()
 			document.getElementById("costo_giornaliero").innerHTML = profilo[13];
 			document.getElementById("possibilita_lavorativa").innerHTML = profilo[14];
 			
-			document.getElementById("skill").innerHTML = profilo[15];
-			document.getElementById("tech_1").innerHTML = profilo[16];   // prima tech
-			document.getElementById("tech_2").innerHTML = profilo[17];
-			document.getElementById("tech_3").innerHTML = profilo[18];
-			document.getElementById("tech_4").innerHTML = profilo[19];
-			document.getElementById("tech_campo_libero").innerHTML = profilo[20];
+			document.getElementById("skill_1").innerHTML = profilo[15];
+			document.getElementById("skill_2").innerHTML = profilo[16];   // prima tech
+			document.getElementById("skill_3").innerHTML = profilo[17];
+			document.getElementById("skill_4").innerHTML = profilo[18];
+			document.getElementById("skill_5").innerHTML = profilo[19];
+			document.getElementById("skill_campo_libero").innerHTML = profilo[20];
 			
 			document.getElementById("lingua_1").innerHTML = profilo[21];
 			document.getElementById("lingua_2").innerHTML = profilo[22];
@@ -502,12 +499,13 @@ function stampa_profilo_lettura()
 			document.getElementById("certificazioni").innerHTML = profilo[25];
 			document.getElementById("seniority").innerHTML = profilo[26];
 			
+			document.getElementById("data_inserimento").innerHTML = profilo[27];
+			
 			localStorage.setItem("nome_cognome", profilo[2]);
 			localStorage.setItem("array", profilo);
 			
 			var x=0;
-			console.log(profilo.length);
-			for(var i=28; i < profilo.length-1; i++)
+			for(var i=29; i < profilo.length-1; i++)
 			{
 				const paragrafo = document.createElement("span");
 				paragrafo.id = i;
@@ -628,10 +626,10 @@ function genera_cv()
 }
 function menu_cascata()
 {
-	menu_cascata_skill();
+	menu_cascata_ruolo_profilo();  //ex skill
 	menu_cascata_lingue();
 	menu_cascata_seniority();
-	menu_cascata_tech();
+	menu_cascata_skill();  // ex tech
 	menu_cascata_esito_colloquio();
 }
 function menu_cascata_lingue()
@@ -694,27 +692,27 @@ function menu_cascata_seniority()
 		}
 	}
 }
-function menu_cascata_skill()
+function menu_cascata_ruolo_profilo()  // ex Skill
 {
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "get_skill");
+	xhttp.send("Servlet=" + "get_ruolo_profilo");
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
 		{
-			var risposta_skill = xhttp.responseText;
-			skill = risposta_skill.split(", ");
-			skill.pop();
-			skill.shift();
-			for (var c = 0; c < skill.length; c++)
+			var risposta_ruolo_profilo = xhttp.responseText;
+			ruolo_profilo = risposta_ruolo_profilo.split(", ");
+			ruolo_profilo.pop();
+			ruolo_profilo.shift();
+			for (var c = 0; c < ruolo_profilo.length; c++)
 			{
-				const skills = document.createElement("option");
-				skills.value = skill[c];
-				skills.innerHTML = skill[c];
-				document.getElementById('skill').appendChild(skills);
+				const ruolo_profili = document.createElement("option");
+				ruolo_profili.value = ruolo_profilo[c];
+				ruolo_profili.innerHTML = ruolo_profilo[c];
+				document.getElementById('ruolo_profilo').appendChild(ruolo_profili);
 			}
 		}
 	}
@@ -744,42 +742,47 @@ function menu_cascata_esito_colloquio()
 		}
 	}
 }
-function menu_cascata_tech()
+function menu_cascata_skill()  // ex tech
 {
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "get_tech");
+	xhttp.send("Servlet=" + "get_skill");
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
 		{
-			var risposta_tech = xhttp.responseText;
-			tech = risposta_tech.split(", ");
-			tech.pop();
-			tech.shift();
-			for (var c = 0; c < tech.length; c++)
+			var risposta_skill = xhttp.responseText;
+			skill = risposta_skill.split(", ");
+			skill.pop();
+			skill.shift();
+			for (var c = 0; c < skill.length; c++)
 			{
-				const techs = document.createElement("option");
-				techs.value = tech[c];
-				techs.innerHTML = tech[c];
-				document.getElementById('tech_1').appendChild(techs);  // sostituito input_tech1
+				const skills = document.createElement("option");
+				skills.value = skill[c];
+				skills.innerHTML = skill[c];
+				document.getElementById('skill_1').appendChild(skills);  // sostituito input_tech1
 				
-				const techs2 = document.createElement("option");
-				techs2.value = tech[c];
-				techs2.innerHTML = tech[c];
-				document.getElementById('tech_2').appendChild(techs2);
+				const skills2 = document.createElement("option");
+				skills2.value = skill[c];
+				skills2.innerHTML = skill[c];
+				document.getElementById('skill_2').appendChild(skills2);
 				
-				const techs3 = document.createElement("option");
-				techs3.value = tech[c];
-				techs3.innerHTML = tech[c];
-				document.getElementById('tech_3').appendChild(techs3);
+				const skills3 = document.createElement("option");
+				skills3.value = skill[c];
+				skills3.innerHTML = skill[c];
+				document.getElementById('skill_3').appendChild(skills3);
 				
-				const techs4 = document.createElement("option");
-				techs4.value = tech[c];
-				techs4.innerHTML = tech[c];
-				document.getElementById('tech_4').appendChild(techs4);
+				const skills4 = document.createElement("option");
+				skills4.value = skill[c];
+				skills4.innerHTML = skill[c];
+				document.getElementById('skill_4').appendChild(skills4);
+				
+				const skills5 = document.createElement("option");
+				skills5.value = skill[c];
+				skills5.innerHTML = skill[c];
+				document.getElementById('skill_5').appendChild(skills5);
 			}
 		}
 	}
@@ -869,12 +872,12 @@ function errore()
 {
 	window.open("index.jsp", "_self");
 }
-function menu_cascata2(skill, tech1, tech2, tech3, tech4, lingua1, lingua2, lingia3, seniority, esito_colloquio_1)
+function menu_cascata2(ruolo_profilo, skill_1, skill_2, skill_3, skill_4, skill_5, lingua1, lingua2, lingia3, seniority, esito_colloquio_1)
 {
-	menu_cascata_skill2(skill);
+	menu_cascata_ruolo_profilo2(ruolo_profilo);
 	menu_cascata_lingue2(lingua1, lingua2, lingia3);
 	menu_cascata_seniority2(seniority);
-	menu_cascata_tech2(tech1, tech2, tech3, tech4);
+	menu_cascata_skill2(skill_1, skill_2, skill_3, skill_4, skill_5);
 	menu_cascata_esito_colloquio2(esito_colloquio_1);
 }
 
@@ -951,29 +954,29 @@ function menu_cascata_seniority2(seniority_1)
 }
 
 
-function menu_cascata_skill2(skill_1)
+function menu_cascata_ruolo_profilo2(ruolo_profilo_1)
 {
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "get_skill");
+	xhttp.send("Servlet=" + "get_ruolo_profilo");
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
 		{
-			var risposta_skill = xhttp.responseText;
-			skill = risposta_skill.split(", ");
-			skill.pop();
-			skill.shift();
-			for (var c = 0; c < skill.length; c++)
+			var risposta_ruolo_profilo = xhttp.responseText;
+			ruolo_profilo = risposta_ruolo_profilo.split(", ");
+			ruolo_profilo.pop();
+			ruolo_profilo.shift();
+			for (var c = 0; c < ruolo_profilo.length; c++)
 			{
-				const skills = document.createElement("option");
-				skills.value = skill[c];
-				skills.innerHTML = skill[c];
-				if (skill[c] == skill_1)
-					skills.selected = true;
-				document.getElementById('skill').appendChild(skills);
+				const ruolo_profili = document.createElement("option");
+				ruolo_profili.value = ruolo_profilo[c];
+				ruolo_profili.innerHTML = ruolo_profilo[c];
+				if (ruolo_profilo[c] == ruolo_profilo_1)
+					ruolo_profili.selected = true;
+				document.getElementById('ruolo_profilo').appendChild(ruolo_profili);
 			}
 		}
 	}
@@ -1009,50 +1012,57 @@ function menu_cascata_esito_colloquio2(esito_colloquio_1)
 	}
 }
 
-function menu_cascata_tech2(tech_1, tech_2, tech_3, tech_4)
+function menu_cascata_skill2(skill_1, skill_2, skill_3, skill_4, skill_5)
 { 
 	var xhttp = new XMLHttpRequest();
 	
 	xhttp.open("POST", 'Servlet', true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("Servlet=" + "get_tech");
+	xhttp.send("Servlet=" + "get_skill");
 	xhttp.onreadystatechange = function()
 	{
 		if (this.readyState == 4 && this.status == 200)
 		{
-			var risposta_tech = xhttp.responseText;
-			tech = risposta_tech.split(", ");
-			tech.pop();
-			tech.shift();
-			for (var c = 0; c < tech.length; c++)
+			var risposta_skill = xhttp.responseText;
+			skill = risposta_skill.split(", ");
+			skill.pop();
+			skill.shift();
+			for (var c = 0; c < skill.length; c++)
 			{
-				const techs = document.createElement("option");
-				techs.value = tech[c];
-				techs.innerHTML = tech[c];
-				if (tech[c] == tech_1)
-					techs.selected = true;
-				document.getElementById('tech_1').appendChild(techs);
+				const skills_1 = document.createElement("option");
+				skills_1.value = skill[c];
+				skills_1.innerHTML = skill[c];
+				if (skill[c] == skill_1)
+					skills_1.selected = true;
+				document.getElementById('skill_1').appendChild(skills_1);
 				
-				const techs2 = document.createElement("option");
-				techs2.value = tech[c];
-				techs2.innerHTML = tech[c];
-				if (tech[c] == tech_2)
-					techs2.selected = true;
-				document.getElementById('tech_2').appendChild(techs2);
+				const skills_2 = document.createElement("option");
+				skills_2.value = skill[c];
+				skills_2.innerHTML = skill[c];
+				if (skill[c] == skill_2)
+					skills_2.selected = true;
+				document.getElementById('skill_2').appendChild(skills_2);
 				
-				const techs3 = document.createElement("option");
-				techs3.value = tech[c];
-				techs3.innerHTML = tech[c];
-				if (tech[c] == tech_3)
-					techs3.selected = true;
-				document.getElementById('tech_3').appendChild(techs3);
+				const skills_3 = document.createElement("option");
+				skills_3.value = skill[c];
+				skills_3.innerHTML = skill[c];
+				if (skill[c] == skill_3)
+					skills_3.selected = true;
+				document.getElementById('skill_3').appendChild(skills_3);
 				
-				const techs4 = document.createElement("option");
-				techs4.value = tech[c];
-				techs4.innerHTML = tech[c];
-				if (tech[c] == tech_4)
-					techs4.selected = true;
-				document.getElementById('tech_4').appendChild(techs4);
+				const skills_4 = document.createElement("option");
+				skills_4.value = skill[c];
+				skills_4.innerHTML = skill[c];
+				if (skill[c] == skill_4)
+					skills_4.selected = true;
+				document.getElementById('skill_4').appendChild(skills_4);
+				
+				const skills_5 = document.createElement("option");
+				skills_5.value = skill[c];
+				skills_5.innerHTML = skill[c];
+				if (skill[c] == skill_5)
+					skills_5.selected = true;
+				document.getElementById('skill_5').appendChild(skills_5);
 			}
 		}
 	}

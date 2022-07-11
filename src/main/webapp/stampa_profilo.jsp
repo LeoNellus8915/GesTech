@@ -315,9 +315,8 @@
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="ruolo" class="col-form-label s-12">RUOLO</label>
-												<input id="ruolo" name="ruolo" placeholder="Insersci Ruolo"
-													class="form-control r-0 light s-12 date-picker" type="text">
+												<label for="ruolo_profilo" class="col-form-label s-12">RUOLO</label>
+												<select name="ruolo_profilo" id="ruolo_profilo" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 											<div class="form-group col-4 m-0">
 												<label for="competenza_principale" class="col-form-label s-12">COMPETENZA PRINCIPALE</label>
@@ -360,31 +359,31 @@
 									<div class="col-md-12">
 										<div class="form-row">
 											<div class="form-group col-4 m-0">
-												<label for="skill" class="col-form-label s-12">SKILL</label>
-												<select name="skill" id="skill" class="form-control r-0 light s-12 date-picker"></select>
+												<label for="skill_1" class="col-form-label s-12">SKILL1</label>
+												<select name="skill_1" id="skill_1" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="tech_1" class="col-form-label s-12">TECH1</label>
-												<select name="tech_1" id="tech_1" class="form-control r-0 light s-12 date-picker"></select>
+												<label for="skill_2" class="col-form-label s-12">SKILL2</label>
+												<select name="skill_2" id="skill_2" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="tech_2" class="col-form-label s-12">TECH2</label>
-												<select name="tech_2" id="tech_2" class="form-control r-0 light s-12 date-picker"></select>
+												<label for="skill_3" class="col-form-label s-12">SKILL3</label>
+												<select name="skill_3" id="skill_3" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 
 											<div class="form-group col-4 m-0">
-												<label for="tech_3" class="col-form-label s-12">TECH3</label>
-												<select name="tech_3" id="tech_3" class="form-control r-0 light s-12 date-picker"></select>
+												<label for="skill_4" class="col-form-label s-12">SKILL4</label>
+												<select name="skill_4" id="skill_4" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="tech_4" class="col-form-label s-12">TECH4</label>
-												<select name="tech_4" id="tech_4" class="form-control r-0 light s-12 date-picker"></select>
+												<label for="skill_5" class="col-form-label s-12">SKILL5</label>
+												<select name="skill_5" id="skill_5" class="form-control r-0 light s-12 date-picker"></select>
 											</div>
 											<div class="form-group col-4 m-0">
-												<label for="tech_campo_libero" class="col-form-label s-12">TECH
-													(campo libero)</label> <input id="tech_campo_libero"
-													name="tech_campo_libero"
-													placeholder="Insersci Tech Campo Libero"
+												<label for="skill_campo_libero" class="col-form-label s-12">SKILL
+													(campo libero)</label> <input id="skill_campo_libero"
+													name="skill_campo_libero"
+													placeholder="Insersci Skill Campo Libero"
 													class="form-control r-0 light s-12 date-picker" type="text">
 											</div>
 										</div>

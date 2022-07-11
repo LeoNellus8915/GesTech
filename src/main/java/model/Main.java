@@ -126,7 +126,7 @@ public class Main
 	public void salva (String nome_cognome, String recapito, String email, String profilo_linkedin, String citta_allocazione, String ruolo, String competenza_principale, String data_colloquio,
 						String anno_colloquio, String esito_colloquio, String fonte_reperimento, String costo_giornaliero,
 						String possibilita_lavorativa, String skill, String tech1, String tech2, String tech3, String tech4, String tech_campo_libero, String lingua1,
-						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv)	
+						String lingua2, String lingua3, String competenze_totali, String certificazioni, String seniority, String percorso_cv, String data_inserimento)	
 	{
 		Profilo profilo = new Profilo();
 		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
@@ -163,6 +163,7 @@ public class Main
         profilo.setCertificazioni(certificazioni);
         profilo.setSeniority(seniority);
         profilo.setPercorso_cv(percorso_cv);
+        profilo.setData_inserimento(data_inserimento);
         controllo.save(profilo);
         controllo.getTransaction().commit();
         controllo.close();
@@ -190,7 +191,7 @@ public class Main
 		controllo.close();
 	}
 	
-	public List ricerca()
+	/*public List ricerca()
 	{
 		Profilo profilo = new Profilo();
 		List profili = new ArrayList();
@@ -207,6 +208,27 @@ public class Main
         	+ profilo.getEsito_colloquio() + "-" + profilo.getRuolo());
         }
         profili.add(" ");
+        controllo.close();
+        return profili;
+	}*/
+	
+	public List ricerca()
+	{
+		Profilo profilo = new Profilo();
+		List profili = new ArrayList();
+		profili.add("#");
+		Session controllo = new Configuration().configure().buildSessionFactory().getCurrentSession();
+		controllo.beginTransaction();
+        Query q = controllo.createQuery("from Profilo order by id desc");
+        List lista = q.list();
+        for (int c=0; c<lista.size(); c++)
+        {
+        	profilo = (Profilo)lista.get(c);
+        	profili.add(profilo.getId() + "#" + profilo.getData_inserimento() + "#" + profilo.getNome_cognome()
+        	+ "#" + profilo.getCitta_allocazione() + "#" + profilo.getRuolo() + "#" 
+            + profilo.getSkill());
+        }
+        profili.add("");
         controllo.close();
         return profili;
 	}
@@ -281,6 +303,7 @@ public class Main
         profili.add(profilo.getCompetenze_totali()!=null?"#"+profilo.getCompetenze_totali():"#");
         profili.add(profilo.getCertificazioni()!=null?"#"+profilo.getCertificazioni():"#");
         profili.add(profilo.getSeniority()!=null?"#"+profilo.getSeniority():"#");
+        profili.add(profilo.getData_inserimento()!=null?"#"+profilo.getData_inserimento():"#");
         profili.add("#");
         controllo.close();
         return profili;
@@ -362,7 +385,7 @@ public class Main
 		controllo.close();
 		return senior;
 	}
-	public List get_skill()
+	public List get_ruolo_profilo()
 	{
 		List skill = new ArrayList();
 		skill.add(" ");
@@ -374,10 +397,11 @@ public class Main
 		for (int c=0; c<list.size(); c++)
 			skill.add((String)list.get(c));
 		skill.add(" ");
+		System.out.println("Qui    "+skill);
 		controllo.close();
 		return skill;
 	}
-	public List get_tech()
+	public List get_skill()
 	{
 		List tech = new ArrayList();
 		tech.add(" ");
