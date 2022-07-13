@@ -40,8 +40,9 @@ public class Servlet extends HttpServlet
 		if (servlet.equals("logout"))
 		{
 			session.setAttribute("Login", null);
-			disp = request.getRequestDispatcher("index.jsp");
-			disp.forward(request, response);
+			response.sendRedirect("index.jsp");
+//			disp = request.getRequestDispatcher("index.jsp");
+//			disp.forward(request, response);
 		}
 		
 		if (servlet.equals("profilo"))
@@ -148,8 +149,9 @@ public class Servlet extends HttpServlet
 			{
 				main.salvaCommento(commento, utente, email);
 			}
-			disp = request.getRequestDispatcher("ricerca.jsp");
-			disp.forward(request, response);
+			response.sendRedirect("ricerca.jsp");
+//			disp = request.getRequestDispatcher("ricerca.jsp");
+//			disp.forward(request, response);
 		}
 		if (servlet.equals("get_ruolo_profilo"))
 		{
