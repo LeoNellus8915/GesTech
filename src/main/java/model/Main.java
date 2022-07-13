@@ -226,7 +226,7 @@ public class Main
         	profilo = (Profilo)lista.get(c);
         	profili.add(profilo.getId() + "#" + profilo.getData_inserimento() + "#" + profilo.getNome_cognome()
         	+ "#" + profilo.getCitta_allocazione() + "#" + profilo.getRuolo() + "#" 
-            + profilo.getSkill());
+            + profilo.getSkill() + "#" + profilo.getEsito_colloquio());
         }
         profili.add("");
         controllo.close();

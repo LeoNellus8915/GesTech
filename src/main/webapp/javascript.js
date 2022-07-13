@@ -246,7 +246,7 @@ function ricerca()
 				var i2 = document.createElement('i');
 				i2.className = "icon-pencil";
 				a2.appendChild(i2);*/
-				arrayRow.push([valori[1], valori[2], valori[3], valori[4], valori[5], b1 + b2]);				
+				arrayRow.push([valori[1], valori[2], valori[3], valori[4], valori[5], b1 + b2, valori[6]]);
 			}
 			$('#tabella_ricerca thead tr')
         	.clone(true)
@@ -254,11 +254,11 @@ function ricerca()
         	.appendTo('#tabella_ricerca thead');
 			$('#tabella_ricerca').DataTable({
 				data: arrayRow,
-				/*createdRow: function(row, valori)
+				createdRow: function(row, valori)
 				{
-				    if (valori[6] == 'Inaffidabile') 
+				    if (valori[6] == 'Inaffidabile')
 				        $(row).addClass('rosso_tabella_ricerca');
-				},*/
+				},
 				
 				orderCellsTop: true,
         		fixedHeader: true,
