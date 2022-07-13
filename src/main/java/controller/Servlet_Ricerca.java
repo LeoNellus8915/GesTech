@@ -104,5 +104,6 @@ public class Servlet_Ricerca extends HttpServlet
 		{
 			response.getWriter().println(main.eliminaAvviso(info[1]));
 		}
+		
 	}
 }
